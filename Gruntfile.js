@@ -41,20 +41,29 @@ module.exports = function(grunt) {
         postcss: {
             build: {
                 options: {
+                    processors: [
+                        require('autoprefixer')({browsers: 'last 5 versions'}),
+                    ]
+                },
+                files: {
+                    'app/css/main.css' : 'app/css/main.css',
+                }
+            },
+            minify: {
+                options: {
                     map: {
                         inline: false,
                         annotation: 'app/css/'
                     },
                     processors: [
-                        require('autoprefixer')({browsers: 'last 5 versions'}),
                         require('cssnano')()
                     ]
                 },
                 files: {
-                    'app/css/main.min.css' : 'app/css/main.css',
-                    'dist/css/main.min.css' : 'app/css/main.css'
+                    'dist/css/main.min.css' : 'app/css/main.css',
+                    'app/css/main.min.css' : 'app/css/main.css'
                 }
-            },
+            }
         }, // end postcss
 
         jshint: {
@@ -63,7 +72,7 @@ module.exports = function(grunt) {
                     reporter: require('jshint-stylish')
                 },
                 files: {
-                    src: ['Gruntfile.js','./app/js/*.js', 'dist/js/*.js']
+                    src: ['Gruntfile.js','./app/js/*.js',]
                 }
             }
         }, // end jshint
@@ -104,32 +113,38 @@ module.exports = function(grunt) {
                 bsFiles: {
                     src: [
                         'app/*.html',
-                        'app/css/main.css',
+                        'app/css/*.css',
                         'app/js/**/*.js'
                     ]
                 },
                 options: {
+                    keepalive: true,
+                    notify:false,
+                    reloadOnRestart: true,
                     watchTask: true,
-                    server: './app'
+                    watchOptions: {
+                        ignored: ''
+                    },
+                    server: './app',
                 }
             }
         }, // end browserSync
 
         watch: {
             jade: {
-                files: 'app/jade/*.jade',
+                files: './app/jade/**/*.jade',
                 tasks: ['jade']
             },
             stylesheet: {
-                files: 'app/scss/main.scss',
-                tasks: ['sass', 'postcss']
+                files: './app/scss/**/*.scss',
+                tasks: ['sass', 'postcss:build', 'postcss:minify']
             },
             scripts: {
-                files: 'app/js/*.js',
+                files: './app/js/*.js',
                 tasks: ['jshint', 'uglify']
             },
             images: {
-                files: ['app/images/**/*.{png,jpg,gif,svg}'],
+                files: ['./app/images/**/*.{png,jpg,gif,svg}'],
                 tasks: ['imagemin:build']
             }
 

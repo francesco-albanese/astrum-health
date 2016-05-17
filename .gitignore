@@ -2,7 +2,6 @@
 /Mockup
 app/components
 bower.json
-package.json
 
 ### OSX ###
 .DS_Store
