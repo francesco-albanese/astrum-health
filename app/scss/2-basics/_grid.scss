@@ -1,0 +1,36 @@
+// Grid system
+
+// container variables
+$container-large: 920px;
+$container-medium: 768px;
+$container-small: 480px;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: $spacing-small;
+  padding-right: $spacing-small;
+  @media screen and (max-width:$container-large) {
+    max-width: ($container-large / 100) * 90;
+  }
+  @media screen and (max-width: $container-medium) {
+    max-width: ($container-medium / 100) * 90;
+  }
+  @media screen and (max-width: $container-small) {
+    max-width: ($container-small / 100) * 90;
+  }
+}
+
+.flex {
+  display: flex;
+  &.space-between {
+    justify-content: space-between;
+  }
+  &.space-around {
+    justify-content: space-around;
+  }
+  &.center {
+    justify-content: center;
+    align-items: center;
+  }
+}

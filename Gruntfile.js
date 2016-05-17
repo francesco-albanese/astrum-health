@@ -24,6 +24,9 @@ module.exports = function(grunt) {
         }, // end jade
 
         sass: {
+            options: {
+    			sourceMap: true
+    		},
             build: {
                 options: {
                     style: 'expanded'
@@ -51,10 +54,10 @@ module.exports = function(grunt) {
             },
             minify: {
                 options: {
-                    map: {
-                        inline: false,
-                        annotation: 'app/css/'
-                    },
+                    // map: {
+                    //     inline: false,
+                    //     annotation: 'app/css/'
+                    // },
                     processors: [
                         require('cssnano')()
                     ]

@@ -1,0 +1,34 @@
+// typography
+h1 {
+  font-size: 50px;
+  @media screen and (max-width: $container-large) {
+    font-size: 40px;
+  }
+  @media screen and (max-width: $container-medium) {
+    font-size: 30px;
+  }
+}
+
+h2 {
+  font-size: 45px;
+  @media screen and (max-width: $container-large) {
+    font-size: 35px;
+  }
+  @media screen and (max-width: $container-medium) {
+    font-size: 25px;
+  }
+}
+
+h3 {
+  font-size: 35px;
+  @media screen and (max-width: $container-large) {
+    font-size: 25px;
+  }
+  @media screen and (max-width: $container-medium) {
+    font-size: 15px;
+  }
+}
+
+h4 {
+  font-size: 24px;
+}
