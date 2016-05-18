@@ -30,6 +30,19 @@
   src: local("Lato Bold"), local("Lato-Bold"), url(https://fonts.gstatic.com/s/lato/v11/H2DMvhDLycM56KNuAtbJYA.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000; }
 
+/* abeatbyKaiRegular only for headings */
+@font-face {
+  font-family: 'abeatbyKai';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/abeatbyKaiRegular.otf) format("otf"); }
+
+@font-face {
+  font-family: 'abeatbyKai';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/ABEAKRG_.ttf) format("ttf"); }
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -171,7 +184,8 @@ body {
   color: #111; }
 
 h1 {
-  font-size: 50px; }
+  font-size: 50px;
+  font-family: 'abeatbyKai'; }
   @media screen and (max-width: 920px) {
     h1 {
       font-size: 40px; } }
@@ -180,7 +194,8 @@ h1 {
       font-size: 30px; } }
 
 h2 {
-  font-size: 45px; }
+  font-size: 45px;
+  font-family: 'abeatbyKai'; }
   @media screen and (max-width: 920px) {
     h2 {
       font-size: 35px; } }
@@ -189,7 +204,8 @@ h2 {
       font-size: 25px; } }
 
 h3 {
-  font-size: 35px; }
+  font-size: 35px;
+  font-family: 'abeatbyKai'; }
   @media screen and (max-width: 920px) {
     h3 {
       font-size: 25px; } }
@@ -198,7 +214,8 @@ h3 {
       font-size: 15px; } }
 
 h4 {
-  font-size: 24px; }
+  font-size: 24px;
+  font-family: 'abeatbyKai'; }
 
 .header {
   padding: 20px;

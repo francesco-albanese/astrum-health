@@ -1,6 +1,7 @@
 // typography
 h1 {
   font-size: 50px;
+  font-family: 'abeatbyKai';
   @media screen and (max-width: $container-large) {
     font-size: 40px;
   }
@@ -11,6 +12,7 @@ h1 {
 
 h2 {
   font-size: 45px;
+  font-family: 'abeatbyKai';
   @media screen and (max-width: $container-large) {
     font-size: 35px;
   }
@@ -21,6 +23,7 @@ h2 {
 
 h3 {
   font-size: 35px;
+  font-family: 'abeatbyKai';
   @media screen and (max-width: $container-large) {
     font-size: 25px;
   }
@@ -31,4 +34,5 @@ h3 {
 
 h4 {
   font-size: 24px;
+  font-family: 'abeatbyKai';
 }
