@@ -2,4 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    ul li a {
+        color: #9E1981;
+        font-family: abeatbyKai;
+        font-size: 1.875em;
+        padding: $spacing-small $spacing-base;
+        @include sweep-to-right(#9E1981, #fff);
+    }
 }

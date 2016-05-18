@@ -16,7 +16,7 @@
             width: 100%;
             height: 2px;
             position: relative;
-            background-color: $black;
+            background-color: #9E1981;
             &:after,
             &:before {
                 content: '';
@@ -24,7 +24,7 @@
                 position: absolute;
                 width: 100%;
                 height: 2px;
-                background-color: $black;
+                background-color: #9E1981;
             }
             &:after {
                 top: -15px;

@@ -1,7 +1,45 @@
 .home-section {
-    width: 100vw;
     height: 100vh;
     background: url(https://c3.staticflickr.com/9/8567/16360331050_2a9c7c04a3_b.jpg) no-repeat;
     background-size: cover;
     position: relative;
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: $spacing-large + 40px;
+        position: relative;
+        z-index: 100;
+        svg {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+            min-width: 20em;
+            width: 100em;
+        }
+    }
+
+    h2 {
+        font-family: 'Lato';
+        color: #fff;
+        text-align: center;
+        position: relative;
+    }
+
+    .fa-angle-down {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        position: relative;
+        z-index: 100;
+        color: #fff;
+        cursor: pointer;
+        @include wobble-vertical;
+    }
+
+}
+
+.articles-section {
+    height: 100vh;
 }
