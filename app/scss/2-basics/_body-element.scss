@@ -6,9 +6,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  > * {
-    box-sizing: border-box;
-  }
 }
 
 html, body {
@@ -24,6 +21,7 @@ body {
   -webkit-text-size-adjust: 100%;
   line-height:1.2;
   font-family: Lato, sans-serif;
+  font-size: 1em;
 
   ul {
     list-style: none;

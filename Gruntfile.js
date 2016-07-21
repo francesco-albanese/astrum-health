@@ -25,11 +25,12 @@ module.exports = function(grunt) {
 
         sass: {
             options: {
-    			sourceMap: true
-    		},
+			        sourceMap: true
+    		    },
             build: {
                 options: {
-                    style: 'expanded'
+                    style: 'expanded',
+                    sourcemap: 'auto'
                 },
                 files: [ {
                     cwd: './app/scss/',

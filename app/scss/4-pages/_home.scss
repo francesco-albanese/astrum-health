@@ -8,7 +8,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: $spacing-large + 40px;
         position: relative;
         z-index: 100;
         svg {
@@ -16,7 +15,7 @@
             display: block;
             margin: 0 auto;
             min-width: 20em;
-            width: 100em;
+            width: 50em;
         }
     }
 
@@ -40,6 +39,15 @@
 
 }
 
-.articles-section {
-    height: 100vh;
+.solutions-section {
+    background: $solutions-bg;
+    color: $silver;
+    padding: $spacing-large;
+}
+
+.facing-the-reality-section {
+  background: $facing-the-reality-bg;
+  color: #fff;
+  text-align: center;
+  padding: $spacing-large;
 }
