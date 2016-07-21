@@ -84,5 +84,64 @@ $container-small: 480px;
 }
 
 .facing-the-reality__grid {
+  margin-top: $spacing-large;
+
+  & &-image {
+    width: 690px;
+    height: 300px;
+    box-shadow: 0px 0px 10px 0px rgba($black, .7);
+  }
+
+  & &-article {
+    width: 300px;
+    height: 300px;
+    flex-direction: column;
+    background: $silver;
+    color: $black;
+    box-shadow: 0px 0px 10px 0px rgba($black, .7);
+  }
+
+  & &-article-wrapper {
+
+    &:first-child {
+      .facing-the-reality__grid-image {
+        background: url(../images/landscape.jpeg) no-repeat center;
+        background-size: cover;
+      }
+    }
+
+    &:nth-child(2) {
+      .facing-the-reality__grid-image {
+        background: url(../images/medical.jpeg) no-repeat center;
+        background-size: cover;
+      }
+    }
+
+    &:nth-child(3) {
+      .facing-the-reality__grid-image {
+        background: url(../images/medical1.jpeg) no-repeat center;
+        background-size: cover;
+      }
+    }
+
+    &:nth-child(4) {
+      .facing-the-reality__grid-image {
+        background: url(../images/sea.jpeg) no-repeat center;
+        background-size: cover;
+      }
+    }
+
+    &:last-child {
+      .facing-the-reality__grid-image {
+        background: url(../images/sea1.jpeg) no-repeat center;
+        background-size: cover;
+      }
+    }
+
+    &--even {
+      flex-direction: row-reverse;
+      justify-content: flex-start;
+    }
+  }
 
 }

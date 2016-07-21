@@ -50,4 +50,20 @@
   color: #fff;
   text-align: center;
   padding: $spacing-large;
+
+  p {
+    font-size: 38px;
+  }
+
+  .twitter-container {
+    margin-top: $spacing-large;
+  }
+
+}
+
+.testimonials-section {
+  background: $testimonials-bg;
+  color: $silver;
+  padding: $spacing-large;
+  text-align: center;
 }
