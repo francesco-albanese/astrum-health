@@ -45,6 +45,7 @@ module.exports = function(grunt) {
         postcss: {
             build: {
                 options: {
+                  map: true,
                     processors: [
                         require('autoprefixer')({browsers: 'last 5 versions'}),
                     ]
@@ -55,10 +56,6 @@ module.exports = function(grunt) {
             },
             minify: {
                 options: {
-                    // map: {
-                    //     inline: false,
-                    //     annotation: 'app/css/'
-                    // },
                     processors: [
                         require('cssnano')()
                     ]
