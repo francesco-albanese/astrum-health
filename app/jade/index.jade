@@ -3,7 +3,7 @@ html(lang="en-GB")
     include partials/page-components/head.jade    
     
     body
-        .home-section
+        section.home-section
             .home-section__overlay
             .container 
                 include partials/page-components/header.jade
@@ -12,7 +12,7 @@ html(lang="en-GB")
                 h2 Astrum Health is a leader in providing education and solutions that improve infection control within medical environments.
                 i.fa.fa-angle-down.fa-4x
         
-        .solutions-section
+        section.solutions-section
             .container
               .grid.flex.flex--center
                 article
@@ -36,7 +36,7 @@ html(lang="en-GB")
                     a.btn(href="#") Read More
                   p Understanding and supporting our customer needs - Service is our most valuable product
         
-        .facing-the-reality-section
+        section.facing-the-reality-section
           h2 Facing the reality
           p Solutions are not only for problems you can see
           .facing-the-reality__grid
@@ -74,5 +74,44 @@ html(lang="en-GB")
           .twitter-container.flex.flex--center
             a(class="twitter-timeline" data-lang="en" data-width="500" data-height="800" href="https://twitter.com/Astrum_Health") Tweets by Astrum_Health
             
-        .testimonials-section
+        section.testimonials-section
           h2 what people say about us
+          .container
+            .grid.flex.flex--center
+              .testimonial
+                .article__image
+                  img(src="images/business1.jpg")
+                h3 mr Johnes
+                p "The Aquaphase washer minimised closure of superbug infected ward as our medical equipment and furniture could be decontaminated and turned around within 24hours. Something that would need days under manual decontamination costing "the"hospital "vast" sums" in "lost"bed" days,"and"staff"and"patient"disruption."
+              .testimonial
+                .article__image
+                  img(src="images/business2.jpg")
+                h3 mr Johnes  
+                p "Investing in a washer disinfector employing chemical disinfection has increased our equipment life cycle as opposed to thermal disinfection which has a negative effect of damage to equipment surfaces, hence cost savings from reducing condemned equipment."
+              .testimonial
+                .article__image
+                  img(src="images/business3.jpg")
+                h3 mr Johnes  
+                p "Jet washes and manual decontamination seemed effective until we employed an automated washer disinfector which meant we could validate reproduce washes. With the Aquaphase, we were also able to quantify and regulate our utility usage."
+        
+        footer.footer
+        
+          section.footer__top
+            .container
+              .footer__top-contact.flex.flex--space-between
+                .footer__top-contact-email.flex.flex--center
+                  i.fa.fa-envelope-o.fa-5x(aria-hidden='true')
+                  h3 Email us
+                .footer__top-contact-phone.flex.flex--center
+                  i.fa.fa-phone-square.fa-5x(aria-hidden='true')
+                  a(href='tel:+44117117888', rel='nofollow') 0117117888
+                .footer__top-contact-find-us.flex.flex--center
+                  i.fa.fa-map-marker.fa-5x(aria-hidden='true')
+                  h3 Find us
+              .footer__top-map
+          section.footer__centre
+            .container
+            
+          section.footer__bottom  
+            .container  
+    script(src="js/index.js", charset="utf-8")            

@@ -173,12 +173,10 @@ body {
       max-width: 432px; } }
 
 .flex {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
   .flex--space-between {
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between; }
@@ -187,18 +185,14 @@ body {
         -ms-flex-pack: distribute;
             justify-content: space-around; }
   .flex--center {
-    -webkit-box-pack: center;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
                 -ms-grid-row-align: center;
             align-items: center; }
   .flex--column {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column; }
@@ -206,9 +200,9 @@ body {
 .grid {
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
+          flex-wrap: wrap;
+  margin-top: 30px; }
   .grid article {
-    -webkit-box-flex: 1;
     -webkit-flex: 1 1 50%;
         -ms-flex: 1 1 50%;
             flex: 1 1 50%;
@@ -227,7 +221,6 @@ body {
         visibility: hidden;
         -webkit-transform: translate3d(-50%, 100%, 0);
                 transform: translate3d(-50%, 100%, 0);
-        -webkit-transition: all .3s ease-in-out;
         transition: all .3s ease-in-out; }
     .grid article:hover .article__image .btn {
       -webkit-transform: translate3d(-50%, -100%, 0);
@@ -237,9 +230,29 @@ body {
     .grid article p {
       text-align: center;
       margin-top: 15px; }
+  .grid .testimonial {
+    -webkit-flex: 0 1 30%;
+        -ms-flex: 0 1 30%;
+            flex: 0 1 30%;
+    padding: 15px;
+    -webkit-align-self: baseline;
+        -ms-flex-item-align: baseline;
+            align-self: baseline; }
+    .grid .testimonial img {
+      width: 100%;
+      max-width: 300px;
+      height: 300px;
+      box-shadow: 0px 0px 10px 0px rgba(17, 17, 17, 0.7); }
+    .grid .testimonial h3,
+    .grid .testimonial p {
+      margin-top: 30px;
+      margin-bottom: 30px; }
+    .grid .testimonial p {
+      font-size: 20px; }
 
 .facing-the-reality__grid {
-  margin-top: 30px; }
+  max-width: 1380px;
+  margin: 30px auto; }
   .facing-the-reality__grid .facing-the-reality__grid-image {
     width: 690px;
     height: 300px;
@@ -247,8 +260,6 @@ body {
   .facing-the-reality__grid .facing-the-reality__grid-article {
     width: 300px;
     height: 300px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
@@ -271,12 +282,9 @@ body {
     background: url(../images/sea1.jpeg) no-repeat center;
     background-size: cover; }
   .facing-the-reality__grid .facing-the-reality__grid-article-wrapper--even {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
     -webkit-flex-direction: row-reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
-    -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
             justify-content: flex-start; }
@@ -351,15 +359,12 @@ p {
 
 .btn {
   background: #641E77;
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -376,15 +381,12 @@ p {
   .header .burger-menu {
     width: 3.125em;
     height: 3.125em;
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: center;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -407,16 +409,29 @@ p {
       .header .burger-menu span:before {
         top: 15px; }
 
+.footer__top {
+  background: #AB35CA;
+  color: #ddd;
+  padding: 30px; }
+  .footer__top h3,
+  .footer__top a[href^="tel:"] {
+    padding: 15px 30px 0; }
+  .footer__top a[href^="tel:"] {
+    font-family: 'abeatbyKai', sans-serif;
+    font-size: 35px; }
+  .footer__top-contact, .footer__top-map {
+    margin-bottom: 30px;
+    margin-top: 30px; }
+  .footer__top-map {
+    height: 600px; }
+
 .navbar {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
@@ -431,7 +446,6 @@ p {
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
     position: relative;
-    -webkit-transition: color .3s linear;
     transition: color .3s linear; }
     .navbar ul li a:before {
       content: '';
@@ -448,7 +462,6 @@ p {
       -webkit-transform-origin: 0 50%;
           -ms-transform-origin: 0 50%;
               transform-origin: 0 50%;
-      -webkit-transition: all .3s ease-in-out;
       transition: all .3s ease-in-out; }
     .navbar ul li a:hover, .navbar ul li a:focus, .navbar ul li a:active {
       color: #fff; }
@@ -471,15 +484,12 @@ p {
   background-size: cover;
   position: relative; }
   .home-section__logo {
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: center;
     -webkit-justify-content: center;
         -ms-flex-pack: center;
             justify-content: center;

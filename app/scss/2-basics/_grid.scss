@@ -26,6 +26,7 @@ $container-small: 480px;
   &--space-between {
     justify-content: space-between;
   }
+
   &--space-around {
     justify-content: space-around;
   }
@@ -40,6 +41,8 @@ $container-small: 480px;
 
 .grid {
   flex-wrap: wrap;
+  margin-top: $spacing-large;
+
   article {
     flex: 1 1 50%;
     padding: $spacing-large;
@@ -81,10 +84,36 @@ $container-small: 480px;
     }
 
   }
+
+  .testimonial {
+    flex: 0 1 30%;
+    padding: $spacing-base;
+    align-self: baseline;
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: 300px;
+      box-shadow: 0px 0px 10px 0px rgba($black, .7);
+    }
+
+    h3,
+    p {
+      margin-top: $spacing-large;
+      margin-bottom: $spacing-large;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+  }
+
 }
 
 .facing-the-reality__grid {
-  margin-top: $spacing-large;
+  max-width: 1380px;
+  margin: $spacing-large auto;
 
   & &-image {
     width: 690px;

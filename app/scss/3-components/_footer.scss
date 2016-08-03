@@ -1,0 +1,25 @@
+.footer {
+  &__top {
+    background: #AB35CA;
+    color: $silver;
+    padding: $spacing-large;
+    h3,
+    a[href^="tel:"] {
+      padding: $spacing-base $spacing-large 0;
+    }
+
+    a[href^="tel:"] {
+      font-family: 'abeatbyKai', sans-serif;
+      font-size: 35px;
+    }
+
+    &-contact,
+    &-map {
+      margin-bottom: $spacing-large;
+      margin-top: $spacing-large;
+    }
+    &-map {
+      height: 600px;
+    }
+  }
+}
