@@ -2,7 +2,7 @@ doctype html
 html(lang="en-GB")
     include partials/page-components/head.jade    
     
-    body
+    body(id="top")
         section.home-section
             .home-section__overlay
             .container 
@@ -10,9 +10,9 @@ html(lang="en-GB")
                 .home-section__logo
                     include partials/page-components/logo-svg.jade
                 h2 Astrum Health is a leader in providing education and solutions that improve infection control within medical environments.
-                i.fa.fa-angle-down.fa-4x
+                a(href="#solutions")#[i.fa.fa-angle-down.fa-4x]
         
-        section.solutions-section
+        section#solutions.solutions-section
             .container
               .grid.flex.flex--center
                 article
@@ -36,7 +36,7 @@ html(lang="en-GB")
                     a.btn(href="#") Read More
                   p Understanding and supporting our customer needs - Service is our most valuable product
         
-        section.facing-the-reality-section
+        section#resources.facing-the-reality-section
           h2 Facing the reality
           p Solutions are not only for problems you can see
           .facing-the-reality__grid
@@ -74,7 +74,7 @@ html(lang="en-GB")
           .twitter-container.flex.flex--center
             a(class="twitter-timeline" data-lang="en" data-width="500" data-height="800" href="https://twitter.com/Astrum_Health") Tweets by Astrum_Health
             
-        section.testimonials-section
+        section#testimonials.testimonials-section
           h2 what people say about us
           .container
             .grid.flex.flex--center
@@ -111,7 +111,22 @@ html(lang="en-GB")
               .footer__top-map
           section.footer__centre
             .container
-            
+              section.flex
+                .footer__centre-logo.flex.flex--center
+                  include partials/page-components/logo-svg.jade        
+                .footer__centre-navigation.flex.flex--center
+                  nav
+                    ul.flex
+                      li: a(href="#") Company
+                      li: a(href="#") Facing The Reality
+                      li: a(href="#") Partners
+                      li: a(href="#") Join us on
           section.footer__bottom  
-            .container  
-    script(src="js/index.js", charset="utf-8")            
+            .container
+              .footer__bottom-copyright.flex.flex--center
+                p Copyright 2016 - Designed by #[a(href="#") francesco albanese]
+        
+        a(href="#top" title="Back to top").back-to-top #[i.fa.fa-angle-up.fa-3x(aria-hidden='true')]
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js", charset="utf-8")        
+        script(src="js/index.js", charset="utf-8")            
+        script(src="js/navbar.js", charset="utf-8")            

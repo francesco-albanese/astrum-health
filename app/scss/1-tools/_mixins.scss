@@ -4,7 +4,7 @@
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     backface-visibility: hidden;
     position: relative;
-    transition: color .3s linear;
+    transition: all .3s linear;
     &:before {
         content: '';
         position: absolute;

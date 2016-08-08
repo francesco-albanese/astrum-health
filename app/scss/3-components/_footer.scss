@@ -1,4 +1,5 @@
 .footer {
+
   &__top {
     background: #AB35CA;
     color: $silver;
@@ -22,4 +23,60 @@
       height: 600px;
     }
   }
+
+  &__centre {
+    background: #8A8A8A;
+    color: $silver;
+    svg {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+      min-width: 20em;
+      width: 20em;
+    }
+
+    & &-navigation {
+      flex: 1;
+      ul {
+        flex-wrap: wrap;
+        li {
+          width: 50%;
+          flex: 1 1 50%;
+          text-align: center;
+          margin: $spacing-large 0;
+          a {
+            color: $silver;
+            font-family: abeatbyKai;
+            font-size: 1.875em;
+            padding: $spacing-small $spacing-base;
+            @include sweep-to-right(#9E1981, #fff);
+            border-bottom: 2px solid;
+            &:hover {
+              border-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    &-copyright{
+      p {
+        padding: $spacing-medium 0;
+        color: #7C136C;
+        font-family: 'abeatbyKai', sans-serif;
+        font-size: 1.875em;
+      }
+      a {
+        @include sweep-to-right(#9E1981, #fff);
+        border-bottom: 2px solid #8A8A8A;
+        &:hover {
+          padding: $spacing-small $spacing-base;
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
 }
