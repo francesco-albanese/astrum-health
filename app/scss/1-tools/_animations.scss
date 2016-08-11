@@ -29,3 +29,81 @@
     transform: translateY(0);
   }
 }
+
+.astrumLogo {
+  path {
+    transition: stroke-dashoffset 1s linear, fill .6s ease .9s;
+  }
+  .svg1 {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 1px;
+    stroke-dasharray: 118.69804382324219px;
+    stroke-dashoffset: -118.69804382324219px;
+  }
+  .svg2 {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 1px;
+    stroke-dasharray: 118.69804382324219px;
+    stroke-dashoffset: -118.69804382324219px;
+  }
+  .svg3 {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 1px;
+    stroke-dasharray: 118.69804382324219px;
+    stroke-dashoffset: -118.69804382324219px;
+  }
+  .svg4 {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 1px;
+    stroke-dasharray: 545.24169921875px;
+    stroke-dashoffset: -545.24169921875px;
+  }
+  .svg6 {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 1px;
+    stroke-dasharray: 473.6961975097656px;
+    stroke-dashoffset: -473.6961975097656px;
+  }
+  .svg5 {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 1px;
+    stroke-dasharray: 545.1317138671875px;
+    stroke-dashoffset: -545.1317138671875px;
+  }
+  &.animate {
+    .svg1 {
+      //fill: url(#SVGID_1_);
+      //fill: #67C7EC;
+      stroke-dashoffset: 0px;
+    }
+    .svg2 {
+      //fill: url(#SVGID_2_);
+      stroke-dashoffset: 0px;
+    }
+    .svg3 {
+      //fill: url(#SVGID_3_);
+      stroke-dashoffset: 0px;
+    }
+    .svg4 {
+      //fill: url(#SVGID_4_);
+      fill: #531664;
+      stroke-dashoffset: 0px;
+    }
+    .svg6 {
+      //fill: url(#SVGID_6_);
+      fill: #9D1981;
+      stroke-dashoffset: 0px;
+    }
+    .svg5 {
+      //fill: url(#SVGID_5_);
+      fill: #621D75;
+      stroke-dashoffset: 0px;
+    }
+  }
+}

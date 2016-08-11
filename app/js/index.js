@@ -39,5 +39,5 @@
   };
   // this is required to make googleMAP.init available for google maps callback
   window.googleMap = googleMap;
-  return googleMap.init();
+  return googleMap;
 })();

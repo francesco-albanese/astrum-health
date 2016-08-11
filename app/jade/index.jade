@@ -10,7 +10,7 @@ html(lang="en-GB")
                 .home-section__logo
                     include partials/page-components/logo-svg.jade
                 h2 Astrum Health is a leader in providing education and solutions that improve infection control within medical environments.
-                a(href="#solutions")#[i.fa.fa-angle-down.fa-4x]
+                a(href="#solutions") #[i.fa.fa-angle-down.fa-4x]
         
         section#solutions.solutions-section
             .container
@@ -117,16 +117,29 @@ html(lang="en-GB")
                 .footer__centre-navigation.flex.flex--center
                   nav
                     ul.flex
-                      li: a(href="#") Company
-                      li: a(href="#") Facing The Reality
-                      li: a(href="#") Partners
-                      li: a(href="#") Join us on
+                      li: a(href="#") company
+                      li: a(href="#") facing the reality
+                      li: a(href="#") partners
+                      li: a(href="#") join us on
           section.footer__bottom  
             .container
               .footer__bottom-copyright.flex.flex--center
                 p Copyright 2016 - Designed by #[a(href="#") francesco albanese]
         
         a(href="#top" title="Back to top").back-to-top #[i.fa.fa-angle-up.fa-3x(aria-hidden='true')]
+        section.offscreen-menu.flex.flex--center
+          i.offscreen-menu__close &times;
+          nav
+            ul.flex.flex--center
+              li
+                a(href="#") company
+              li
+                a(href="#") partners
+              li
+                a(href="#") facing the reality
+              li
+                a(href="#") join us on
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js", charset="utf-8")        
         script(src="js/index.js", charset="utf-8")            
         script(src="js/navbar.js", charset="utf-8")            
+        script(src="js/svg-animation.js", charset="utf-8")            
