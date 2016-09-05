@@ -1,5 +1,4 @@
 .home-section {
-    height: 100vh;
     background: url(https://c3.staticflickr.com/9/8567/16360331050_2a9c7c04a3_b.jpg) no-repeat;
     background-size: cover;
     position: relative;
@@ -16,6 +15,9 @@
             margin: 0 auto;
             min-width: 20em;
             width: 50em;
+            @media screen and (max-width: $container-large) {
+              width: 45em;
+            }
         }
     }
 
@@ -52,7 +54,19 @@
   padding: $spacing-large;
 
   p {
-    font-size: 38px;
+    font-size: 2em;
+    @media screen and (max-width: $container-medium) {
+      font-size: 1.4em;
+    }
+  }
+
+  a {
+    padding: $spacing-small $spacing-medium;
+    @include sweep-to-right(darken(#ddd, 5%), #9E1981);
+    border-bottom: 1px solid;
+    &:hover {
+      border: none;
+    }
   }
 
   .twitter-container {

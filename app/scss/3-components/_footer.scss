@@ -9,11 +9,6 @@
       padding: $spacing-base $spacing-large 0;
     }
 
-    a[href^="tel:"] {
-      font-family: 'abeatbyKai', sans-serif;
-      font-size: 35px;
-    }
-
     &-contact,
     &-map {
       margin-bottom: $spacing-large;
@@ -21,6 +16,16 @@
     }
     &-map {
       height: 600px;
+    }
+    &-contact {
+      div {
+        i {
+          font-size: 5em;
+          @media screen and (max-width: $container-large) {
+            font-size: 4em;
+          }
+        }
+      }
     }
   }
 
@@ -44,6 +49,10 @@
           flex: 1 1 50%;
           text-align: center;
           margin: $spacing-large 0;
+          @media screen and (max-width: $container-medium) {
+            flex: 1 1 100%;
+            width: auto;
+          }
           a {
             color: $silver;
             font-family: abeatbyKai;
@@ -51,6 +60,9 @@
             padding: $spacing-small $spacing-base;
             @include sweep-to-right(#9E1981, #fff);
             border-bottom: 2px solid;
+            @media screen and (max-width: $container-large) {
+              font-size: 1.438em;
+            }
             &:hover {
               border-bottom: 0;
             }
@@ -67,12 +79,15 @@
         color: #7C136C;
         font-family: 'abeatbyKai', sans-serif;
         font-size: 1.875em;
+        @media screen and (max-width: $container-large) {
+          font-size: 1.438em;
+        }
       }
       a {
         @include sweep-to-right(#9E1981, #fff);
         border-bottom: 2px solid #8A8A8A;
+        padding: $spacing-small $spacing-base;
         &:hover {
-          padding: $spacing-small $spacing-base;
           border-bottom: 0;
         }
       }

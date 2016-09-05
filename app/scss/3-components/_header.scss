@@ -11,6 +11,10 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        @media screen and (max-width: $container-large) {
+          width: 2.500em;
+          height: 2.500em;
+        }
         span {
             display: block;
             width: 100%;
