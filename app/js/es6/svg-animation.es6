@@ -1,6 +1,6 @@
-(function() {
-  var animation = {
-    cacheDom: function () {
+(() => {
+  const animation = {
+    cacheDom() {
       this.svg = document.querySelectorAll('.astrumLogo');
       this.pathCentral = document.querySelector('.svg6');
       this.pathCentral2 = document.querySelector('.svg3');
@@ -10,17 +10,17 @@
       this.pathRight = document.querySelector('.svg4');
       this.burgerMenu = document.querySelector('.burger-menu');
     },
-    grabPathLength: function (path) {
+    grabPathLength(path) {
       return path.getTotalLength();
     },
-    toggleAnimation: function () {
-      setInterval(function() {
-        animation.svg.forEach(function(svg) {
+    toggleAnimation() {
+      setInterval(() => {
+        animation.svg.forEach((svg) => {
           svg.classList.toggle('animate');
         });
-      }, 1500);
+      }, 1750);
     },
-    init: function() {
+    init() {
       this.cacheDom();
       this.toggleAnimation();
       // console.info(animation.grabPathLength(animation.pathCentral), '.svg6');

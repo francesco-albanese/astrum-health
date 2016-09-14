@@ -799,7 +799,8 @@ a[href^="tel:"] {
 .home-section {
   background: url(https://c3.staticflickr.com/9/8567/16360331050_2a9c7c04a3_b.jpg) no-repeat;
   background-size: cover;
-  position: relative; }
+  position: relative;
+  height: calc(100vh + 5em); }
   .home-section__logo {
     display: -webkit-flex;
     display: -ms-flexbox;

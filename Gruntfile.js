@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-    require('load-grunt-tasks')(grunt); // required to load cssnano and sass
+    require('load-grunt-tasks')(grunt); // required to load cssnano and sass and babel
 
     // Project configuration
     grunt.initConfig({
@@ -78,13 +78,26 @@ module.exports = function(grunt) {
             }
         }, // end jshint
 
+        babel: {
+            options: {
+                sourceMap: true,
+                presets: ['babel-preset-es2015']
+            },
+            files: {
+              expand: true,
+                src: ['./app/js/es6/*.es6'],
+                dest: './',
+                ext: '.js'
+            }
+        }, // end babel
+
         uglify: {
             build: {
                 options: {
                     mangle: false
                 },
                 files: [ {
-                    cwd: './app/js/',
+                    cwd: './app/js/es6',
                     src: '*.js',
                     dest: 'dist/js',
                     expand: true,
@@ -140,8 +153,12 @@ module.exports = function(grunt) {
                 files: './app/scss/**/*.scss',
                 tasks: ['sass', 'postcss:build', 'postcss:minify']
             },
+            babel: {
+              files: '.app/js/es6/*.es6',
+              tasks: ['babel']
+            },
             scripts: {
-                files: './app/js/*.js',
+                files: './app/js/es6/*.js',
                 tasks: ['jshint', 'uglify']
             },
             images: {

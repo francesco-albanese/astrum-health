@@ -1,11 +1,12 @@
-(function($) {
-  var navbar = {
+'use strict';
 
-    smoothScroll: function() {
-      $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+(function () {
+  var navbar = {
+    smoothScroll: function smoothScroll() {
+      $('a[href*="#"]:not([href="#"])').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
           var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
           if (target.length) {
             $('html, body').animate({
               scrollTop: target.offset().top
@@ -15,30 +16,25 @@
         }
       });
     },
-
-    cacheDom: function () {
+    cacheDom: function cacheDom() {
       this.burgerMenu = $('.burger-menu');
       this.offScreenMenu = $('.offscreen-menu');
       this.closeMenu = this.offScreenMenu.children('.offscreen-menu__close');
       this.body = this.burgerMenu.parents('body');
     },
-
-    bindEvents: function () {
+    bindEvents: function bindEvents() {
       this.burgerMenu.on('click', this.openOffScreenMenu.bind(this));
       this.closeMenu.on('click', this.closeOffScreenMenu.bind(this));
     },
-
-    openOffScreenMenu: function () {
+    openOffScreenMenu: function openOffScreenMenu() {
       this.body.addClass('no-scroll');
       this.offScreenMenu.addClass('is-visible');
     },
-
-    closeOffScreenMenu: function () {
+    closeOffScreenMenu: function closeOffScreenMenu() {
       this.body.removeClass('no-scroll');
       this.offScreenMenu.removeClass('is-visible');
     },
-
-    init: function() {
+    init: function init() {
       this.smoothScroll();
       this.cacheDom();
       this.bindEvents();
@@ -46,4 +42,5 @@
   };
 
   return navbar.init();
-})(jQuery);
+})();
+//# sourceMappingURL=navbar.js.map

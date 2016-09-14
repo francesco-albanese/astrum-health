@@ -139,7 +139,13 @@ html(lang="en-GB")
                 a(href="#") facing the reality
               li
                 a(href="#") join us on
-        script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js", charset="utf-8")        
-        script(src="js/index.js", charset="utf-8")            
-        script(src="js/navbar.js", charset="utf-8")            
-        script(src="js/svg-animation.js", charset="utf-8")            
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js", charset="utf-8")
+        script(async defer src="//platform.twitter.com/widgets.js" charset="utf-8")
+        script.
+          function googleError() {
+            alert('Error, couldn\'t load Google Maps API, please refresh the page!');
+          }
+        script(async defer src='https://maps.googleapis.com/maps/api/js?&key=AIzaSyDo1QK9ZijAF99Knr1xbwgb3N61PrE7dKU&callback=googleMap.init', onerror='googleError()')        
+        script(src="js/es6/index.js", charset="utf-8")            
+        script(src="js/es6/navbar.js", charset="utf-8")            
+        script(src="js/es6/svg-animation.js", charset="utf-8")            
