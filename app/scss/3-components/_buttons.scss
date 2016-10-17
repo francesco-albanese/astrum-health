@@ -10,6 +10,14 @@
   font-size: 1.0625em;
   padding: $spacing-base $spacing-medium;
   box-shadow: 0px 0px 0px 2px inset;
+
+  &--submit {
+    outline: 0;
+    border: none;
+    appearance: none;
+    cursor: pointer;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  }
 }
 
 .back-to-top {
@@ -26,6 +34,9 @@
   right: 32px;
   bottom: 32px;
   z-index: 20;
+  @media screen and (max-width: $container-medium) {
+    bottom: 3.75em;
+  }
 
   i {
     padding-bottom: 5px;

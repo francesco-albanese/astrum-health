@@ -1,8 +1,12 @@
 .home-section {
-    background: url(https://c3.staticflickr.com/9/8567/16360331050_2a9c7c04a3_b.jpg) no-repeat;
+    background: url(../images/2087.jpg) no-repeat top center fixed;
     background-size: cover;
     position: relative;
-    height: calc(100vh + 5em);
+    height: 100vh;
+    min-height: 46.875em;
+    @media screen and (max-width: $container-medium) and (orientation: portrait) {
+        height: 100vh;
+    }
     &__logo {
         display: flex;
         align-items: center;
@@ -16,18 +20,16 @@
             min-width: 20em;
             width: 50em;
             @media screen and (max-width: $container-large) {
-              width: 45em;
+                width: 45em;
             }
         }
     }
-
     h2 {
         font-family: 'Lato';
         color: $silver-darker;
         text-align: center;
         position: relative;
     }
-
     .fa-angle-down {
         display: block;
         text-align: center;
@@ -38,46 +40,41 @@
         cursor: pointer;
         @include wobble-vertical;
     }
-
 }
 
 .solutions-section {
-    background: $solutions-bg;
+    background: darken($solutions-bg, 10%);
     color: $silver;
     padding: $spacing-large;
 }
 
 .facing-the-reality-section {
-  background: $facing-the-reality-bg;
-  color: #fff;
-  text-align: center;
-  padding: $spacing-large;
-
-  p {
-    font-size: 2em;
-    @media screen and (max-width: $container-medium) {
-      font-size: 1.4em;
+    background: $facing-the-reality-bg;
+    color: #fff;
+    text-align: center;
+    padding: $spacing-large;
+    p {
+        font-size: 2em;
+        @media screen and (max-width: $container-medium) {
+            font-size: 1.4em;
+        }
     }
-  }
-
-  a {
-    padding: $spacing-small $spacing-medium;
-    @include sweep-to-right(darken(#ddd, 5%), #9E1981);
-    border-bottom: 1px solid;
-    &:hover {
-      border: none;
+    a {
+        padding: $spacing-small $spacing-medium;
+        @include sweep-to-right(darken(#ddd, 5%), #9E1981);
+        border-bottom: 1px solid;
+        &:hover {
+            border: none;
+        }
     }
-  }
-
-  .twitter-container {
-    margin-top: $spacing-large;
-  }
-
+    .twitter-container {
+        margin-top: $spacing-large;
+    }
 }
 
 .testimonials-section {
-  background: $testimonials-bg;
-  color: $silver;
-  padding: $spacing-large;
-  text-align: center;
+    background: $testimonials-bg;
+    color: $silver;
+    padding: $spacing-large;
+    text-align: center;
 }

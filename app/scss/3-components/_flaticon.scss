@@ -1,0 +1,45 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 17/09/2016 11:33
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("../font/Flaticon.eot");
+  src: url("../font/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../font/Flaticon.woff") format("woff"),
+       url("../font/Flaticon.ttf") format("truetype"),
+       url("../font/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../font/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-businessman-resources-graphic:before { content: "\f100"; }
+.flaticon-customer-testimonial:before { content: "\f101"; }
+.flaticon-labyrinth:before { content: "\f102"; }
+
+    $font-Flaticon-businessman-resources-graphic: "\f100";
+    $font-Flaticon-customer-testimonial: "\f101";
+    $font-Flaticon-labyrinth: "\f102";

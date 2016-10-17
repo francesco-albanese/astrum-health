@@ -1,0 +1,69 @@
+form {
+  h2 {
+    text-align: center;
+  }
+  .label__wrapper {
+    position: relative;
+    margin-top: $spacing-large;
+    margin-bottom: $spacing-large;
+    input,
+    textarea {
+      display: block;
+      background: none;
+      transition: all .3s ease-in-out;
+      border: none;
+      border-bottom: 2px solid #fff;
+      width: 100%;
+      color: #fff;
+      font-size: 1.875em;
+      padding: $spacing-small;
+      resize: none;
+      font-family: Lato, sans-serif;
+      ~ .label--floating {
+        transition: all .3s ease-in-out;
+        position:absolute;
+        pointer-events:none;
+        left:5px;
+        top:10px;
+        font-size: 1.875em;
+        font-family: abeatbyKai, sans-serif;
+      }
+      &:focus {
+        outline: none;
+      }
+      &:focus ~ .label--floating,
+      &:valid ~ .label--floating {
+        top: -17px;
+        font-size: 1em;
+      }
+      &:focus ~ .bar:before,
+      &:focus ~ .bar:after {
+        width: 50%;
+      }
+      &:focus ~ .highlight {
+        animation: inputHighlighter 0.3s ease-in-out;
+      }
+    }
+    .bar {
+      position: relative;
+      display: block;
+      width: 100%;
+      &:before,
+      &:after {
+        content:'';
+        height:2px;
+        width:0;
+        bottom:0;
+        position: absolute;
+        background: darken(#AB35CA, 8%);
+        transition:0.2s ease all;
+      }
+      &:before {
+        left: 50%;
+      }
+      &:after {
+        right: 50%;
+      }
+    }
+  }
+}

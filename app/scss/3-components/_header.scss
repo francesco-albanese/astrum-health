@@ -3,17 +3,17 @@
     padding: $spacing-medium;
     position: relative;
     z-index: 100;
+    align-items: center;
 
     .burger-menu {
         width: 3.125em;
         height: 3.125em;
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        @media screen and (max-width: $container-large) {
-          width: 2.500em;
-          height: 2.500em;
+        @media screen and (max-width: $container-medium) {
+          display: flex;
         }
         span {
             display: block;

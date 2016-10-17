@@ -4,9 +4,15 @@
     background: #AB35CA;
     color: $silver;
     padding: $spacing-large;
-    h3,
+    h2,
     a[href^="tel:"] {
-      padding: $spacing-base $spacing-large 0;
+      padding-left: $spacing-base;
+    }
+
+    @media screen and (max-width: 39.063em) {
+      &-map-content-wrapper {
+        flex-direction: column;
+      }
     }
 
     &-contact,
@@ -15,16 +21,38 @@
       margin-top: $spacing-large;
     }
     &-map {
-      height: 600px;
+      height: 400px;
+      display: flex;
+      flex: 1;
+      max-width: 700px;
+      //@media screen and (max-width: $container-small) {
+      //  height: 400px;
+      //}
     }
     &-contact {
+      flex-direction: column;
+      align-items: baseline;
+      margin-left: $spacing-medium;
+      @media screen and (max-width: 39.063em) {
+        flex-direction: row;
+      }
       div {
         i {
           font-size: 5em;
           @media screen and (max-width: $container-large) {
             font-size: 4em;
           }
+          @media screen and (max-width: $container-medium) {
+            font-size: 2em;
+          }
         }
+          @media screen and (max-width: $container-medium) {
+            h2,a[href^="tel:"] {font-size: 1.3em;}
+          }
+          @media screen and (max-width: 28.125em) {//450px
+            i {font-size: 1.3em}
+            h2,a[href^="tel:"] {font-size: .83em;}
+          }
       }
     }
   }
@@ -32,6 +60,11 @@
   &__centre {
     background: #8A8A8A;
     color: $silver;
+
+    @media screen and (max-width: 39.063em) {
+      section {flex-direction: column;}
+    }
+
     svg {
       max-width: 100%;
       display: block;
@@ -81,6 +114,10 @@
         font-size: 1.875em;
         @media screen and (max-width: $container-large) {
           font-size: 1.438em;
+        }
+
+        @media screen and (max-width: 39.063em) {
+          font-size: .75em;
         }
       }
       a {

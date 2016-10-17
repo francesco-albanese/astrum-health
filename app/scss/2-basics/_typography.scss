@@ -10,7 +10,8 @@ h1 {
   }
 }
 
-h2 {
+h2,
+a[href^="tel:"] {
   font-size: 2.813em;
   font-family: 'abeatbyKai';
   @media screen and (max-width: $container-large) {
@@ -40,15 +41,4 @@ h4 {
 p {
   font-family: 'Lato', sans-serif;
   font-size: 1.750em;
-}
-
-a[href^="tel:"] {
-  font-size: 2.188em;
-  font-family: 'abeatbyKai';
-  @media screen and (max-width: $container-large) {
-    font-size: 1.563em;
-  }
-  @media screen and (max-width: $container-medium) {
-    font-size: 0.938em;
-  }
 }

@@ -72,7 +72,15 @@ html(lang="en-GB")
                 a(href="#") Article Title #[i(class="fa fa-chevron-right" aria-hidden="true")]
                 
           .twitter-container.flex.flex--center
-            a(class="twitter-timeline" data-lang="en" data-width="500" data-height="800" href="https://twitter.com/Astrum_Health") Tweets by Astrum_Health
+            a(class="twitter-timeline" data-lang="en" data-width="400" data-height="400" href="https://twitter.com/Astrum_Health") Tweets by Astrum_Health
+            script(src="//platform.twitter.com/widgets.js" charset="utf-8")
+            script.
+              setTimeout(function() {
+                $('.twitter-timeline').attr('style', 'position: static;visibility: visible;display: inline-block;width: 400px;display: block;height: 400px;padding: 0px;border: none;max-width: 100%;min-width: 180px;margin-top: 0px;margin-bottom: 0px;min-height: 200px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.28), 0 4px 15px 0 rgba(0, 0, 0, 0.75) !important;');
+                $('.twitter-timeline').contents().find('.timeline-Header').attr("style", "background: #791563 !important;color: #fff !important");
+                $('.twitter-timeline').contents().find('.timeline-Header-title.u-inlineBlock').attr('style', 'color: #fff !important');
+                $('.twitter-timeline').contents().find('.timeline-Footer.u-cf').attr('style', 'background: #791563 !important;color: #fff !important');
+              }, 2500);
             
         section#testimonials.testimonials-section
           h2 what people say about us
@@ -98,17 +106,47 @@ html(lang="en-GB")
         
           section.footer__top
             .container
-              .footer__top-contact.flex.flex--space-between
-                .footer__top-contact-email.flex.flex--center
-                  i.fa.fa-envelope-o(aria-hidden='true')
-                  h3 Email us
-                .footer__top-contact-phone.flex.flex--center
-                  i.fa.fa-phone-square(aria-hidden='true')
-                  a(href='tel:+44117117888', rel='nofollow') 0117117888
-                .footer__top-contact-find-us.flex.flex--center
-                  i.fa.fa-map-marker(aria-hidden='true')
-                  h3 Find us
-              .footer__top-map
+              .footer__top-map-content-wrapper.flex.flex--space-between
+                .footer__top-map
+                .footer__top-contact.flex.flex--space-between
+                  .footer__top-contact-email.flex.flex--center
+                    i.fa.fa-envelope-o(aria-hidden='true')
+                    h2 Email us
+                  .footer__top-contact-phone.flex.flex--center
+                    i.fa.fa-phone-square(aria-hidden='true')
+                    a(href='tel:+44117117888', rel='nofollow') 0117117888
+                  .footer__top-contact-find-us.flex.flex--center
+                    i.fa.fa-map-marker(aria-hidden='true')
+                    h2 Find us
+              .footer__top-contact-us#contact-us
+                form
+                  h2 contact us
+                  .label__wrapper
+                    input(type="text", name="name", id="name" required)
+                    span(class="highlight")
+                    span(class="bar")
+                    label(for="name", class="label--floating") name
+                  .label__wrapper
+                    input(type="text", name="surname", id="surname" required)
+                    span(class="highlight")
+                    span(class="bar")
+                    label(for="surname", class="label--floating") surname
+                  .label__wrapper
+                    input(type="email", name="email", id="email" required)
+                    span(class="highlight")
+                    span(class="bar")
+                    label(for="email", class="label--floating") email
+                  .label__wrapper
+                    textarea(name="message", id="message" required rows="5")
+                    span(class="highlight")
+                    span(class="bar")
+                    label(for="message", class="label--floating") message
+                  button(class="btn btn--submit" type="submit") submit
+                    
+                  
+                    
+                  
+                
           section.footer__centre
             .container
               section.flex
@@ -120,7 +158,7 @@ html(lang="en-GB")
                       li: a(href="#") company
                       li: a(href="#") facing the reality
                       li: a(href="#") partners
-                      li: a(href="#") join us on
+                      li: a(href="#") follow us
           section.footer__bottom  
             .container
               .footer__bottom-copyright.flex.flex--center
@@ -138,9 +176,15 @@ html(lang="en-GB")
               li
                 a(href="#") facing the reality
               li
-                a(href="#") join us on
-        script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js", charset="utf-8")
-        script(async defer src="//platform.twitter.com/widgets.js" charset="utf-8")
+                a(href="#") follow us
+              li 
+                a(href="#solutions") solutions
+              li 
+                a(href="#resources") resources
+              li 
+                a(href="#testimonials") testimonials
+              li 
+                a(href="#contact-us") contact us
         script.
           function googleError() {
             alert('Error, couldn\'t load Google Maps API, please refresh the page!');
@@ -148,4 +192,4 @@ html(lang="en-GB")
         script(async defer src='https://maps.googleapis.com/maps/api/js?&key=AIzaSyDo1QK9ZijAF99Knr1xbwgb3N61PrE7dKU&callback=googleMap.init', onerror='googleError()')        
         script(src="js/es6/index.js", charset="utf-8")            
         script(src="js/es6/navbar.js", charset="utf-8")            
-        script(src="js/es6/svg-animation.js", charset="utf-8")            
+        script(src="js/es6/svg-animation.js", charset="utf-8")          

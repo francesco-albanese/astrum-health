@@ -80,14 +80,14 @@ module.exports = function(grunt) {
 
         babel: {
             options: {
-                sourceMap: true,
-                presets: ['babel-preset-es2015']
+              sourceMap: true,
+              presets: ['babel-preset-es2015']
             },
             files: {
               expand: true,
-                src: ['./app/js/es6/*.es6'],
-                dest: './',
-                ext: '.js'
+              src: ['./app/js/es6/*.es6'],
+              dest: './',
+              ext: '.js'
             }
         }, // end babel
 

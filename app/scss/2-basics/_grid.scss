@@ -63,6 +63,9 @@ $container-small: 30.000em; //480px
         @media screen and (max-width: 68.750em) {
           height: 400px;
         }
+        @media screen and (max-width: $container-small) {
+          height: 300px;
+        }
       }
 
       .btn {
@@ -102,9 +105,15 @@ $container-small: 30.000em; //480px
     padding: $spacing-base;
     align-self: baseline;
     margin: 0 auto;
+    @media screen and (max-width: $container-medium) {
+      flex: 0 1 100%;
+    }
 
     img {
       max-width: 300px;
+      @media screen and (max-width: $container-large) {
+        max-width: 100%;
+      }
       height: 300px;
       box-shadow: 0px 0px 10px 0px rgba($black, .7);
     }
@@ -129,12 +138,16 @@ $container-small: 30.000em; //480px
 
   & &-article-wrapper {
     max-width: 1240px;
+    @media screen and (max-width: $container-small) {
+      flex-direction: column-reverse;
+    }
   }
 
   & &-image {
     width: 620px;
     height: 300px;
     box-shadow: 0px 0px 10px 0px rgba($black, .7);
+    max-width: 100%;
   }
 
   & &-article {
@@ -144,6 +157,9 @@ $container-small: 30.000em; //480px
     background: $silver;
     color: $black;
     box-shadow: 0px 0px 10px 0px rgba($black, .7);
+    @media screen and (max-width: $container-small) {
+      width: auto;
+    }
   }
 
   & &-article-wrapper {
@@ -186,6 +202,9 @@ $container-small: 30.000em; //480px
     &--even {
       flex-direction: row-reverse;
       justify-content: flex-start;
+      @media screen and (max-width: $container-small) {
+        flex-direction: column-reverse;
+      }
     }
   }
 
