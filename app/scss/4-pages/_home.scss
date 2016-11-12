@@ -1,5 +1,5 @@
 .home-section {
-    background: url(../images/2087.jpg) no-repeat top center fixed;
+    background: url(../images/geometric1.jpg) no-repeat top center fixed;
     background-size: cover;
     position: relative;
     height: 100vh;
@@ -26,7 +26,7 @@
     }
     h2 {
         font-family: 'Lato';
-        color: $silver-darker;
+        color: darken(#9E1981, 5%);
         text-align: center;
         position: relative;
     }
@@ -36,7 +36,7 @@
         margin: 0 auto;
         position: relative;
         z-index: 100;
-        color: #fff;
+        color: #9E1981;
         cursor: pointer;
         @include wobble-vertical;
     }
