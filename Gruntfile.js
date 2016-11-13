@@ -123,7 +123,10 @@ module.exports = function(grunt) {
             }
         }, // end imagemin
 
-        clean: ["dist"], // end clean
+        clean:  {
+          cleanDist: ['dist'],
+          cleanJS: ['dist/js/**.js', '!dist/js/bundle.js']
+        }, // end clean
 
         copy: {
           main: {
@@ -133,6 +136,16 @@ module.exports = function(grunt) {
             dest: 'dist/font',
           },
         }, // end copy
+
+        concat: {
+          options: {
+            separator: ';',
+          },
+          dist: {
+            src: ['./dist/js/**.js'],
+            dest: 'dist/js/bundle.js',
+          },
+        }, // end concat
 
         browserSync: {
             build: {
@@ -185,6 +198,6 @@ module.exports = function(grunt) {
 
     // register tasks
     grunt.registerTask('default', ['browserSync', 'watch']);
-    grunt.registerTask('production', ['clean', 'jade', 'copy', 'sass','postcss:build', 'postcss:minify', 'babel', 'imagemin:build']);
+    grunt.registerTask('production', ['clean:cleanDist', 'jade', 'copy', 'sass','postcss:build', 'postcss:minify', 'uglify', 'concat', 'imagemin:build', 'clean:cleanJS']);
 
 };
