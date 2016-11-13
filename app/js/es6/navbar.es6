@@ -27,14 +27,17 @@
       this.offScreenLinks = this.offScreenMenu.find('a[href="#"]');
       this.header = this.burgerMenu.parent();
       this.solutionsSection = this.body.find('.solutions-section');
+      this.testimonialsSection = this.body.find('.testimonials-section');
     },
 
     bindEvents() {
       this.burgerMenu.on('click', this.openOffScreenMenu.bind(this));
       this.closeMenu.on('click', this.closeOffScreenMenu.bind(this));
       this.offScreenLinks.on('click', this.closeOffScreenMenu.bind(this));
-      this.window.on('scroll', this.toggleHeader.bind(this));
-      this.window.on('scroll', this.animateSolutionsSection.bind(this));
+      this.window.on('scroll', () => {
+        this.toggleHeader();
+        this.triggerAnimations();
+      });
     },
 
     isElementVisible(element) {
@@ -48,14 +51,38 @@
       return visible;
     },
 
+    triggerAnimations() {
+      this.animateSolutionsSection();
+      this.animateTestimonialsSection();
+    },
+
     animateSolutionsSection() {
       const articles = this.solutionsSection.find('article');
-      articles.each(function(i, elem) {
+      articles.each((i, elem) => {
         let visible = navbar.isElementVisible($(elem));
         if (visible && (i % 2 !== 0)) {
+          $(elem).removeClass('opacity');
           $(elem).addClass('fadeInRightBig');
         } else if(visible && (i % 2 === 0)) {
+          $(elem).removeClass('opacity');
           $(elem).addClass('fadeInLeftBig');
+        }
+      });
+    },
+
+    animateTestimonialsSection() {
+      const testimonials = this.testimonialsSection.find('.testimonial');
+      testimonials.each((i, elem) => {
+        let visible = navbar.isElementVisible($(elem));
+        if (visible && (i === 0)) {
+          $(elem).removeClass('opacity');
+          $(elem).addClass('fadeInLeftBig');
+        } else if(visible && i === 1) {
+          $(elem).removeClass('opacity');
+          $(elem).addClass('fadeInDownBig');
+        } else if (visible && i === 2) {
+          $(elem).removeClass('opacity');
+          $(elem).addClass('fadeInRightBig');
         }
       });
     },

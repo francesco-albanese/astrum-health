@@ -27,13 +27,18 @@
       this.offScreenLinks = this.offScreenMenu.find('a[href="#"]');
       this.header = this.burgerMenu.parent();
       this.solutionsSection = this.body.find('.solutions-section');
+      this.testimonialsSection = this.body.find('.testimonials-section');
     },
     bindEvents: function bindEvents() {
+      var _this = this;
+
       this.burgerMenu.on('click', this.openOffScreenMenu.bind(this));
       this.closeMenu.on('click', this.closeOffScreenMenu.bind(this));
       this.offScreenLinks.on('click', this.closeOffScreenMenu.bind(this));
-      this.window.on('scroll', this.toggleHeader.bind(this));
-      this.window.on('scroll', this.animateSolutionsSection.bind(this));
+      this.window.on('scroll', function () {
+        _this.toggleHeader();
+        _this.triggerAnimations();
+      });
     },
     isElementVisible: function isElementVisible(element) {
       var visible = false;
@@ -45,14 +50,36 @@
       }
       return visible;
     },
+    triggerAnimations: function triggerAnimations() {
+      this.animateSolutionsSection();
+      this.animateTestimonialsSection();
+    },
     animateSolutionsSection: function animateSolutionsSection() {
       var articles = this.solutionsSection.find('article');
       articles.each(function (i, elem) {
         var visible = navbar.isElementVisible($(elem));
         if (visible && i % 2 !== 0) {
+          $(elem).removeClass('opacity');
           $(elem).addClass('fadeInRightBig');
         } else if (visible && i % 2 === 0) {
+          $(elem).removeClass('opacity');
           $(elem).addClass('fadeInLeftBig');
+        }
+      });
+    },
+    animateTestimonialsSection: function animateTestimonialsSection() {
+      var testimonials = this.testimonialsSection.find('.testimonial');
+      testimonials.each(function (i, elem) {
+        var visible = navbar.isElementVisible($(elem));
+        if (visible && i === 0) {
+          $(elem).removeClass('opacity');
+          $(elem).addClass('fadeInLeftBig');
+        } else if (visible && i === 1) {
+          $(elem).removeClass('opacity');
+          $(elem).addClass('fadeInDownBig');
+        } else if (visible && i === 2) {
+          $(elem).removeClass('opacity');
+          $(elem).addClass('fadeInRightBig');
         }
       });
     },

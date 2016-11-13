@@ -2,12 +2,18 @@
   const googleMap = {
 
     location: {
-      title: 'Redcliffe, Bristol, UK',
-      location: {lat: 51.4484272, lng: -2.5874823},
+      title: `
+      Unit B1006
+      94 New Road
+      Hill of GoodHope 2
+      Midrand
+      Gauteng 1685
+      South Africa`,
+      location: {lat: -25.9772779, lng: 28.110519},
     },
 
     mapOptions: {
-      center: {lat: 51.454513, lng: -2.58791},
+      center: {lat: -25.9991795, lng: 28.1262927},
       zoom: 15,
       mapTypeControl: false,
       scrollwheel: false,
@@ -15,10 +21,10 @@
     },
 
     initMap() {
+      this.mapCanvas = $('.footer__top-map');
       const map = new google.maps.Map(document.querySelector('.footer__top-map'), googleMap.mapOptions);
       this.map = map;
       this.infowindow = new google.maps.InfoWindow();
-      this.mapCanvas = $('.footer__top-map');
     },
 
     appendMarkers(map) {
@@ -30,9 +36,9 @@
         title: title,
         animation: google.maps.Animation.DROP
       });
-      // bounds.extend(marker.position);
+      bounds.extend(marker.position);
       marker.setMap(map);
-      // map.fitBounds(bounds);
+      map.fitBounds(bounds);
       marker.addListener('mouseover', function() {
         marker.setAnimation(google.maps.Animation.BOUNCE);
       });
