@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 
     require('load-grunt-tasks')(grunt); // required to load cssnano and sass and babel
+    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks); // automatically load all grunt plugins
 
     // Project configuration
     grunt.initConfig({
@@ -115,12 +116,23 @@ module.exports = function(grunt) {
                 },
                 files: [ {
                     cwd: './app/images/',
-                    src: '**/*.{png,jpg,gif,svg}',
+                    src: '**/*.{png,jpg,gif,svg,jpeg}',
                     dest: 'dist/images',
                     expand: true,
                 } ]
             }
         }, // end imagemin
+
+        clean: ["dist"], // end clean
+
+        copy: {
+          main: {
+            expand: true,
+            cwd: './app/font',
+            src: '**',
+            dest: 'dist/font',
+          },
+        }, // end copy
 
         browserSync: {
             build: {
@@ -166,21 +178,13 @@ module.exports = function(grunt) {
                 tasks: ['imagemin:build']
             }
 
-        }, // end watch
+        } // end watch
 
 
     });
 
-    // enable plugins with call
-    grunt.loadNpmTasks('grunt-contrib-jade');
-    grunt.loadNpmTasks('grunt-postcss');
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-browser-sync');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-
     // register tasks
     grunt.registerTask('default', ['browserSync', 'watch']);
+    grunt.registerTask('production', ['clean', 'jade', 'copy', 'sass','postcss:build', 'postcss:minify', 'babel', 'imagemin:build']);
 
 };

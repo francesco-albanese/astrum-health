@@ -4,7 +4,7 @@
   var googleMap = {
 
     location: {
-      title: 'Astrum Health',
+      title: '\n      Unit B1006\n      94 New Road\n      Hill of GoodHope 2\n      Midrand\n      Gauteng 1685\n      South Africa',
       location: { lat: -25.9772779, lng: 28.110519 }
     },
 

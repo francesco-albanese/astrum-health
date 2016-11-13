@@ -2,6 +2,7 @@
 /Mockup
 app/components
 bower.json
+yarn.lock
 
 ### OSX ###
 .DS_Store
