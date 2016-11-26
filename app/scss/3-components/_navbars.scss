@@ -56,6 +56,10 @@
     li {
       margin-top: $spacing-medium;
       margin-bottom: $spacing-medium;
+      @media screen and (max-width: $container-small) {
+        margin-top: $spacing-small;
+        margin-bottom: $spacing-small;
+      }
       a {
         font-family: abeatbyKai, sans-serif;
         font-size: 2.188em;
@@ -64,6 +68,10 @@
         color: $silver;
         padding: $spacing-base;
         @include sweep-to-right(#fff, #9E1981);
+        @media screen and (max-width: $container-small) {
+          font-size: 1.563em;
+          padding: 5px;
+        }
         &:hover {
           border-bottom: 0;
         }

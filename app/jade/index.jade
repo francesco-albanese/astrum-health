@@ -30,7 +30,7 @@ html(lang="en-GB")
                   .article__image
                     img(src="images/wheelchair.jpg")
                     a.btn(href="#") Read More
-                  p Offering a new generation of track and traceability solutions for sterilization process monitoring
+                  p Insulation testing for diathermy instruments.
                 article.opacity
                   .article__image
                     img(src="images/4.jpg")
@@ -110,7 +110,7 @@ html(lang="en-GB")
               .footer__top-map-content-wrapper.flex.flex--space-between
                 .footer__top-map
                 .footer__top-contact.flex.flex--space-between
-                  .footer__top-contact-email.flex.flex--center
+                  .footer__top-contact-email.flex.flex--center.bounce
                     i.fa.fa-envelope-o(aria-hidden='true')
                     h2 Email us
                   .footer__top-contact-phone.flex.flex--center
@@ -119,8 +119,17 @@ html(lang="en-GB")
                   .footer__top-contact-find-us.flex.flex--center
                     i.fa.fa-map-marker(aria-hidden='true')
                     h2 Find us
+              .footer__top-contact-address.flex.flex--center
+                address
+                  h3 Unit B1006
+                  h3 94 New Road
+                  h3 Hill of GoodHope 2
+                  h3 Midrand
+                  h3 Gauteng 1685
+                  h3 South Africa
               .footer__top-contact-us#contact-us
-                form
+                i.contact-us__close &times;
+                form.opacity
                   h2 contact us
                   .label__wrapper
                     input(type="text", name="name", id="name" required)
@@ -138,7 +147,7 @@ html(lang="en-GB")
                     span(class="bar")
                     label(for="email", class="label--floating") email
                   .label__wrapper
-                    textarea(name="message", id="message" required rows="5")
+                    textarea(name="message", id="message" required rows="3")
                     span(class="highlight")
                     span(class="bar")
                     label(for="message", class="label--floating") message
@@ -160,10 +169,9 @@ html(lang="en-GB")
                       li: a(href="#") facing the reality
                       li: a(href="#") partners
                       li: a(href="#") follow us
-          section.footer__bottom  
-            .container
-              .footer__bottom-copyright.flex.flex--center
-                p Copyright 2016 - Designed by #[a(href="#") francesco albanese]
+          section.footer__bottom
+            .footer__bottom-copyright.flex.flex--center
+              p Copyright 2016 - Designed by #[a(href="#") francesco albanese]
         
         a(href="#top" title="Back to top").back-to-top #[i.fa.fa-angle-up.fa-3x(aria-hidden='true')]
         section.offscreen-menu.flex.flex--center

@@ -68,6 +68,20 @@ $container-small: 30.000em; //480px
         @media screen and (max-width: $container-small) {
           height: 300px;
         }
+        //iPhone 6S Plus
+        @media only screen
+        and (min-device-width : 414px)
+        and (max-device-width : 736px)
+        and (orientation : portrait) {
+          height: 300px !important;
+        }
+        //iphone 5 & 5S
+        @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 568px)
+        and (orientation : portrait) {
+          height: 200px;
+        }
       }
 
       .btn {

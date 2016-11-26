@@ -11,7 +11,7 @@
             $('.offscreen-menu').removeClass('is-visible');
             $('html, body').animate({
               scrollTop: target.offset().top
-            }, 1000);
+            }, 500);
             return false;
           }
         }
@@ -28,6 +28,11 @@
       this.header = this.burgerMenu.parent();
       this.solutionsSection = this.body.find('.solutions-section');
       this.testimonialsSection = this.body.find('.testimonials-section');
+      this.emailUs = this.body.find('.footer__top-contact-email');
+      this.contactForm = this.body.find('.footer__top-contact-us');
+      this.closeForm = this.contactForm.find('.contact-us__close');
+      this.form = this.contactForm.find('form');
+      this.contactUsInNavbar = this.body.find('a[href="#contact-us"]');
     },
 
     bindEvents() {
@@ -38,13 +43,31 @@
         this.toggleHeader();
         this.triggerAnimations();
       });
+      this.emailUs.on('click', this.openForm.bind(this));
+      this.closeForm.on('click', this.closeContactForm.bind(this));
+      this.contactUsInNavbar.on('click', this.openForm.bind(this));
+    },
+
+    openForm() {
+      this.contactForm.addClass('is-visible');
+      this.body.addClass('no-scroll');
+      this.form.removeClass('opacity');
+      this.form.addClass('bounceInLeft');
+      setTimeout(() => {
+        navbar.form.removeClass('bounceInLeft');
+      }, 2000);
+    },
+
+    closeContactForm() {
+      this.contactForm.removeClass('is-visible');
+      this.body.removeClass('no-scroll');
     },
 
     isElementVisible(element) {
       let visible = false;
       let bottom_of_object = (element.offset().top + element.outerHeight()) - (element.outerHeight() / 2);
       let bottom_of_window = navbar.window.scrollTop() + navbar.window.height();
-      /* If the object is completely visible in the window, fade it it */
+      /* If the object is completely visible in the window, fade it */
       if( bottom_of_window > bottom_of_object ){
         visible = true;
       }
