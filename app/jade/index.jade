@@ -1,3 +1,5 @@
+- var production = false;
+
 doctype html
 html(lang="en-GB")
     include partials/page-components/head.jade    
@@ -198,8 +200,11 @@ html(lang="en-GB")
           function googleError() {
             alert('Error, couldn\'t load Google Maps API, please refresh the page!');
           }
-        script(async defer src='https://maps.googleapis.com/maps/api/js?&key=AIzaSyDo1QK9ZijAF99Knr1xbwgb3N61PrE7dKU&callback=googleMap.init', onerror='googleError()')        
+        script(async defer src='https://maps.googleapis.com/maps/api/js?&key=AIzaSyDo1QK9ZijAF99Knr1xbwgb3N61PrE7dKU&callback=googleMap.init', onerror='googleError()')
+      - if (production === false) 
         script(src="js/es6/index.js", charset="utf-8")            
         script(src="js/es6/navbar.js", charset="utf-8")            
         script(src="js/es6/svg-animation.js", charset="utf-8")
+      -  else 
+        script(src="js/bundle.js")
             
