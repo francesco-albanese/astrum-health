@@ -173,14 +173,14 @@
 
 .bounce {
   animation-name: bounce;
-  animation-duration: 1.5s;
+  animation-duration: .9s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
 
 .bounceInLeft {
   animation-name: bounceInLeft;
-  animation-duration: 1.5s;
+  animation-duration: .7s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
@@ -191,28 +191,28 @@
 
 .fadeIn {
   animation-name: fadeIn;
-  animation-duration: 1.5s;
+  animation-duration: .7s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
 
 .fadeInDownBig {
   animation-name: fadeInDownBig;
-  animation-duration: 1s;
+  animation-duration: .5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
 
 .fadeInLeftBig {
   animation-name: fadeInLeftBig;
-  animation-duration: 1s;
+  animation-duration: .5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
 
 .fadeInRightBig {
   animation-name: fadeInRightBig;
-  animation-duration: 1s;
+  animation-duration: .5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: 1;
 }
@@ -226,7 +226,7 @@
 
 .astrumLogo {
   path {
-    transition: stroke-dashoffset 1s linear, fill .6s ease .9s;
+    transition: stroke-dashoffset .6s linear, fill .3s ease .5s;
   }
   .svg1 {
     fill: transparent;

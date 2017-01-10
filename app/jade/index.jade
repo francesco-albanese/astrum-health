@@ -109,26 +109,27 @@ html(lang="en-GB")
         
           section.footer__top
             .container
+              .footer__top--email-phone.flex.flex--space-around
+                .footer__top-contact-email.flex.flex--center
+                  i.fa.fa-envelope-o(aria-hidden='true')
+                  h2 Email us
+                .footer__top-contact-phone.flex.flex--center
+                  i.fa.fa-phone-square(aria-hidden='true')
+                  a(href='tel:+44117117888', rel='nofollow') 0117117888
               .footer__top-map-content-wrapper.flex.flex--space-between
                 .footer__top-map
                 .footer__top-contact.flex.flex--space-between
-                  .footer__top-contact-email.flex.flex--center.bounce
-                    i.fa.fa-envelope-o(aria-hidden='true')
-                    h2 Email us
-                  .footer__top-contact-phone.flex.flex--center
-                    i.fa.fa-phone-square(aria-hidden='true')
-                    a(href='tel:+44117117888', rel='nofollow') 0117117888
                   .footer__top-contact-find-us.flex.flex--center
                     i.fa.fa-map-marker(aria-hidden='true')
                     h2 Find us
-              .footer__top-contact-address.flex.flex--center
-                address
-                  h3 Unit B1006
-                  h3 94 New Road
-                  h3 Hill of GoodHope 2
-                  h3 Midrand
-                  h3 Gauteng 1685
-                  h3 South Africa
+                  .footer__top-contact-address.flex.flex--center
+                    address
+                      h3 Unit B1006
+                      h3 94 New Road
+                      h3 Hill of GoodHope 2
+                      h3 Midrand
+                      h3 Gauteng 1685
+                      h3 South Africa  
               .footer__top-contact-us#contact-us
                 i.contact-us__close &times;
                 form.opacity

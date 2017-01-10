@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Astrum Health is a leader in providing education and solutions that improve infection control within medical environments.",
   "main": "Gruntfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "grunt-cli": "^1.2.0"
+  },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "babel-preset-es2015": "^6.14.0",

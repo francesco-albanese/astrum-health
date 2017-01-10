@@ -320,8 +320,8 @@ table {
 .bounce {
   -webkit-animation-name: bounce;
           animation-name: bounce;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-duration: .9s;
+          animation-duration: .9s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: infinite;
@@ -330,8 +330,8 @@ table {
 .bounceInLeft {
   -webkit-animation-name: bounceInLeft;
           animation-name: bounceInLeft;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-duration: .7s;
+          animation-duration: .7s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: 1;
@@ -343,8 +343,8 @@ table {
 .fadeIn {
   -webkit-animation-name: fadeIn;
           animation-name: fadeIn;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-duration: .7s;
+          animation-duration: .7s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: 1;
@@ -353,8 +353,8 @@ table {
 .fadeInDownBig {
   -webkit-animation-name: fadeInDownBig;
           animation-name: fadeInDownBig;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: 1;
@@ -363,8 +363,8 @@ table {
 .fadeInLeftBig {
   -webkit-animation-name: fadeInLeftBig;
           animation-name: fadeInLeftBig;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: 1;
@@ -373,8 +373,8 @@ table {
 .fadeInRightBig {
   -webkit-animation-name: fadeInRightBig;
           animation-name: fadeInRightBig;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: 1;
@@ -391,7 +391,7 @@ table {
           animation-iteration-count: 1; }
 
 .astrumLogo path {
-  transition: stroke-dashoffset 1s linear, fill .6s ease .9s; }
+  transition: stroke-dashoffset .6s linear, fill .3s ease .5s; }
 
 .astrumLogo .svg1 {
   fill: transparent;
@@ -900,7 +900,8 @@ p {
   padding: 30px; }
   .footer__top h2,
   .footer__top a[href^="tel:"] {
-    padding-left: 15px; }
+    padding-left: 15px;
+    cursor: pointer; }
   @media screen and (max-width: 39.063em) {
     .footer__top-map-content-wrapper {
       -webkit-flex-direction: column;
@@ -918,6 +919,22 @@ p {
         -ms-flex: 1;
             flex: 1;
     max-width: 700px; }
+  .footer__top--email-phone i {
+    font-size: 5em; }
+    @media screen and (max-width: 58.75em) {
+      .footer__top--email-phone i {
+        font-size: 4em; } }
+    @media screen and (max-width: 48em) {
+      .footer__top--email-phone i {
+        font-size: 2em; } }
+  @media screen and (max-width: 48em) {
+    .footer__top--email-phone h2, .footer__top--email-phone a[href^="tel:"] {
+      font-size: 1.3em; } }
+  @media screen and (max-width: 28.125em) {
+    .footer__top--email-phone i {
+      font-size: 1.3em; }
+    .footer__top--email-phone h2, .footer__top--email-phone a[href^="tel:"] {
+      font-size: .83em; } }
   .footer__top-contact {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
@@ -1121,7 +1138,6 @@ p {
 
 form {
   min-height: 500px;
-  margin-top: 100px;
   overflow: auto; }
   @media screen and (max-width: 48em) {
     form {

@@ -7,6 +7,7 @@
     h2,
     a[href^="tel:"] {
       padding-left: $spacing-base;
+      cursor: pointer;
     }
 
     @media screen and (max-width: 39.063em) {
@@ -29,6 +30,27 @@
       //  height: 400px;
       //}
     }
+
+    &--email-phone {
+      i {
+        font-size: 5em;
+        @media screen and (max-width: $container-large) {
+          font-size: 4em;
+        }
+        @media screen and (max-width: $container-medium) {
+          font-size: 2em;
+        }
+      }
+        @media screen and (max-width: $container-medium) {
+          h2,a[href^="tel:"] {font-size: 1.3em;}
+        }
+
+        @media screen and (max-width: 28.125em) {//450px
+          i {font-size: 1.3em}
+          h2,a[href^="tel:"] {font-size: .83em;}
+        }
+    }
+
     &-contact {
       flex-direction: column;
       align-items: baseline;
