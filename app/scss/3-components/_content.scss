@@ -1,0 +1,15 @@
+.content {
+  display: flex;
+  align-items: center;
+
+  .content__container {
+    h1 {
+      text-align: center;
+    }
+    p {
+      padding: $spacing-large $spacing-base;
+      line-height: 1.5;
+    }
+  }
+
+}

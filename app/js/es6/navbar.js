@@ -77,16 +77,18 @@
     },
     animateSolutionsSection: function animateSolutionsSection() {
       var articles = this.solutionsSection.find('article');
-      articles.each(function (i, elem) {
-        var visible = navbar.isElementVisible($(elem));
-        if (visible && i % 2 !== 0) {
-          $(elem).removeClass('opacity');
-          $(elem).addClass('fadeInRightBig');
-        } else if (visible && i % 2 === 0) {
-          $(elem).removeClass('opacity');
-          $(elem).addClass('fadeInLeftBig');
-        }
-      });
+      if (articles.length) {
+        articles.each(function (i, elem) {
+          var visible = navbar.isElementVisible($(elem));
+          if (visible && i % 2 !== 0) {
+            $(elem).removeClass('opacity');
+            $(elem).addClass('fadeInRightBig');
+          } else if (visible && i % 2 === 0) {
+            $(elem).removeClass('opacity');
+            $(elem).addClass('fadeInLeftBig');
+          }
+        });
+      }
     },
     animateTestimonialsSection: function animateTestimonialsSection() {
       var testimonials = this.testimonialsSection.find('.testimonial');

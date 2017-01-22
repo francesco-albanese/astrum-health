@@ -1,6 +1,7 @@
 form {
   min-height: 500px;
   overflow: auto;
+  color: $silver;
   @media screen and (max-width: $container-medium) {
     width: 80%;
     margin-right: auto;

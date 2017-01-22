@@ -81,16 +81,18 @@
 
     animateSolutionsSection() {
       const articles = this.solutionsSection.find('article');
-      articles.each((i, elem) => {
-        let visible = navbar.isElementVisible($(elem));
-        if (visible && (i % 2 !== 0)) {
-          $(elem).removeClass('opacity');
-          $(elem).addClass('fadeInRightBig');
-        } else if(visible && (i % 2 === 0)) {
-          $(elem).removeClass('opacity');
-          $(elem).addClass('fadeInLeftBig');
-        }
-      });
+      if (articles.length) {
+        articles.each((i, elem) => {
+          let visible = navbar.isElementVisible($(elem));
+          if (visible && (i % 2 !== 0)) {
+            $(elem).removeClass('opacity');
+            $(elem).addClass('fadeInRightBig');
+          } else if(visible && (i % 2 === 0)) {
+            $(elem).removeClass('opacity');
+            $(elem).addClass('fadeInLeftBig');
+          }
+        });
+      }
     },
 
     animateTestimonialsSection() {

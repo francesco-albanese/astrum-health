@@ -1,0 +1,106 @@
+- var production = false;
+doctype html
+html(lang="en-GB")
+  head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content ='IE=edge')
+      meta(name='description', content='Astrum Health is a leader in providing education and solutions that improve infection control within medical environments.')
+      meta(name='keywords', content='keywords')
+      meta(name="robots", content="noindex, nofollow")
+      meta(name='author', content='Francesco Albanese')
+      link(rel='canonical', href='company.html')
+      meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+      title Astrum Health
+      link(rel='icon', href='', type='image/x-icon', sizes='16x16')
+      link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1", crossorigin="anonymous")
+      - if (!production)
+        link(rel='stylesheet', href='css/main.css')
+      - else  
+        link(rel='stylesheet', href='css/main.min.css')
+      script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js", charset="utf-8")
+      
+      <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+    
+  body(id="top", class="company")
+    section.header--not-home
+      .container 
+          include partials/page-components/header-not-home.jade
+        
+    section.content
+      .container
+        article.content__container
+          h1 Company
+          p Astrum focuses on the distribution of leading decontamination and sterilization solutions, their related consumables and servicing within healthcare markets. Driven to bring innovations to the industry, our company’s objective is to be a leader in supporting and enabling healthcare practices in emerging economies whilst attaining market share as a leading decontamination and sterilization solution supplier. Astrum provides a route to market for key solutions sourced around the world. The team has over 10 years experience within the medical, decontamination and sterilization fields with first hand experiences of working with the all our solutions within the respective industry.
+  
+    footer.footer
+      section
+        .container
+          .footer__top-contact-us#contact-us
+            i.contact-us__close &times;
+            form.opacity
+              h2 contact us
+              .label__wrapper
+                input(type="text", name="name", id="name" required)
+                span(class="highlight")
+                span(class="bar")
+                label(for="name", class="label--floating") name
+              .label__wrapper
+                input(type="text", name="surname", id="surname" required)
+                span(class="highlight")
+                span(class="bar")
+                label(for="surname", class="label--floating") surname
+              .label__wrapper
+                input(type="email", name="email", id="email" required)
+                span(class="highlight")
+                span(class="bar")
+                label(for="email", class="label--floating") email
+              .label__wrapper
+                textarea(name="message", id="message" required rows="3")
+                span(class="highlight")
+                span(class="bar")
+                label(for="message", class="label--floating") message
+              button(class="btn btn--submit" type="submit") submit
+      section.footer__centre
+        .container
+          section.flex
+            .footer__centre-logo.flex.flex--center
+              include partials/page-components/logo-svg.jade        
+            .footer__centre-navigation.flex.flex--center
+              nav
+                ul.flex
+                  li: a(href="#") company
+                  li: a(href="#") facing the reality
+                  li: a(href="#") partners
+                  li: a(href="#") follow us
+      section.footer__bottom
+        .footer__bottom-copyright.flex.flex--center
+          p Copyright 2016 - Designed by #[a(href="#") francesco albanese]
+    
+    a(href="#top" title="Back to top").back-to-top #[i.fa.fa-angle-up.fa-3x(aria-hidden='true')]
+    section.offscreen-menu.flex.flex--center
+      i.offscreen-menu__close &times;
+      nav
+        ul.flex.flex--center
+          li
+            a(href="#") company
+          li
+            a(href="#") partners
+          li
+            a(href="#") facing the reality
+          li
+            a(href="#") follow us
+          li 
+            a(href="#solutions") solutions
+          li 
+            a(href="#resources") resources
+          li 
+            a(href="#testimonials") testimonials
+          li 
+            a(href="#contact-us") contact us
+    
+    - if (production === false)          
+      script(src="js/es6/navbar.js", charset="utf-8")            
+      script(src="js/es6/svg-animation.js", charset="utf-8")
+    -  else 
+      script(src="js/bundle.js")
