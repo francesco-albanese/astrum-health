@@ -1,16 +1,31 @@
 .tabs {
-  .tab {
-    &__content {
-      opacity: 0;
-      visibility: hidden;
-      transition: all .25s ease-in-out;
-      transform: scale(0);
+  padding: $spacing-large;
+  &-title-container {
+    margin-bottom: $spacing-medium;
+    .tab__title {
+      cursor: pointer;
+      font-family: abeatbyKai, sans-serif;
+      font-size: 2em;
+      color: $solutions-bg;
+      border-bottom: 1px solid $solutions-bg;
+      padding: 3px $spacing-medium;
+      &.is-active {
+        border-bottom: 3px solid $facing-the-reality-bg;
+      }
     }
+  }
+  .tab {
+    display: none;
     &.is-visible {
+      display: flex;
       .tab__content {
-        opacity: 1;
-        visibility: visible;
-        transform: scale(1);
+        animation-name: scaleTab;
+        animation-duration: .25s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+        p {
+          margin-bottom: $spacing-small;
+        }
       }
     }
   }

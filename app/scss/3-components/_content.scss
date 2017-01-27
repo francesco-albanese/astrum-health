@@ -3,7 +3,9 @@
   align-items: center;
 
   .content__container {
-    h1 {
+    padding: $spacing-large;
+    h1,
+    h2 {
       text-align: center;
     }
     p {
