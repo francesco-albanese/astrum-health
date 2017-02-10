@@ -9,6 +9,21 @@
       color: $solutions-bg;
       border-bottom: 1px solid $solutions-bg;
       padding: 3px $spacing-medium;
+      @media screen and (max-width: $container-small) {
+        font-size: 1.1em;
+        text-align: center;
+      }
+
+      @media screen and (max-width: $container-small) {
+        font-size: .9em;
+      }
+
+      @media only screen
+      and (min-device-width : 320px)
+      and (max-device-width : 568px)
+      and (orientation : portrait) {
+        padding: 3px 8px;
+      }
       &.is-active {
         border-bottom: 3px solid $facing-the-reality-bg;
       }
@@ -23,6 +38,44 @@
         animation-duration: .25s;
         animation-timing-function: ease-in-out;
         animation-iteration-count: 1;
+        &--explore-all-models {
+          justify-content: space-between;
+          align-items: baseline;
+          flex-wrap: wrap;
+          .model-content {
+            flex-basis: 50%;
+            flex-direction: column;
+            @media screen and (max-width: $container-medium) {
+              flex-basis: 100%;
+              align-items: center;
+            }
+            h3 {
+              margin-bottom: $spacing-large;
+              margin-top: $spacing-medium;
+              @media screen and (max-width: $container-medium) {
+                font-size: 1.563em;
+              }
+            }
+            img {
+              width: 400px;
+              height: 325px;
+            }
+            ul {
+              list-style-type: disc;
+              margin-left: $spacing-medium;
+            }
+            &--universal-features {
+              display: flex;
+              flex-basis: 100%;
+              align-items: center;
+              flex-direction: column;
+              ul {
+                list-style-type: disc;
+                margin-left: $spacing-medium;
+              }
+            }
+          }
+        }
         p {
           margin-bottom: $spacing-small;
         }

@@ -53,26 +53,26 @@
 
     &-contact {
       flex-direction: column;
-      align-items: baseline;
+      align-items: center;
       margin-left: $spacing-medium;
 
-      @media screen and (max-width: 39.063em) {
-        flex-direction: row;
-      }
+      // @media screen and (max-width: 39.063em) {
+      //   flex-direction: row;
+      // }
       //iPhone 6S Plus
-      @media only screen
-      and (min-device-width : 414px)
-      and (max-device-width : 736px)
-      and (orientation : portrait) {
-        flex-direction: row !important;
-      }
+      // @media only screen
+      // and (min-device-width : 414px)
+      // and (max-device-width : 736px)
+      // and (orientation : portrait) {
+      //   flex-direction: row !important;
+      // }
       //iphone 5 & 5S
-      @media only screen
-      and (min-device-width : 320px)
-      and (max-device-width : 568px)
-      and (orientation : portrait) {
-        flex-direction: column;
-      }
+      // @media only screen
+      // and (min-device-width : 320px)
+      // and (max-device-width : 568px)
+      // and (orientation : portrait) {
+      //   flex-direction: column;
+      // }
       div {
 
         //iphone 5 & 5S
@@ -101,6 +101,10 @@
             h2,a[href^="tel:"] {font-size: .83em;}
           }
       }
+    }
+
+    &-contact-address {
+      text-align: center;
     }
 
     &-contact-us {
@@ -143,12 +147,64 @@
       section {flex-direction: column;}
     }
 
-    svg {
-      max-width: 100%;
-      display: block;
-      margin: 0 auto;
-      min-width: 20em;
-      width: 20em;
+    &-follow-us {
+      opacity: 0;
+      visibility: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($solutions-bg, .85);
+      z-index: 150;
+      padding: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all .3s ease-in-out;
+      .follow-us__close {
+        color: $silver;
+        position: fixed;
+        top: $spacing-base;
+        left: $spacing-base;
+        font-size: 4em;
+        font-family: abeatbyKai, sans-serif;
+        font-weight: 100;
+        cursor: pointer;
+      }
+      &.is-visible {
+        opacity: 1;
+        visibility: visible;
+      }
+      .follow-us-container {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      svg {
+        min-width: 10em;
+        width: 10em;
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+        &:first-child {
+          @media screen and (max-width: 28.125em) {//450px
+            margin-bottom: $spacing-medium;
+          }
+        }
+      }
+    }
+
+    &-logo {
+      svg {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+        min-width: 20em;
+        width: 20em;
+      }
     }
 
     & &-navigation {

@@ -35,6 +35,13 @@
   right: 32px;
   bottom: 32px;
   z-index: 20;
+  transition: all .25s ease-in-out;
+  &.is-visible {
+    animation-name: scaleTab;
+    animation-duration: .25s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+  }
   @media screen and (max-width: $container-medium) {
     bottom: 3.75em;
   }

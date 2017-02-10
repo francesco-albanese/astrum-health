@@ -22,7 +22,7 @@ html(lang="en-GB")
       <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
     
-  body(id="top", class="company")
+  body(id="top", class="partners")
     section.header--not-home
       .container 
           include partials/page-components/header-not-home.jade
@@ -30,8 +30,13 @@ html(lang="en-GB")
     section.content
       .container
         article.content__container
-          h1 Company
-          p Astrum focuses on the distribution of leading decontamination and sterilization solutions, their related consumables and servicing within healthcare markets. Driven to bring innovations to the industry, our company’s objective is to be a leader in supporting and enabling healthcare practices in emerging economies whilst attaining market share as a leading decontamination and sterilization solution supplier. Astrum provides a route to market for key solutions sourced around the world. The team has over 10 years experience within the medical, decontamination and sterilization fields with first hand experiences of working with the all our solutions within the respective industry.
+          section.content__logos
+            img(src="images/AquaPhase-Logo.jpg") 
+            img(src="images/Entrhal-Medical-Logo.jpg") 
+          h1 Partners
+          p At Astrum Health, high superior infection control standards are our chief priority, which our partners fully understand and support. Astrum’s partners are manufacturers of high quality medical devices that meet international quality standards. Together, our aim is to support healthier lives, increasing efficiency whilst decreasing cost - both direct and indirect. This is attained though building value from educating, superb class service and bespoke customer relationship. 
+          
+          p We maintain a close working relationship with our partners which sees customer needs and feedback appropriately fed up the supply chain. This is used to influence our continuing product development and solution provision.
   
     footer.footer
       section
@@ -79,7 +84,7 @@ html(lang="en-GB")
                 a(href="http://www.linkedin.com/company/10386914?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10386914%2Cidx%3A2-1-2%2CtarId%3A1486756326929%2Ctas%3Aastrum%20health" target="_blank")
                   include partials/page-components/linkedin-svg.jade
                 a(href="https://twitter.com/Astrum_Health" target="_blank") 
-                  include partials/page-components/twitter-svg.jade      
+                  include partials/page-components/twitter-svg.jade
       section.footer__bottom
         .footer__bottom-copyright.flex.flex--center
           p Copyright 2016 - Designed by #[a(href="#") francesco albanese]

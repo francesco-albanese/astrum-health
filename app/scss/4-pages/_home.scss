@@ -53,6 +53,10 @@
     color: #fff;
     text-align: center;
     padding: $spacing-large;
+    .subheading {
+      font-size: 1.25em;
+      margin-top: $spacing-base;
+    }
     p {
         font-size: 2em;
         @media screen and (max-width: $container-medium) {
@@ -63,6 +67,7 @@
         padding: $spacing-small $spacing-medium;
         @include sweep-to-right(darken(#ddd, 5%), #9E1981);
         border-bottom: 1px solid;
+        cursor: pointer;
         &:hover {
             border: none;
         }

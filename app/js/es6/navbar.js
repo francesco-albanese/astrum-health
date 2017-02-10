@@ -33,6 +33,12 @@
       this.closeForm = this.contactForm.find('.contact-us__close');
       this.form = this.contactForm.find('form');
       this.contactUsInNavbar = this.body.find('a[href="#contact-us"]');
+      this.backToTop = this.body.find('.back-to-top');
+      this.followUs = this.body.find('.footer__centre-follow-us');
+      this.followUsOffScreen = this.body.find('.offscreen-menu .follow-us');
+      this.followUsContainer = this.body.find('.follow-us-container');
+      this.followUsInNavbar = this.body.find('a[href="#follow-us"]');
+      this.closeFollowUs = this.body.find('.follow-us__close');
     },
     bindEvents: function bindEvents() {
       var _this = this;
@@ -47,6 +53,9 @@
       this.emailUs.on('click', this.openForm.bind(this));
       this.closeForm.on('click', this.closeContactForm.bind(this));
       this.contactUsInNavbar.on('click', this.openForm.bind(this));
+      this.followUsInNavbar.on('click', this.openFollowUs.bind(this));
+      this.closeFollowUs.on('click', this.closeFollow.bind(this));
+      this.followUsOffScreen.on('click', this.openFollowUsOffScreen.bind(this));
     },
     openForm: function openForm() {
       this.contactForm.addClass('is-visible');
@@ -60,6 +69,23 @@
     closeContactForm: function closeContactForm() {
       this.contactForm.removeClass('is-visible');
       this.body.removeClass('no-scroll');
+    },
+    openFollowUs: function openFollowUs() {
+      this.followUs.addClass('is-visible');
+      this.body.addClass('no-scroll');
+      this.followUsContainer.removeClass('opacity');
+      this.followUsContainer.addClass('bounceInLeft');
+      setTimeout(function () {
+        navbar.followUsContainer.removeClass('bounceInLeft');
+      }, 2000);
+    },
+    closeFollow: function closeFollow() {
+      this.followUs.removeClass('is-visible');
+      this.body.removeClass('no-scroll');
+    },
+    openFollowUsOffScreen: function openFollowUsOffScreen() {
+      this.closeContactForm();
+      this.openFollowUs();
     },
     isElementVisible: function isElementVisible(element) {
       var visible = false;
@@ -111,8 +137,12 @@
       var headerHeight = this.header.outerHeight();
       if (windowScroll > headerHeight) {
         this.header.addClass('header--fixed-top');
+        this.backToTop.removeClass('opacity');
+        this.backToTop.addClass('is-visible');
       } else {
         this.header.removeClass('header--fixed-top');
+        this.backToTop.addClass('opacity');
+        this.backToTop.removeClass('is-visible');
       }
     },
     openOffScreenMenu: function openOffScreenMenu() {
@@ -126,6 +156,7 @@
     init: function init() {
       this.smoothScroll();
       this.cacheDom();
+      this.backToTop.addClass('opacity');
       this.bindEvents();
     }
   };

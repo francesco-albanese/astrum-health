@@ -27,7 +27,7 @@ html(lang="en-GB")
       .container 
           include partials/page-components/header-not-home.jade
         
-    section.content
+    section.content.fadeIn
       .container
         article.content__container
           h1 AquaPhase Washer Disinfectors
@@ -74,138 +74,144 @@ html(lang="en-GB")
               p B: Recycled water adds to cost savings.
           .tab
             .tab__content
-              h3 AQ4800PT – Bariatric
-              p #[img(src="images/AQ4800PT.jpg")]
-              h4 Offering the best solution on the market to cater for your bariatric equipment. Stainless steel spray arms combined with 83 spray nozzles for improved cleaning efficiency.
-              
-              h4 Technical Features:
-              p Outer Dimensions
-              ul 
-                li Width 74”
-                li Length 108-3/4
-                li Height 77-1/4”
-              p Effective Chamber Dimensions
-                ul
-                  li Width 51”
-                  li Length 105-3/8”
-                  li Height 53-1/4”
-              p Options:
-                ul
-                  li Data and Audit Tracker (AQDC)
-                  li Enhancements Include Additional
-                  li Temperature sensors
-                  li Chemical injection sensors
-                  li Disinfection level sensors
-                  li Data processor
-                  li Printer
-                  li Heatrae Sadia Megaflo Unvented Water Heater x2 (DDD300)
-                  li Ramps – 6 Foot: 2 pairs (AQRA6)
-                  li Ramps – 8 Foot: 2 pairs (AQRA8)
-                  li Lighted Wash Chamber (AQ60)
-              h3 AQ4000  
-              p #[img(src="images/AQ4000.jpg")]
-              h4 The ultimate solution designed to cater for hospitals and large medical equipment. Can accommodate hospital beds and similarly sized equipment. Stainless steel spray arms combined with 60 spray nozzles for improved cleaning efficiency.
-              h4 Technical Features:
-              ul
-                li 2 HP Motor/ Stainless Steel Pump
-                li 230V, 50/60Hz, Single Phase AC Operation
-              p Outer Dimensions:
-                ul
-                  li Width 63-1/4”
-                  li Length 96-3/4” 
-                  li Height 73” 
-              p Effective Chamber Dimensions
-                ul
-                  li Width 40-1/2” 
-                  li Length 93-3/4” 
-                  li Height 48-1/2”
-              p Options:
-                ul 
-                  li Data and Audit Tracker (AQDC)
-                  li Enhancements Include Additional
-                  li Temperature sensors
-                  li Chemical injection sensors
-                  li Disinfection level sensors
-                  li Data processor
-                  li Printer
-                  li Set of Three Utility Wash Trays for AQ4000 series (AQ4353)
-                  li Heatrae Sadia Megaflo Unvented Water Heater x2 (DDD300)
-                  li Ramps – 4 Foot: 2 pairs (AQRA4)
-                  li Ramps – 6 Foot: 2 pairs (AQRA6)
-                  li Ramps – 8 Foot: 2 pairs (AQRA8)
-                  li Lighted Wash Chamber (AQ60)
-              h3 AQ3000
-              //- p #[img(src="images/AQ4000.jpg")]
-              h4 The standard washer within the AquaPhase range, maintaining the same quality-cleaning efficacy enabled by 23 wash nozzles.
-              h4 Technical Features:
-              ul
-                li 1.5 HP Motor/ Stainless Steel Pump
-                li 115V, 50/60Hz, 20 Amp AC Operation (230V, 50/60Hz, Single Phase AC Operation Optional)
-                li Wheelchair Wheel Rotation System
-              p Outer Dimensions
-                ul
-                  li Width 33-1/2”  
-                  li Length 64”
-                  li Height 62”
-              p Effective Chamber Dimensions
-                ul 
-                  li Width 26-1/2”
-                  li Length 51-1/4” 
-                  li Height 36-3/4” 
-              p Options:
-               ul 
-                li Data and Audit Tracker (AQDC)
-                li Enhancements Include Additional
-                li Temperature sensors
-                li Chemical injection sensors
-                li Disinfection level sensors
-                li Data processor
-                li Printer
-                li Heatrae Sadia Megaflo Unvented Water Heater x2 (DDD300)
-                li Equipment Rack (AQ330E)
-                li Set of Two Utility Wash Trays (AQ335E)
-                li Ramps – 4 Foot: 2 pairs (AQRA4)
-                li Ramps – 6 Foot: 2 pairs (AQRA6)
-                li Lighted Wash Chamber (AQ60)
-              h3 AQ3500
-              p #[img(src="images/AQ3500.jpg")]
-              h4 Provides a larger wash chamber within the AQ3000 range of washers. Maintains superior wash efficacy enabled by 31 wash nozzles.
-              h4 Technical Features:
-              p
-                ul
-                  li 1.5 HP Motor/ Stainless Steel Pump
-                  li 115V, 50/60Hz, 20 Amp AC Operation
+              .tab__content--explore-all-models.flex 
+                .model-content.flex 
+                  h3 AQ4800PT – Bariatric
+                  p #[img(src="images/AQ4800PT.jpg")]
+                  p Offering the best solution on the market to cater for your bariatric equipment. Stainless steel spray arms combined with 83 spray nozzles for improved cleaning efficiency.
                   
-              p Options:
-                ul
-                  li Data and Audit Tracker (AQDC)
-                  li Enhancements Include Additional
-                  li Temperature sensors
-                  li Chemical injection sensors
-                  li Disinfection level sensors
-                  li Data processor
-                  li Heatrae Sadia Megaflo Unvented Water Heater x2 (DDD300)
-                  li Equipment Rack (AQ330E)
-                  li Set of Two Utility Wash Trays (AQ335E)
-                  li Ramps – 4 Foot: 2 pairs (AQRA4)
-                  li Ramps – 6 Foot: 2 pairs (AQRA6)
-                  li Conveyor Belt Transfer Floor System (AQ68)
-                  li Lighted Wash Chamber (AQ60)
-                  li Printer
-              h3 Universal Technical Features:
-              p
-                ul
-                  li Plug and Play’ Installation
-                  li Detergent Wash, Rinse, and Disinfect cycles
-                  li Wash Cycle Time: 3, 5, or 7 Minute options
-                  li LCD Status Display
-                  li Water Temperature Monitor (Front-mounted Digital Temperature Gauge)
-                  li Door Window
-                  li Stainless Steel Chamber
-                  li Stainless Steel Oscillating Spray Arms
-                  li Dedicated Disinfection Delivery Pipework
-                  li Heavy-Duty Castor Wheels
-                  li Powerful Pump and Motor
+                  h4 Technical Features:
+                  p Outer Dimensions
+                  ul 
+                    li Width 74”
+                    li Length 108-3/4
+                    li Height 77-1/4”
+                  p Effective Chamber Dimensions
+                    ul
+                      li Width 51”
+                      li Length 105-3/8”
+                      li Height 53-1/4”
+                  p Options:
+                    ul
+                      li Data and Audit Tracker (AQDC)
+                      li Enhancements Include Additional
+                      li Temperature sensors
+                      li Chemical injection sensors
+                      li Disinfection level sensors
+                      li Data processor
+                      li Printer
+                      li Heatrae Sadia Megaflo Unvented Water Heater x2 (DDD300)
+                      li Ramps – 6 Foot: 2 pairs (AQRA6)
+                      li Ramps – 8 Foot: 2 pairs (AQRA8)
+                      li Lighted Wash Chamber (AQ60)
+                .model-content.flex
+                  h3 AQ4000  
+                  p #[img(src="images/AQ4000.jpg")]
+                  h4 The ultimate solution designed to cater for hospitals and large medical equipment. Can accommodate hospital beds and similarly sized equipment. Stainless steel spray arms combined with 60 spray nozzles for improved cleaning efficiency.
+                  h4 Technical Features:
+                  ul
+                    li 2 HP Motor/ Stainless Steel Pump
+                    li 230V, 50/60Hz, Single Phase AC Operation
+                  p Outer Dimensions:
+                    ul
+                      li Width 63-1/4”
+                      li Length 96-3/4” 
+                      li Height 73” 
+                  p Effective Chamber Dimensions
+                    ul
+                      li Width 40-1/2” 
+                      li Length 93-3/4” 
+                      li Height 48-1/2”
+                  p Options:
+                    ul 
+                      li Data and Audit Tracker (AQDC)
+                      li Enhancements Include Additional
+                      li Temperature sensors
+                      li Chemical injection sensors
+                      li Disinfection level sensors
+                      li Data processor
+                      li Printer
+                      li Set of Three Utility Wash Trays for AQ4000 series (AQ4353)
+                      li Heatrae Sadia Megaflo Unvented Water Heater x2 (DDD300)
+                      li Ramps – 4 Foot: 2 pairs (AQRA4)
+                      li Ramps – 6 Foot: 2 pairs (AQRA6)
+                      li Ramps – 8 Foot: 2 pairs (AQRA8)
+                      li Lighted Wash Chamber (AQ60)
+                .model-content.flex
+                  h3 AQ3000
+                  //- p #[img(src="images/AQ4000.jpg")]
+                  h4 The standard washer within the AquaPhase range, maintaining the same quality-cleaning efficacy enabled by 23 wash nozzles.
+                  h4 Technical Features:
+                  ul
+                    li 1.5 HP Motor/ Stainless Steel Pump
+                    li 115V, 50/60Hz, 20 Amp AC Operation (230V, 50/60Hz, Single Phase AC Operation Optional)
+                    li Wheelchair Wheel Rotation System
+                  p Outer Dimensions
+                    ul
+                      li Width 33-1/2”  
+                      li Length 64”
+                      li Height 62”
+                  p Effective Chamber Dimensions
+                    ul 
+                      li Width 26-1/2”
+                      li Length 51-1/4” 
+                      li Height 36-3/4” 
+                  p Options:
+                   ul 
+                    li Data and Audit Tracker (AQDC)
+                    li Enhancements Include Additional
+                    li Temperature sensors
+                    li Chemical injection sensors
+                    li Disinfection level sensors
+                    li Data processor
+                    li Printer
+                    li Heatrae Sadia Megaflo Unvented Water Heater x2 (DDD300)
+                    li Equipment Rack (AQ330E)
+                    li Set of Two Utility Wash Trays (AQ335E)
+                    li Ramps – 4 Foot: 2 pairs (AQRA4)
+                    li Ramps – 6 Foot: 2 pairs (AQRA6)
+                    li Lighted Wash Chamber (AQ60)
+                .model-content.flex
+                  h3 AQ3500
+                  p #[img(src="images/AQ3500.jpg")]
+                  h4 Provides a larger wash chamber within the AQ3000 range of washers. Maintains superior wash efficacy enabled by 31 wash nozzles.
+                  h4 Technical Features:
+                  p
+                    ul
+                      li 1.5 HP Motor/ Stainless Steel Pump
+                      li 115V, 50/60Hz, 20 Amp AC Operation
+                      
+                  p Options:
+                    ul
+                      li Data and Audit Tracker (AQDC)
+                      li Enhancements Include Additional
+                      li Temperature sensors
+                      li Chemical injection sensors
+                      li Disinfection level sensors
+                      li Data processor
+                      li Heatrae Sadia Megaflo Unvented Water Heater x2 (DDD300)
+                      li Equipment Rack (AQ330E)
+                      li Set of Two Utility Wash Trays (AQ335E)
+                      li Ramps – 4 Foot: 2 pairs (AQRA4)
+                      li Ramps – 6 Foot: 2 pairs (AQRA6)
+                      li Conveyor Belt Transfer Floor System (AQ68)
+                      li Lighted Wash Chamber (AQ60)
+                      li Printer
+                .model-content--universal-features
+                  h3 Universal Technical Features:
+                  p
+                    ul
+                      li Plug and Play’ Installation
+                      li Detergent Wash, Rinse, and Disinfect cycles
+                      li Wash Cycle Time: 3, 5, or 7 Minute options
+                      li LCD Status Display
+                      li Water Temperature Monitor (Front-mounted Digital Temperature Gauge)
+                      li Door Window
+                      li Stainless Steel Chamber
+                      li Stainless Steel Oscillating Spray Arms
+                      li Dedicated Disinfection Delivery Pipework
+                      li Heavy-Duty Castor Wheels
+                      li Powerful Pump and Motor
           .tab
             .tab__content
               h3 Chemicals
@@ -263,10 +269,17 @@ html(lang="en-GB")
             .footer__centre-navigation.flex.flex--center
               nav
                 ul.flex
-                  li: a(href="#") company
-                  li: a(href="#") facing the reality
-                  li: a(href="#") partners
-                  li: a(href="#") follow us
+                  li: a(href="company.html") company
+                  li: a(href="facing-the-reality.html") facing the reality
+                  li: a(href="partners.html") partners
+                  li: a(href="#follow-us") follow us
+            .footer__centre-follow-us
+              i.follow-us__close &times;
+              .follow-us-container.opacity
+                a(href="http://www.linkedin.com/company/10386914?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10386914%2Cidx%3A2-1-2%2CtarId%3A1486756326929%2Ctas%3Aastrum%20health" target="_blank")
+                  include partials/page-components/linkedin-svg.jade
+                a(href="https://twitter.com/Astrum_Health" target="_blank") 
+                  include partials/page-components/twitter-svg.jade      
       section.footer__bottom
         .footer__bottom-copyright.flex.flex--center
           p Copyright 2016 - Designed by #[a(href="#") francesco albanese]
@@ -277,13 +290,15 @@ html(lang="en-GB")
       nav
         ul.flex.flex--center
           li
-            a(href="#") company
+            a(href="index.html") home
           li
-            a(href="#") partners
+            a(href="company.html") company
           li
-            a(href="#") facing the reality
+            a(href="partners.html") partners
           li
-            a(href="#") follow us
+            a(href="facing-the-reality.html") facing the reality
+          li
+            a.follow-us(href="#") follow us
           li 
             a(href="#solutions") solutions
           li 

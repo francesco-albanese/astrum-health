@@ -22,16 +22,45 @@ html(lang="en-GB")
       <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
     
-  body(id="top", class="company")
+  body(id="top", class="facing-the-reality")
     section.header--not-home
       .container 
           include partials/page-components/header-not-home.jade
         
-    section.content
-      .container
-        article.content__container
-          h1 Company
-          p Astrum focuses on the distribution of leading decontamination and sterilization solutions, their related consumables and servicing within healthcare markets. Driven to bring innovations to the industry, our company’s objective is to be a leader in supporting and enabling healthcare practices in emerging economies whilst attaining market share as a leading decontamination and sterilization solution supplier. Astrum provides a route to market for key solutions sourced around the world. The team has over 10 years experience within the medical, decontamination and sterilization fields with first hand experiences of working with the all our solutions within the respective industry.
+    section#resources.facing-the-reality-section
+      h2 Facing the reality
+      p Solutions are not only for problems you can see
+      .facing-the-reality__grid
+        .facing-the-reality__grid-article-wrapper.facing-the-reality__grid-article-wrapper--odd.flex
+          .facing-the-reality__grid-image
+          .facing-the-reality__grid-article.flex.flex--center
+            h4 Surgical Diathermy Burns
+            h4.subheading Lack of Electrode Testing
+            a(href="facing-the-reality1.html") Find out more #[i(class="fa fa-chevron-right" aria-hidden="true")]
+        .facing-the-reality__grid-article-wrapper.facing-the-reality__grid-article-wrapper--even.flex
+          .facing-the-reality__grid-image
+          .facing-the-reality__grid-article.flex.flex--center
+            h4 Insulation failure in electrosurgery instrumentation
+            h4.subheading Proactive Diathermy Testing
+            a(href="facing-the-reality2.html") Find out more #[i(class="fa fa-chevron-right" aria-hidden="true")]
+        .facing-the-reality__grid-article-wrapper.facing-the-reality__grid-article-wrapper--odd.flex
+          .facing-the-reality__grid-image
+          .facing-the-reality__grid-article.flex.flex--center
+            h4 Cross Contamination on Hospital Surfaces and Medical Equipment
+            h4.subheading Decontamination of equipment
+            a(href="facing-the-reality3.html") Find out more #[i(class="fa fa-chevron-right" aria-hidden="true")]
+        .facing-the-reality__grid-article-wrapper.facing-the-reality__grid-article-wrapper--even.flex
+          .facing-the-reality__grid-image
+          .facing-the-reality__grid-article.flex.flex--center
+            h4 HEADING
+            h4.subheading SUB HEADING
+            a(href="facing-the-reality4.html") Find out more #[i(class="fa fa-chevron-right" aria-hidden="true")]
+        .facing-the-reality__grid-article-wrapper.facing-the-reality__grid-article-wrapper--odd.flex
+          .facing-the-reality__grid-image
+          .facing-the-reality__grid-article.flex.flex--center
+            h4 HEADING
+            h4.subheading SUB HEADING
+            a(href="facing-the-reality5.html") Find out more #[i(class="fa fa-chevron-right" aria-hidden="true")]
   
     footer.footer
       section
@@ -79,7 +108,7 @@ html(lang="en-GB")
                 a(href="http://www.linkedin.com/company/10386914?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10386914%2Cidx%3A2-1-2%2CtarId%3A1486756326929%2Ctas%3Aastrum%20health" target="_blank")
                   include partials/page-components/linkedin-svg.jade
                 a(href="https://twitter.com/Astrum_Health" target="_blank") 
-                  include partials/page-components/twitter-svg.jade      
+                  include partials/page-components/twitter-svg.jade
       section.footer__bottom
         .footer__bottom-copyright.flex.flex--center
           p Copyright 2016 - Designed by #[a(href="#") francesco albanese]
