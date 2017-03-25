@@ -1,4 +1,4 @@
-- var production = true;
+- var production = false;
 
 doctype html
 html(lang="en-GB")
@@ -64,26 +64,30 @@ html(lang="en-GB")
             .facing-the-reality__grid-article-wrapper.facing-the-reality__grid-article-wrapper--even.flex
               .facing-the-reality__grid-image
               .facing-the-reality__grid-article.flex.flex--center
-                h4 HEADING
-                h4.subheading SUB HEADING
+                h4 The Impact of Hospital Furniture in Infection Control
+                h4.subheading The Enemy In the Unseen
                 a(href="facing-the-reality4.html") Find out more #[i(class="fa fa-chevron-right" aria-hidden="true")]
             .facing-the-reality__grid-article-wrapper.facing-the-reality__grid-article-wrapper--odd.flex
               .facing-the-reality__grid-image
               .facing-the-reality__grid-article.flex.flex--center
-                h4 HEADING
-                h4.subheading SUB HEADING
+                h4 The Role of hospital surfaces in transmission of pathogens
+                h4.subheading The inability to validate manually cleaned surfaces and equipment
                 a(href="facing-the-reality5.html") Find out more #[i(class="fa fa-chevron-right" aria-hidden="true")]
                 
           .twitter-container.flex.flex--center
             a(class="twitter-timeline" data-lang="en" data-width="400" data-height="400" href="https://twitter.com/Astrum_Health") Tweets by Astrum_Health
             script(src="//platform.twitter.com/widgets.js" charset="utf-8")
             script.
-              setTimeout(function() {
                 $('.twitter-timeline').attr('style', 'position: static;visibility: visible;display: inline-block;width: 400px;display: block;height: 400px;padding: 0px;border: none;max-width: 100%;min-width: 180px;margin-top: 0px;margin-bottom: 0px;min-height: 200px;box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.28), 0 4px 15px 0 rgba(0, 0, 0, 0.75) !important;');
-                $('.twitter-timeline').contents().find('.timeline-Header').attr("style", "background: #791563 !important;color: #fff !important");
-                $('.twitter-timeline').contents().find('.timeline-Header-title.u-inlineBlock').attr('style', 'color: #fff !important');
-                $('.twitter-timeline').contents().find('.timeline-Footer.u-cf').attr('style', 'background: #791563 !important;color: #fff !important');
-              }, 2500);
+                var timelineInterval = setInterval(function() {
+                  var $timelineHeader = $('.twitter-timeline').contents().find('.timeline-Header');
+                  if ($timelineHeader.length) {
+                    $('.twitter-timeline').contents().find('.timeline-Header').attr("style", "background: #791563 !important;color: #fff !important");
+                    $('.twitter-timeline').contents().find('.timeline-Header-title.u-inlineBlock').attr('style', 'color: #fff !important');
+                    $('.twitter-timeline').contents().find('.timeline-Footer.u-cf').attr('style', 'background: #791563 !important;color: #fff !important');
+                    return clearInterval(timelineInterval);
+                  }
+                }, 50);
             
         section#testimonials.testimonials-section
           h2 what people say about us

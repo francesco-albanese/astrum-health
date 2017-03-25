@@ -15,6 +15,14 @@
     }
   }
 
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: $spacing-large auto;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  }
+
   .url {
     padding: $spacing-small $spacing-medium;
     text-decoration: underline;
@@ -30,9 +38,34 @@
     h2 {
       text-align: center;
     }
+    h1 {
+      color: lighten(#3F0D4D, 10%);
+      font-size: 2.1em;
+    }
+    h2 {
+      color: lighten(#3F0D4D, 15%);
+      font-size: 1.8em;
+      margin: 10px 0;
+    }
+    @media screen and (max-width:$container-large) {
+      h1 {
+        font-size: 1.5em;
+      }
+      
+      h2 {
+        font-size: 1.4em;
+      }
+    }
     p {
       padding: $spacing-large $spacing-base;
       line-height: 1.5;
+      font-size: 1.25em;
+      
+      &.split-columns {
+        column-count: 2;
+        column-rule: 1px dotted #3F0D4D;
+        column-gap: 40px;
+      }
     }
   }
 

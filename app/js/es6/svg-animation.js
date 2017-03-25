@@ -2,8 +2,6 @@
 
 (function () {
   var animation = {
-    arr: [],
-
     cacheDom: function cacheDom() {
       this.svg = document.querySelectorAll('.astrumLogo');
       this.pathCentral = document.querySelector('.svg6');
@@ -13,9 +11,6 @@
       this.pathLeft = document.querySelector('.svg5');
       this.pathRight = document.querySelector('.svg4');
       this.burgerMenu = document.querySelector('.burger-menu');
-      for (var i = 0, index = this.svg.length; i < index; i++) {
-        this.arr.push(this.svg[i]);
-      }
       this.articles = $('.facing-the-reality__grid-article');
     },
     grabPathLength: function grabPathLength(path) {
@@ -23,8 +18,8 @@
     },
     toggleAnimation: function toggleAnimation() {
       setInterval(function () {
-        animation.arr.forEach(function (svg) {
-          svg.classList.toggle('animate');
+        [].forEach.call(animation.svg, function (svg) {
+          return svg.classList.toggle('animate');
         });
       }, 2100);
     },
@@ -45,8 +40,6 @@
       this.cacheDom();
       this.toggleAnimation();
       this.articlesAnimation();
-      // console.info(animation.grabPathLength(animation.pathCentral), '.svg6');
-      // console.info(animation.grabPathLength(animation.pathLeft), '.svg5');
       // console.info(animation.grabPathLength(animation.pathRight), '.svg4');
       // console.info(animation.grabPathLength(animation.pathCentral2), '.svg3');
       // console.info(animation.grabPathLength(animation.pathCentral3), '.svg2');

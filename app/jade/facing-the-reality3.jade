@@ -1,4 +1,4 @@
-- var production = true;
+- var production = false;
 doctype html
 html(lang="en-GB")
   head
@@ -27,12 +27,13 @@ html(lang="en-GB")
       .container 
           include partials/page-components/header-not-home.jade
         
-    section.content
+    section.content.fadeIn
       .container
         article.content__container
           h1 Cross Contamination on Hospital Surfaces and Medical Equipment
           h2 Decontamination of equipment
-          p Numerous studies have shown that frequently used medical equipment become contaminated by a variety of pathogenic and nonpathogenic organisms. Common human pathogens can survive on surfaces for prolonged periods ranging from 1.5 hours to 7 months (Arias, 2010). 
+          img.content__image(src="images/cross-contamination.jpg")
+          p.split-columns Numerous studies have shown that frequently used medical equipment become contaminated by a variety of pathogenic and nonpathogenic organisms. Common human pathogens can survive on surfaces for prolonged periods ranging from 1.5 hours to 7 months (Arias, 2010). 
           p Url: #[a.url(href="#" target="_blank") Read More]
   
     footer.footer

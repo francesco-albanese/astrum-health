@@ -315,3 +315,36 @@
     }
   }
 }
+
+.follow-us-svg {
+  transition: transform .25s ease-in-out;
+  transform: scale(1);
+  path {
+    transition: stroke-dashoffset .45s linear, fill .25s ease-in-out .25s;
+    &.linkedin-path {
+      fill: #007AAA;
+      stroke: #fff;
+      stroke-width: 7px;
+      stroke-dasharray: 3085.959716796875px;
+      stroke-dashoffset: -3085.959716796875px;
+    }
+    &.twitter-path {
+      fill: #76A9EA;
+      stroke: #fff;
+      stroke-width: 7px;
+      stroke-dasharray: 1645.4073486328125px;
+      stroke-dashoffset: -1645.4073486328125px;
+    }
+  }
+  &:hover {
+    transform: scale(1.5);
+    .linkedin-path {
+      fill: transparent;
+      stroke-dashoffset: 0px;
+    }
+    .twitter-path {
+      fill: transparent;
+      stroke-dashoffset: 0px;
+    }
+  }
+}

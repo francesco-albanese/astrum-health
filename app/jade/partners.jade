@@ -1,4 +1,4 @@
-- var production = true;
+- var production = false;
 doctype html
 html(lang="en-GB")
   head
@@ -27,14 +27,14 @@ html(lang="en-GB")
       .container 
           include partials/page-components/header-not-home.jade
         
-    section.content
+    section.content.fadeIn
       .container
         article.content__container
           section.content__logos
             img(src="images/AquaPhase-Logo.jpg") 
             img(src="images/Entrhal-Medical-Logo.jpg") 
           h1 Partners
-          p At Astrum Health, high superior infection control standards are our chief priority, which our partners fully understand and support. Astrum’s partners are manufacturers of high quality medical devices that meet international quality standards. Together, our aim is to support healthier lives, increasing efficiency whilst decreasing cost - both direct and indirect. This is attained though building value from educating, superb class service and bespoke customer relationship. 
+          p.split-columns At Astrum Health, high superior infection control standards are our chief priority, which our partners fully understand and support. Astrum’s partners are manufacturers of high quality medical devices that meet international quality standards. Together, our aim is to support healthier lives, increasing efficiency whilst decreasing cost - both direct and indirect. This is attained though building value from educating, superb class service and bespoke customer relationship. 
           
           p We maintain a close working relationship with our partners which sees customer needs and feedback appropriately fed up the supply chain. This is used to influence our continuing product development and solution provision.
   

@@ -1,6 +1,5 @@
 (() => {
   const animation = {
-    arr: [],
 
     cacheDom() {
       this.svg = document.querySelectorAll('.astrumLogo');
@@ -11,9 +10,6 @@
       this.pathLeft = document.querySelector('.svg5');
       this.pathRight = document.querySelector('.svg4');
       this.burgerMenu = document.querySelector('.burger-menu');
-      for (let i = 0, index = this.svg.length; i < index; i++) {
-        this.arr.push(this.svg[i]);
-      }
       this.articles = $('.facing-the-reality__grid-article');
     },
 
@@ -23,9 +19,7 @@
 
     toggleAnimation() {
       setInterval(() => {
-        animation.arr.forEach((svg) => {
-          svg.classList.toggle('animate');
-        });
+        [].forEach.call(animation.svg, (svg) => svg.classList.toggle('animate'));
       }, 2100);
     },
 
@@ -46,8 +40,6 @@
       this.cacheDom();
       this.toggleAnimation();
       this.articlesAnimation();
-      // console.info(animation.grabPathLength(animation.pathCentral), '.svg6');
-      // console.info(animation.grabPathLength(animation.pathLeft), '.svg5');
       // console.info(animation.grabPathLength(animation.pathRight), '.svg4');
       // console.info(animation.grabPathLength(animation.pathCentral2), '.svg3');
       // console.info(animation.grabPathLength(animation.pathCentral3), '.svg2');

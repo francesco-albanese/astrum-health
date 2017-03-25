@@ -38,10 +38,39 @@
         animation-duration: .25s;
         animation-timing-function: ease-in-out;
         animation-iteration-count: 1;
+        .content__image {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: $spacing-large auto;
+          box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+        }
+        .display-mode {
+          display: flex;
+          align-items: baseline;
+        }
         &--explore-all-models {
           justify-content: space-between;
           align-items: baseline;
           flex-wrap: wrap;
+          &.display-list {
+            .model-content {
+              flex-basis: 100%;
+              h3 {
+                margin-bottom: 0;
+              }
+              .model-content-container {
+                display: flex;
+                align-items: baseline;
+                img {
+                  width: 180px;
+                  height: auto;
+                  margin: auto;
+                  margin-right: 20px;
+                }
+              }
+            }
+          }
           .model-content {
             flex-basis: 50%;
             flex-direction: column;
@@ -78,6 +107,34 @@
         }
         p {
           margin-bottom: $spacing-small;
+          font-size: 1.25em;
+        }
+        .features-benefits {
+          background: #c5c5c5;
+          padding: $spacing-small $spacing-medium;
+          transition: all .25s ease-in-out;
+          color: #fff;
+
+          .f {
+            color: #9E1981;
+          }
+
+          .b {
+            color: #303F9F;
+          }
+
+          &:hover {
+            background: #0097A7;
+            color: #fff;
+          }
+
+          &--odd {
+            background: #607D8B;
+            &:hover {
+              background: #fff;
+              color: #607D8B;
+            }
+          }
         }
       }
     }

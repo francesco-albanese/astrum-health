@@ -1,4 +1,4 @@
-- var production = true;
+- var production = false;
 doctype html
 html(lang="en-GB")
   head
@@ -27,12 +27,13 @@ html(lang="en-GB")
       .container 
           include partials/page-components/header-not-home.jade
         
-    section.content
+    section.content.fadeIn
       .container
         article.content__container
           h1 Insulation failure in electrosurgery instrumentation
           h2 Proactive Diathermy Testing
-          p Accidental burns are a hidden problem and can lead to patient complications. In most healthcare organisations prevention currently includes only visual control of electrosurgery instrumentation, but testing campaigns are now necessary in order to identify maximum instruments’ defects. Amongst  489 electrosurgical instruments visually tested for integrity, 13.1 % were visually intact. There is the added risk from the invisible defects, and this can be reduced by diathermy testing. The DIATEG is a new-generation of insulation testers which is proven to be very effective to accurately detect defects.  
+          img.content__image(src="images/insulation-failure.jpg")
+          p.split-columns Accidental burns are a hidden problem and can lead to patient complications. In most healthcare organisations prevention currently includes only visual control of electrosurgery instrumentation, but testing campaigns are now necessary in order to identify maximum instruments’ defects. Amongst  489 electrosurgical instruments visually tested for integrity, 13.1 % were visually intact. There is the added risk from the invisible defects, and this can be reduced by diathermy testing. The DIATEG is a new-generation of insulation testers which is proven to be very effective to accurately detect defects.  
           p Url: #[a.url(href="#" target="_blank") Read More]
   
     footer.footer

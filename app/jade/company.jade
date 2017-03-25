@@ -1,4 +1,4 @@
-- var production = true;
+- var production = false;
 doctype html
 html(lang="en-GB")
   head
@@ -27,11 +27,11 @@ html(lang="en-GB")
       .container 
           include partials/page-components/header-not-home.jade
         
-    section.content
+    section.content.fadeIn
       .container
         article.content__container
           h1 Company
-          p Astrum focuses on the distribution of leading decontamination and sterilization solutions, their related consumables and servicing within healthcare markets. Driven to bring innovations to the industry, our company’s objective is to be a leader in supporting and enabling healthcare practices in emerging economies whilst attaining market share as a leading decontamination and sterilization solution supplier. Astrum provides a route to market for key solutions sourced around the world. The team has over 10 years experience within the medical, decontamination and sterilization fields with first hand experiences of working with the all our solutions within the respective industry.
+          p.split-columns Astrum focuses on the distribution of leading decontamination and sterilization solutions, their related consumables and servicing within healthcare markets. Driven to bring innovations to the industry, our company’s objective is to be a leader in supporting and enabling healthcare practices in emerging economies whilst attaining market share as a leading decontamination and sterilization solution supplier. Astrum provides a route to market for key solutions sourced around the world. The team has over 10 years experience within the medical, decontamination and sterilization fields with first hand experiences of working with the all our solutions within the respective industry.
   
     footer.footer
       section
