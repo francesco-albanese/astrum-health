@@ -41,6 +41,8 @@
 
         template: "\n            <div class=\"model-content flex\"> <h3>AQ4800PT \u2013 Bariatric</h3> <img class=\"content__image\" src=\"images/AQ4800PT.jpg\"> <p>Offering the best solution on the market to cater for your bariatric equipment. Stainless steel spray arms combined with 83 spray nozzles for improved cleaning efficiency.</p><button class=\"btn btn--view-more\" data-view-more=\"AQ4800PT\">View More</button></div><div class=\"model-content flex\"> <h3>AQ4000</h3> <img class=\"content__image\" src=\"images/AQ4000.jpg\"> <p>The ultimate solution designed to cater for hospitals and large medical equipment. Can accommodate hospital beds and similarly sized equipment. Stainless steel spray arms combined with 60 spray nozzles for improved cleaning efficiency.</p><button class=\"btn btn--view-more\" data-view-more=\"AQ4000\">View More</button></div><div class=\"model-content flex\"> <h3>AQ3000</h3> <img class=\"content__image\" src=\"images/AQ3000.jpg\"> <p>The standard washer within the AquaPhase range, maintaining the same quality-cleaning efficacy enabled by 23 wash nozzles.</p><button class=\"btn btn--view-more\" data-view-more=\"AQ3000\">View More</button></div><div class=\"model-content flex\"> <h3>AQ3500</h3> <img class=\"content__image\" src=\"images/AQ3500.jpg\"> <p>Provides a larger wash chamber within the AQ3000 range of washers. Maintains superior wash efficacy enabled by 31 wash nozzles.</p><button class=\"btn btn--view-more\" data-view-more=\"AQ3500\">View More</button></div><div class=\"model-content--universal-features\"> <h3>Universal Technical Features:</h3> <p> <ul> <li>Plug and Play\u2019 Installation</li><li>Detergent Wash, Rinse, and Disinfect cycles</li><li>Wash Cycle Time: 3, 5, or 7 Minute options</li><li>LCD Status Display</li><li>Water Temperature Monitor (Front-mounted Digital Temperature Gauge)</li><li>Door Window</li><li>Stainless Steel Chamber</li><li>Stainless Steel Oscillating Spray Arms</li><li>Dedicated Disinfection Delivery Pipework</li><li>Heavy-Duty Castor Wheels</li><li>Powerful Pump and Motor</li></ul> </p></div>\n        ",
 
+        sliderIndex: 0,
+
         chooseDisplayMode: function chooseDisplayMode(mode) {
             this.removeButtonsEventListeners();
             switch (mode) {
@@ -52,10 +54,12 @@
                 case "list":
                     this.displayList();
                     break;
+                //call the function to create the slider
                 case "slider":
-                    //call the function to create the slider
                     this.displaySlider();
+                    break;
                 default:
+                    this.displayGrid();
                     break;
             }
         },
@@ -75,6 +79,7 @@
             });
         },
         displayGrid: function displayGrid() {
+            this.exploreModelsContainer.classList.add("flex");
             this.exploreModelsContainer.innerHTML = "";
             this.exploreModelsContainer.innerHTML = this.template;
             this.exploreModelsContainer.classList.remove("display-list");
@@ -84,6 +89,7 @@
         displayList: function displayList() {
             this.exploreModelsContainer.innerHTML = "";
             this.exploreModelsContainer.innerHTML = this.template;
+            this.exploreModelsContainer.classList.add("flex");
             this.exploreModelsContainer.classList.add("display-list");
             this.exploreModelsContainer.classList.remove("display-slider");
             var allModelsContent = this.exploreModelsContainer.querySelectorAll(".model-content");
@@ -107,11 +113,105 @@
             this.bindEventsToViewMoreButtons();
         },
         displaySlider: function displaySlider() {
+            var _this2 = this;
+
             this.exploreModelsContainer.innerHTML = "";
             this.exploreModelsContainer.innerHTML = this.template;
-            this.exploreModelsContainer.classList.remove("display-list");
+            this.exploreModelsContainer.classList.remove("display-list", "flex");
             this.exploreModelsContainer.classList.add("display-slider");
+            var allModelsContent = this.exploreModelsContainer.querySelectorAll(".model-content");
+            var tabsTitleContainerWidth = document.querySelector(".tabs-title-container").getBoundingClientRect().width;
+            this.modelWidth = tabsTitleContainerWidth;
+            [].forEach.call(allModelsContent, function (modelContent) {
+                modelContent.style.width = tabsTitleContainerWidth + "px";
+            });
+
+            /* create container for all sliders and make its width equal to the length of the items */
+            var sliderWrapperContainer = document.createElement("div");
+            var modelContentContainer = document.createElement("div");
+            sliderWrapperContainer.classList.add("slider-wrapper-container");
+            modelContentContainer.classList.add("model-content-container");
+            sliderWrapperContainer.style.width = tabsTitleContainerWidth + "px";
+            modelContentContainer.style.width = tabsTitleContainerWidth * allModelsContent.length + "px";
+
+            /* make slider container available elsewhere */
+            this.sliderContainer = modelContentContainer;
+
+            /* append the content container to the DOM */
+            this.appendNodes(this.exploreModelsContainer, sliderWrapperContainer);
+            this.appendNodes(sliderWrapperContainer, modelContentContainer);
+
+            /* append all models to content container */
+            [].forEach.call(allModelsContent, function (modelContent) {
+                return _this2.appendNodes(modelContentContainer, modelContent);
+            });
+
+            /* create arrows templates */
+            var leftArrowContainer = document.createElement("div");
+            var rightArrowContainer = document.createElement("div");
+            var leftArrow = document.createElement("i");
+            var rightArrow = document.createElement("i");
+            leftArrowContainer.classList.add("arrow-container", "arrow-container--left");
+            rightArrowContainer.classList.add("arrow-container", "arrow-container--right");
+            leftArrow.classList.add("fa", "fa-angle-left", "fa-3x");
+            rightArrow.classList.add("fa", "fa-angle-right", "fa-3x");
+            leftArrowContainer.setAttribute("data-slide", "left");
+            rightArrowContainer.setAttribute("data-slide", "right");
+            this.appendNodes(leftArrowContainer, leftArrow);
+            this.appendNodes(rightArrowContainer, rightArrow);
+            this.appendNodes(sliderWrapperContainer, [leftArrowContainer, rightArrowContainer]);
+
+            this.bindClickToArrows([leftArrowContainer, rightArrowContainer]);
+
             this.bindEventsToViewMoreButtons();
+        },
+        bindClickToArrows: function bindClickToArrows(arrows) {
+            var _this3 = this;
+
+            [].forEach.call(arrows, function (arrow) {
+                arrow.addEventListener("click", _this3.slideArrow);
+            });
+        },
+        moveSlider: function moveSlider(isRight) {
+            var transformProp = function () {
+                var testEl = document.createElement('div');
+                if (testEl.style.transform == null) {
+                    var vendors = ['Webkit', 'Moz', 'ms'];
+                    for (var vendor in vendors) {
+                        if (testEl.style[vendors[vendor] + 'Transform'] !== undefined) {
+                            return vendors[vendor] + 'Transform';
+                        }
+                    }
+                }
+                return 'transform';
+            }();
+            var allModelsContentLength = displayMode.exploreModelsContainer.querySelectorAll(".model-content").length - 1;
+            var movement = 0;
+
+            if (isRight) {
+                if (displayMode.sliderIndex < allModelsContentLength) {
+                    displayMode.sliderIndex++;
+                } else {
+                    displayMode.sliderIndex = 0;
+                }
+            } else {
+                if (displayMode.sliderIndex <= 0) {
+                    displayMode.sliderIndex = allModelsContentLength;
+                } else {
+                    displayMode.sliderIndex--;
+                }
+            }
+            movement = displayMode.modelWidth * displayMode.sliderIndex * -1;
+
+            displayMode.sliderContainer.style[transformProp] = "translate3d(" + movement + "px, 0 ,0)";
+        },
+        slideArrow: function slideArrow(event) {
+            var currentArrow = event.target.getAttribute("data-slide");
+            if (currentArrow === "right") {
+                displayMode.moveSlider(true);
+            } else {
+                displayMode.moveSlider(false);
+            }
         },
         populateViewMoreModal: function populateViewMoreModal(event) {
             var currentButton = event.target;
@@ -192,11 +292,11 @@
             this.displayModeButtons = document.querySelectorAll(".display-mode .btn--display");
         },
         bindEvents: function bindEvents() {
-            var _this2 = this;
+            var _this4 = this;
 
             //attach click event to all buttons
             [].forEach.call(this.displayModeButtons, function (button) {
-                button.addEventListener("click", _this2.switchDisplayMode);
+                button.addEventListener("click", _this4.switchDisplayMode);
             });
         },
         addClassSelectedToDefaultDisplayModeButton: function addClassSelectedToDefaultDisplayModeButton() {
