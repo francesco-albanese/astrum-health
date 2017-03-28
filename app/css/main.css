@@ -825,6 +825,16 @@ p {
       background: #ddd;
       color: #6a6a6a;
       border: 1px solid rgba(0, 0, 0, 0.5); }
+  .btn--view-more {
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    font-size: 1em;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+            align-self: center; }
 
 .back-to-top {
   background: #AB35CA;
@@ -912,15 +922,19 @@ p {
     .content .content__container h1 {
       color: #631479;
       font-size: 2.1em; }
+      @media screen and (max-width: 58.75em) {
+        .content .content__container h1 {
+          font-size: 1.5em; } }
     .content .content__container h2 {
       color: #75188e;
       font-size: 1.8em;
       margin: 10px 0; }
-    @media screen and (max-width: 58.75em) {
-      .content .content__container h1 {
-        font-size: 1.5em; }
-      .content .content__container h2 {
-        font-size: 1.4em; } }
+      @media screen and (max-width: 58.75em) {
+        .content .content__container h2 {
+          font-size: 1.4em; } }
+      @media screen and (max-width: 30em) {
+        .content .content__container h2 {
+          font-size: .95em; } }
     .content .content__container p {
       padding: 30px 15px;
       line-height: 1.5;
@@ -935,6 +949,12 @@ p {
         -webkit-column-gap: 40px;
            -moz-column-gap: 40px;
                 column-gap: 40px; }
+        @media screen and (max-width: 30em) {
+          .content .content__container p.split-columns {
+            -webkit-column-count: 1;
+               -moz-column-count: 1;
+                    column-count: 1;
+            font-size: 1em; } }
 
 /*
     Flaticon icon font: Flaticon
@@ -1682,12 +1702,14 @@ form {
             display: -ms-inline-flexbox;
             display: inline-flex; }
           .tabs .tab.is-visible .tab__content--explore-all-models .model-content {
-            -webkit-flex-basis: 50%;
-                -ms-flex-preferred-size: 50%;
-                    flex-basis: 50%;
+            -webkit-flex-basis: 45%;
+                -ms-flex-preferred-size: 45%;
+                    flex-basis: 45%;
             -webkit-flex-direction: column;
                 -ms-flex-direction: column;
-                    flex-direction: column; }
+                    flex-direction: column;
+            height: 675px;
+            margin-bottom: 15px; }
             @media screen and (max-width: 48em) {
               .tabs .tab.is-visible .tab__content--explore-all-models .model-content {
                 -webkit-flex-basis: 100%;
@@ -1695,7 +1717,8 @@ form {
                         flex-basis: 100%;
                 -webkit-align-items: center;
                     -ms-flex-align: center;
-                        align-items: center; } }
+                        align-items: center;
+                height: auto; } }
             .tabs .tab.is-visible .tab__content--explore-all-models .model-content h3 {
               margin-bottom: 30px;
               margin-top: 20px; }
@@ -1705,6 +1728,10 @@ form {
             .tabs .tab.is-visible .tab__content--explore-all-models .model-content img {
               width: 400px;
               height: 325px; }
+              @media screen and (max-width: 30em) {
+                .tabs .tab.is-visible .tab__content--explore-all-models .model-content img {
+                  width: 270px;
+                  height: 270px; } }
             .tabs .tab.is-visible .tab__content--explore-all-models .model-content ul {
               list-style-type: disc;
               margin-left: 20px; }
@@ -1726,7 +1753,14 @@ form {
                 margin-left: 20px; }
         .tabs .tab.is-visible .tab__content p {
           margin-bottom: 10px;
-          font-size: 1.25em; }
+          font-size: 1.25em;
+          -webkit-flex: 1;
+              -ms-flex: 1;
+                  flex: 1;
+          text-align: justify; }
+          @media screen and (max-width: 30em) {
+            .tabs .tab.is-visible .tab__content p {
+              font-size: .938em; } }
         .tabs .tab.is-visible .tab__content .features-benefits {
           background: #c5c5c5;
           padding: 10px 20px;

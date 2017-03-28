@@ -41,21 +41,22 @@
     h1 {
       color: lighten(#3F0D4D, 10%);
       font-size: 2.1em;
+      @media screen and (max-width:$container-large) {
+        font-size: 1.5em;
+      }
     }
     h2 {
       color: lighten(#3F0D4D, 15%);
       font-size: 1.8em;
       margin: 10px 0;
-    }
-    @media screen and (max-width:$container-large) {
-      h1 {
-        font-size: 1.5em;
-      }
-      
-      h2 {
+      @media screen and (max-width:$container-large) {
         font-size: 1.4em;
       }
+      @media screen and (max-width: $container-small) {
+        font-size: .95em;
+      }
     }
+    
     p {
       padding: $spacing-large $spacing-base;
       line-height: 1.5;
@@ -65,6 +66,10 @@
         column-count: 2;
         column-rule: 1px dotted #3F0D4D;
         column-gap: 40px;
+        @media screen and (max-width: $container-small) {
+          column-count: 1;
+          font-size: 1em;
+        }
       }
     }
   }

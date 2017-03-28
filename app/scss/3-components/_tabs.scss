@@ -121,11 +121,14 @@
             }
           }
           .model-content {
-            flex-basis: 50%;
+            flex-basis: 45%;
             flex-direction: column;
+            height: 675px;
+            margin-bottom: $spacing-base;
             @media screen and (max-width: $container-medium) {
               flex-basis: 100%;
               align-items: center;
+              height: auto;
             }
             h3 {
               margin-bottom: $spacing-large;
@@ -137,6 +140,10 @@
             img {
               width: 400px;
               height: 325px;
+              @media screen and (max-width: $container-small) {
+                width: 270px;
+                height: 270px;
+              }
             }
             ul {
               list-style-type: disc;
@@ -157,6 +164,11 @@
         p {
           margin-bottom: $spacing-small;
           font-size: 1.25em;
+          flex: 1;
+          text-align: justify;
+          @media screen and (max-width: $container-small) {
+            font-size: .938em;
+          }
         }
         .features-benefits {
           background: #c5c5c5;

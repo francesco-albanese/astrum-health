@@ -164,6 +164,16 @@
             this.bindClickToArrows([leftArrowContainer, rightArrowContainer]);
 
             this.bindEventsToViewMoreButtons();
+
+            window.addEventListener("resize", function () {
+                tabsTitleContainerWidth = document.querySelector(".tabs-title-container").getBoundingClientRect().width;
+                _this2.modelWidth = tabsTitleContainerWidth;
+                [].forEach.call(allModelsContent, function (modelContent) {
+                    modelContent.style.width = tabsTitleContainerWidth + "px";
+                });
+                sliderWrapperContainer.style.width = tabsTitleContainerWidth + "px";
+                modelContentContainer.style.width = tabsTitleContainerWidth * allModelsContent.length + "px";
+            });
         },
         bindClickToArrows: function bindClickToArrows(arrows) {
             var _this3 = this;

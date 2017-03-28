@@ -132,8 +132,8 @@
             });
 
             /* create container for all sliders and make its width equal to the length of the items */
-            const sliderWrapperContainer = document.createElement(`div`);
-            const modelContentContainer = document.createElement(`div`);
+            let sliderWrapperContainer = document.createElement(`div`);
+            let modelContentContainer = document.createElement(`div`);
             sliderWrapperContainer.classList.add(`slider-wrapper-container`);
             modelContentContainer.classList.add(`model-content-container`);
             sliderWrapperContainer.style.width = `${tabsTitleContainerWidth}px`;
@@ -167,6 +167,16 @@
             this.bindClickToArrows([leftArrowContainer, rightArrowContainer]);
 
             this.bindEventsToViewMoreButtons();
+
+            window.addEventListener(`resize`, () => {
+                tabsTitleContainerWidth = document.querySelector(`.tabs-title-container`).getBoundingClientRect().width;
+                this.modelWidth = tabsTitleContainerWidth;
+                [].forEach.call(allModelsContent, (modelContent) => {
+                    modelContent.style.width = `${tabsTitleContainerWidth}px`;
+                });
+                sliderWrapperContainer.style.width = `${tabsTitleContainerWidth}px`;
+                modelContentContainer.style.width = `${tabsTitleContainerWidth * allModelsContent.length}px`;
+            })
         },
 
         bindClickToArrows(arrows) {
