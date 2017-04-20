@@ -1,0 +1,39 @@
+.modal-container-outer {
+    @extend .footer__top-contact-us;
+    .modal-container-inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-height: 100%;
+        overflow-y: scroll;
+        color: $silver;
+        background-color: $testimonials-bg;
+        padding: $spacing-medium;
+        .modal-dismiss {
+            @extend .contact-us__close;
+            position: absolute;
+            top: -5px;
+            left: 5px;
+            @media screen and (max-width: 375px) {
+                font-size: 2em;
+            }
+        }
+        h3 {
+            text-align: center;
+        }
+        img {
+            max-width: 200px;
+            height: 200px;
+            margin: $spacing-base auto;
+        }
+        .modal-universal-features,
+        p {
+            margin: $spacing-medium 0;
+        }
+
+        li {
+            list-style-type: lower-latin;
+            list-style-position: inside;
+        }
+    }
+}

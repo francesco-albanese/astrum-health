@@ -22,19 +22,34 @@ html(lang="en-GB")
       <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
     
-  body(id="top", class="facing-the-reality")
+  body(id="top", class="solutions")
     section.header--not-home
       .container 
           include partials/page-components/header-not-home.jade
         
-    section.content.fadeIn
-      .container
-        article.content__container
-          h1 The Impact of Hospital Furniture in Infection Control
-          h2 The Enemy In the Unseen
-          img.content__image(src="images/hospital-furniture.jpg")
-          p.split-columns A fresh perspective about how the role furniture can be on the harboring of microorganisms and the importance of the ease of cleaning and disinfection has begun to emerge. Most HAIs are transmitted through contact with pathogens transferred from reservoirs on hand-touch sites found on high-risk objects including inpatient room chairs. This study used plating techniques commonly used in laboratories around the world and established that use of a cleaning and disinfecting wipe had been able to remove 58.08% of the microorganisms from the healthcare grade vinyl surface, equivalent to a 0.4 log reduction.
-          p Url: #[a.url(href="http://healthcentric.com/wp-content/uploads/downloads/2014/09/healtHcentric_InfectionControl_web.pdf" target="_blank") The impact furniture and IC+ can have on infection control]
+    section#solutions.solutions-section
+        .container
+            .grid.flex.flex--center
+                article
+                    .article__image
+                        img(src="images/AQ4.jpg")
+                        a.btn(href="aquaphase-washer-disinfector.html") Read More
+                    p Washer disinfectors for healthcare. Enter a world of superior washer disinfecting efficacy - best in class
+                article
+                    .article__image
+                        img(src="images/sterile-services.png")
+                        a.btn(href="#") Read More
+                    p Uncompromising quality solutions for sterile services that promote patient care and safety
+                article
+                    .article__image
+                        img(src="images/diathermy.jpg")
+                        a.btn(href="#") Read More
+                    p Insulation testing for diathermy instruments.
+                article
+                    .article__image
+                        img(src="images/service-support.jpg")
+                        a.btn(href="#") Read More
+                    p Understanding and supporting our customer needs - Service is our most valuable product.
   
     footer.footer
       section

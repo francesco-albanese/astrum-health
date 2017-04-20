@@ -1,6 +1,7 @@
 /node_modules
 /Mockup
 app/components
+/.vscode
 bower.json
 yarn.lock
 

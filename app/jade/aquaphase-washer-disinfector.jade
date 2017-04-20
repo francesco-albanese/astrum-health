@@ -1,4 +1,4 @@
-- var production = false;
+- var production = true;
 doctype html
 html(lang="en-GB")
   head
@@ -231,24 +231,27 @@ html(lang="en-GB")
                 //-       li Powerful Pump and Motor
           .tab
             .tab__content
-              h3 Chemicals
-              p We supply chemicals for use with your AQ that have proven efficacy against infection control challenges such as bacteria, funguses, and viruses. These offer cleaning and disinfection efficiency as well as cost effectiveness against use of thermal disinfection and through automated and quantifiable chemical dosage that greatly reduces chemical lose.
+              .chemicals
+                h3 Chemicals
+                p We supply chemicals for use with your AQ that have proven efficacy against infection control challenges such as bacteria, funguses, and viruses. These offer cleaning and disinfection efficiency as well as cost effectiveness against use of thermal disinfection and through automated and quantifiable chemical dosage that greatly reduces chemical lose.
 
-              h4 Descaler (AQ223)
-              p Volume – 5L bottles
-              p Prevents the build up of lime scale within the wash chamber and pipework. 
-
-              h4 Detergent (AQ243)
-              p Volume – 5L bottles
-              p Effective against a broad spectrum of microorganisms and soil related protein. 
-
-              h4 Rinse Aid (AQ263)
-              p Volume – 5L bottles
-              p Aids in preventing rusting of the washer chamber and pipework, as well as acting as a surfactant that aids quicker drying of washed equipment. 
-
-              h4 Disinfectant (AQ283)
-              p Volume – 5L bottles
-              p Proven to be effective against a broad spectrum of microorganisms.              
+                .chemicals-content-container
+                  .chemicals-content
+                    h4 Descaler (AQ223)
+                    p Volume – 5L bottles
+                    p Prevents the build up of lime scale within the wash chamber and pipework. 
+                  .chemicals-content
+                    h4 Detergent (AQ243)
+                    p Volume – 5L bottles
+                    p Effective against a broad spectrum of microorganisms and soil related protein. 
+                  .chemicals-content
+                    h4 Rinse Aid (AQ263)
+                    p Volume – 5L bottles
+                    p Aids in preventing rusting of the washer chamber and pipework, as well as acting as a surfactant that aids quicker drying of washed equipment. 
+                  .chemicals-content
+                    h4 Disinfectant (AQ283)
+                    p Volume – 5L bottles
+                    p Proven to be effective against a broad spectrum of microorganisms.              
   
     footer.footer
       section
@@ -317,18 +320,19 @@ html(lang="en-GB")
           li
             a.follow-us(href="#") follow us
           li 
-            a(href="#solutions") solutions
+            a(href="solutions.html") solutions
           li 
-            a(href="#resources") resources
+            a(href="facing-the-reality.html") resources
           li 
-            a(href="#testimonials") testimonials
+            a(href="testimonials.html") testimonials
           li 
             a(href="#contact-us") contact us
     
     - if (production === false)          
-      script(src="js/es6/navbar.js", charset="utf-8")            
-      script(src="js/es6/svg-animation.js", charset="utf-8")
-      script(src="js/es6/tabs.js", charset="utf-8")
-      script(src="js/es6/displaymode.js", charset="utf-8")
+      script(src="js/es6/navbar.js")            
+      script(src="js/es6/svg-animation.js")
+      script(src="js/es6/tabs.js")
+      script(src="js/es6/displaymode.js")
     -  else 
       script(src="js/bundle.js")
+      script(src="js/displaymode.min.js")

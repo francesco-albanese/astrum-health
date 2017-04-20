@@ -125,7 +125,7 @@ module.exports = function(grunt) {
 
         clean:  {
           cleanDist: ['dist'],
-          cleanJS: ['dist/js/**.js', '!dist/js/bundle.js']
+          cleanJS: ['dist/js/**.js', '!dist/js/bundle.js', '!dist/js/displaymode.min.js']
         }, // end clean
 
         copy: {
@@ -142,7 +142,7 @@ module.exports = function(grunt) {
             separator: ';',
           },
           dist: {
-            src: ['./dist/js/**.js'],
+            src: ['./dist/js/**.js', '!./dist/js/displaymode.min.js'],
             dest: 'dist/js/bundle.js',
           },
         }, // end concat
@@ -179,7 +179,7 @@ module.exports = function(grunt) {
                 tasks: ['sass', 'postcss:build', 'postcss:minify']
             },
             babel: {
-              files: '.app/js/es6/*.es6',
+              files: '.app/js/**/*.es6',
               tasks: ['babel']
             },
             scripts: {
