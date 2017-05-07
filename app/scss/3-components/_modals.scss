@@ -43,6 +43,7 @@
         }
         .modal-container-call-to-action {
             padding-bottom: $spacing-large;
+            height: 20px;
             @media screen and (max-width: 499px) {
                 font-size: .65em;
             }

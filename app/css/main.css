@@ -1883,7 +1883,8 @@ form {
       height: auto;
       cursor: -webkit-zoom-out; }
   .modal-container-outer .modal-container-inner .modal-container-call-to-action {
-    padding-bottom: 30px; }
+    padding-bottom: 30px;
+    height: 20px; }
     @media screen and (max-width: 499px) {
       .modal-container-outer .modal-container-inner .modal-container-call-to-action {
         font-size: .65em; } }
