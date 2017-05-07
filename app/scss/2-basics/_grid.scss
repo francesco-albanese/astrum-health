@@ -56,10 +56,12 @@ $container-small: 30.000em; //480px
     .article__image {
       position: relative;
       overflow: hidden;
+      max-width: 300px;
+      margin: 0 auto;
 
       img {
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
         box-shadow: 0px 0px 10px 0px rgba($black, .7);
         transition: all .25s ease-in-out;
         margin: 0 auto;

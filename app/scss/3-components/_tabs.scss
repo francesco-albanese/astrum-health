@@ -36,6 +36,10 @@
         animation-duration: .25s;
         animation-timing-function: ease-in-out;
         animation-iteration-count: 1;
+        .find-out-more {
+          margin-top: $spacing-large;
+          margin-bottom: $spacing-large;
+        }
         .content__image {
           display: flex;
           justify-content: center;
@@ -203,17 +207,14 @@
           p {
             margin: $spacing-base 0;
           }
-
           @media screen and (max-width:$container-small) {
             h3 {
               font-size: 2.5em;
             }
-
             h4 {
               font-size: 1.5em;
             }
           }
-
           .chemicals-content-container {
             display: flex;
             flex-wrap: wrap;

@@ -4,6 +4,7 @@ app/components
 /.vscode
 bower.json
 yarn.lock
+.vscode
 
 ### OSX ###
 .DS_Store

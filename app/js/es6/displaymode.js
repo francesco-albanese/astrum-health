@@ -38,6 +38,21 @@
 
         sliderIndex: 0,
 
+        scrollPosition: 0,
+
+        transformProp: function () {
+            var testEl = document.createElement('div');
+            if (testEl.style.transform == null) {
+                var vendors = ['Webkit', 'Moz', 'ms'];
+                for (var vendor in vendors) {
+                    if (testEl.style[vendors[vendor] + 'Transform'] !== undefined) {
+                        return vendors[vendor] + 'Transform';
+                    }
+                }
+            }
+            return 'transform';
+        }(),
+
         chooseDisplayMode: function chooseDisplayMode(mode) {
             this.removeButtonsEventListeners();
             switch (mode) {
@@ -70,6 +85,7 @@
             this.viewMoreButtons = document.querySelectorAll(".model-content .btn--view-more");
             /* Remember to remove the event listeners!!!!! */
             [].forEach.call(this.viewMoreButtons, function (viewMoreButton) {
+                viewMoreButton.addEventListener("click", _this.setScrollPosition);
                 viewMoreButton.addEventListener("click", _this.populateViewMoreModal);
             });
         },
@@ -162,7 +178,7 @@
 
             this.bindEventsToViewMoreButtons();
 
-            window.addEventListener("resize", function () {
+            $(window).on('resize orientationchange', function () {
                 tabsTitleContainerWidth = document.querySelector(".tabs-title-container").getBoundingClientRect().width;
                 _this2.modelWidth = tabsTitleContainerWidth;
                 [].forEach.call(allModelsContent, function (modelContent) {
@@ -170,6 +186,8 @@
                 });
                 sliderWrapperContainer.style.width = tabsTitleContainerWidth + "px";
                 modelContentContainer.style.width = tabsTitleContainerWidth * allModelsContent.length + "px";
+                var movement = displayMode.modelWidth * displayMode.sliderIndex * -1;
+                displayMode.sliderContainer.style[displayMode.transformProp] = "translate3d(" + movement + "px, 0 ,0)";
             });
         },
         bindClickToArrows: function bindClickToArrows(arrows) {
@@ -179,19 +197,10 @@
                 arrow.addEventListener("click", _this3.slideArrow);
             });
         },
+        setScrollPosition: function setScrollPosition() {
+            displayMode.scrollPosition = $(displayMode.window).scrollTop();
+        },
         moveSlider: function moveSlider(isRight) {
-            var transformProp = function () {
-                var testEl = document.createElement('div');
-                if (testEl.style.transform == null) {
-                    var vendors = ['Webkit', 'Moz', 'ms'];
-                    for (var vendor in vendors) {
-                        if (testEl.style[vendors[vendor] + 'Transform'] !== undefined) {
-                            return vendors[vendor] + 'Transform';
-                        }
-                    }
-                }
-                return 'transform';
-            }();
             var allModelsContentLength = displayMode.exploreModelsContainer.querySelectorAll(".model-content").length - 1;
             var movement = 0;
 
@@ -210,7 +219,7 @@
             }
             movement = displayMode.modelWidth * displayMode.sliderIndex * -1;
 
-            displayMode.sliderContainer.style[transformProp] = "translate3d(" + movement + "px, 0 ,0)";
+            displayMode.sliderContainer.style[displayMode.transformProp] = "translate3d(" + movement + "px, 0 ,0)";
         },
         slideArrow: function slideArrow(event) {
             var currentArrow = event.target.getAttribute("data-slide");
@@ -225,6 +234,9 @@
             var currentDataViewMore = currentButton.getAttribute("data-view-more");
             displayMode.initModal(currentDataViewMore);
         },
+        getBackToScrollPosition: function getBackToScrollPosition() {
+            $(displayMode.window).scrollTop(displayMode.scrollPosition);
+        },
         initModal: function initModal(modelNumber) {
             /* create containers */
             var modalContainerOuter = document.createElement("div");
@@ -234,6 +246,11 @@
             var modalImage = document.createElement("img");
             var modalFeatures = document.createElement("div");
             var modalUniversalFeatures = document.createElement("div");
+            var callToAction = document.createElement("button");
+
+            /* make elements available in the module */
+            this.modalImage = modalImage;
+            this.modalContainerOuter = modalContainerOuter;
 
             /* assign classes */
             modalContainerOuter.classList.add("modal-container-outer");
@@ -241,18 +258,32 @@
             modalDismiss.classList.add("modal-dismiss");
             modalFeatures.classList.add("modal-features");
             modalUniversalFeatures.classList.add("modal-universal-features");
+            callToAction.classList.add("btn", "btn--view-more", "modal-container-call-to-action");
 
             /* fill containers with content */
-            modalDismiss.innerHTML = "&times;";
             modalTitle.innerHTML = this.models[modelNumber].title;
             modalImage.src = this.models[modelNumber].imageSrc;
             modalFeatures.innerHTML = this.models[modelNumber].technicalFeatures;
             modalUniversalFeatures.innerHTML = this.models[modelNumber].universalFeatures;
+            callToAction.innerHTML = "<span><i class=\"fa fa-envelope-o\"></i> Contact us for more information</span>";
 
             /* append elements to DOM */
-            this.appendNodes(modalContainerInner, [modalTitle, modalDismiss, modalImage, modalFeatures, modalUniversalFeatures]);
-            this.appendNodes(modalContainerOuter, modalContainerInner);
+            this.appendNodes(modalContainerInner, [modalTitle, modalImage, callToAction, modalFeatures, modalUniversalFeatures]);
+            this.appendNodes(modalContainerOuter, [modalContainerInner, modalDismiss]);
             this.appendNodes(document.body, modalContainerOuter);
+
+            /* positioning modalDismiss correctly */
+            modalDismiss.style.top = modalContainerInner.offsetTop + "px";
+            modalDismiss.style.left = modalContainerInner.offsetLeft + "px";
+            $(window).on('resize orientationchange', function () {
+                if (modalDismiss && modalContainerInner) {
+                    modalDismiss.style.top = modalContainerInner.offsetTop + "px";
+                    modalDismiss.style.left = modalContainerInner.offsetLeft + "px";
+                }
+            });
+
+            /* trigger contact us modal on call to action click */
+            $(callToAction).on('click', displayMode.openForm);
 
             /* add animations */
             this.body.classList.add("no-scroll");
@@ -264,23 +295,44 @@
             }, 2000);
 
             /* dismiss modal */
-            modalDismiss.addEventListener("click", function () {
-                modalContainerOuter.parentNode.removeChild(modalContainerOuter);
-                document.removeEventListener("keydown", addListener);
-                displayMode.body.classList.remove("no-scroll");
-                modalContainerOuter.classList.remove("is-visible");
-            });
+            modalDismiss.addEventListener("click", displayMode.dismissModal);
 
-            document.addEventListener("keydown", addListener);
+            document.addEventListener("keydown", displayMode.addListener);
 
-            function addListener(event) {
-                if (event.keyCode == 27 && modalContainerOuter) {
-                    modalContainerOuter.parentNode.removeChild(modalContainerOuter);
-                    document.removeEventListener("keydown", addListener);
-                    modalContainerOuter.classList.remove("is-visible");
-                    displayMode.body.classList.remove("no-scroll");
-                }
+            /* toggle class zoomed on image click */
+
+            modalImage.addEventListener("click", displayMode.zoomed);
+        },
+        dismissModal: function dismissModal() {
+            displayMode.modalImage.removeEventListener("click", displayMode.zoomed);
+            displayMode.modalContainerOuter.parentNode.removeChild(displayMode.modalContainerOuter);
+            document.removeEventListener("keydown", displayMode.addListener);
+            displayMode.body.classList.remove("no-scroll");
+            displayMode.modalContainerOuter.classList.remove("is-visible");
+            displayMode.getBackToScrollPosition();
+        },
+        zoomed: function zoomed() {
+            displayMode.modalImage.classList.toggle("zoomed");
+        },
+        addListener: function addListener(event) {
+            if (event.keyCode == 27 && displayMode.modalContainerOuter) {
+                displayMode.dismissModal();
             }
+        },
+        openForm: function openForm() {
+            displayMode.dismissModal();
+            displayMode.contactForm.addClass('is-visible');
+            $(displayMode.body).addClass('no-scroll');
+            displayMode.form.removeClass('opacity');
+            displayMode.form.addClass('bounceInLeft');
+            setTimeout(function () {
+                displayMode.form.removeClass('bounceInLeft');
+            }, 2000);
+        },
+        closeContactForm: function closeContactForm() {
+            displayMode.contactForm.removeClass('is-visible');
+            $(displayMode.body).removeClass('no-scroll');
+            displayMode.getBackToScrollPosition();
         },
         appendNodes: function appendNodes(container, listOfNodes) {
             if (Object.prototype.toString.call(listOfNodes) !== "[object Array]") listOfNodes = [listOfNodes];
@@ -313,6 +365,10 @@
             this.exploreModelsContainer = document.querySelector(".tab__content--explore-all-models");
             this.displayModeButtons = document.querySelectorAll(".display-mode .btn--display");
             this.body = document.body || window.document.body;
+            this.window = window;
+            this.contactForm = $(this.body).find('.footer__top-contact-us');
+            this.closeForm = this.contactForm.find('.contact-us__close');
+            this.form = this.contactForm.find('form');
         },
         bindEvents: function bindEvents() {
             var _this4 = this;

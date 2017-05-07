@@ -35,22 +35,37 @@
 
         template: `
             <div class="model-content flex"> <h3>AQ4800PT – Bariatric</h3> <img class="content__image" src="images/AQ4800PT.jpg"> <p>Offering the best solution on the market to cater for your bariatric equipment. Stainless steel spray arms combined with 83 spray nozzles for improved cleaning efficiency.</p><button class="btn btn--view-more" data-view-more="AQ4800PT">View More</button></div><div class="model-content flex"> <h3>AQ4000</h3> <img class="content__image" src="images/AQ4000.jpg"> <p>The ultimate solution designed to cater for hospitals and large medical equipment. Can accommodate hospital beds and similarly sized equipment. Stainless steel spray arms combined with 60 spray nozzles for improved cleaning efficiency.</p><button class="btn btn--view-more" data-view-more="AQ4000">View More</button></div><div class="model-content flex"> <h3>AQ3000</h3> <img class="content__image" src="images/AQ3000.jpg"> <p>The standard washer within the AquaPhase range, maintaining the same quality-cleaning efficacy enabled by 23 wash nozzles.</p><button class="btn btn--view-more" data-view-more="AQ3000">View More</button></div><div class="model-content flex"> <h3>AQ3500</h3> <img class="content__image" src="images/AQ3500.jpg"> <p>Provides a larger wash chamber within the AQ3000 range of washers. Maintains superior wash efficacy enabled by 31 wash nozzles.</p><button class="btn btn--view-more" data-view-more="AQ3500">View More</button></div>
-        `, 
+        `,
 
         sliderIndex: 0,
 
+        scrollPosition: 0,
+
+        transformProp: (function () {
+            let testEl = document.createElement('div');
+            if (testEl.style.transform == null) {
+                let vendors = ['Webkit', 'Moz', 'ms'];
+                for (let vendor in vendors) {
+                    if (testEl.style[vendors[vendor] + 'Transform'] !== undefined) {
+                        return vendors[vendor] + 'Transform';
+                    }
+                }
+            }
+            return 'transform';
+        })(),
+
         chooseDisplayMode(mode) {
             this.removeButtonsEventListeners();
-            switch(mode) {
+            switch (mode) {
                 //call the function to create the grid
                 case `grid`:
                     this.displayGrid();
                     break;
-                //call the function to create the list
+                    //call the function to create the list
                 case `list`:
                     this.displayList();
                     break;
-                //call the function to create the slider
+                    //call the function to create the slider
                 case `slider`:
                     this.displaySlider();
                     break;
@@ -71,6 +86,7 @@
             this.viewMoreButtons = document.querySelectorAll(`.model-content .btn--view-more`);
             /* Remember to remove the event listeners!!!!! */
             [].forEach.call(this.viewMoreButtons, (viewMoreButton) => {
+                viewMoreButton.addEventListener(`click`, this.setScrollPosition);
                 viewMoreButton.addEventListener(`click`, this.populateViewMoreModal);
             });
         },
@@ -111,7 +127,7 @@
             this.bindEventsToViewMoreButtons();
         },
 
-        displaySlider() { 
+        displaySlider() {
             this.exploreModelsContainer.innerHTML = ``;
             this.exploreModelsContainer.innerHTML = this.template;
             this.exploreModelsContainer.classList.remove(`display-list`, `flex`);
@@ -149,7 +165,7 @@
             const leftArrow = document.createElement(`i`);
             const rightArrow = document.createElement(`i`);
             leftArrowContainer.classList.add(`arrow-container`, `arrow-container--left`);
-            rightArrowContainer.classList.add(`arrow-container`, `arrow-container--right`);            
+            rightArrowContainer.classList.add(`arrow-container`, `arrow-container--right`);
             leftArrow.classList.add(`fa`, `fa-angle-left`, `fa-3x`);
             rightArrow.classList.add(`fa`, `fa-angle-right`, `fa-3x`);
             leftArrowContainer.setAttribute(`data-slide`, `left`);
@@ -162,7 +178,7 @@
 
             this.bindEventsToViewMoreButtons();
 
-            window.addEventListener(`resize`, () => {
+            $(window).on('resize orientationchange', () => {
                 tabsTitleContainerWidth = document.querySelector(`.tabs-title-container`).getBoundingClientRect().width;
                 this.modelWidth = tabsTitleContainerWidth;
                 [].forEach.call(allModelsContent, (modelContent) => {
@@ -170,7 +186,9 @@
                 });
                 sliderWrapperContainer.style.width = `${tabsTitleContainerWidth}px`;
                 modelContentContainer.style.width = `${tabsTitleContainerWidth * allModelsContent.length}px`;
-            });
+                let movement = (displayMode.modelWidth * displayMode.sliderIndex) * -1;
+                displayMode.sliderContainer.style[displayMode.transformProp] = `translate3d(${movement}px, 0 ,0)`;
+            })
         },
 
         bindClickToArrows(arrows) {
@@ -179,19 +197,11 @@
             });
         },
 
+        setScrollPosition() {
+            displayMode.scrollPosition = $(displayMode.window).scrollTop();
+        },
+
         moveSlider(isRight) {
-            let transformProp = (function(){
-                let testEl = document.createElement('div');
-                if (testEl.style.transform == null) {
-                    let vendors = ['Webkit', 'Moz', 'ms'];
-                    for (let vendor in vendors) {
-                        if (testEl.style[vendors[vendor] + 'Transform'] !== undefined) {
-                            return vendors[vendor] + 'Transform';
-                        }
-                    }
-                }
-                return 'transform';
-            })();
             let allModelsContentLength = displayMode.exploreModelsContainer.querySelectorAll(`.model-content`).length - 1;
             let movement = 0;
 
@@ -210,13 +220,13 @@
             }
             movement = (displayMode.modelWidth * displayMode.sliderIndex) * -1;
 
-            displayMode.sliderContainer.style[transformProp] = `translate3d(${movement}px, 0 ,0)`;
+            displayMode.sliderContainer.style[displayMode.transformProp] = `translate3d(${movement}px, 0 ,0)`;
 
         },
 
         slideArrow(event) {
             let currentArrow = event.target.getAttribute(`data-slide`);
-            if(currentArrow === `right`) {
+            if (currentArrow === `right`) {
                 displayMode.moveSlider(true);
             } else {
                 displayMode.moveSlider(false);
@@ -229,6 +239,10 @@
             displayMode.initModal(currentDataViewMore);
         },
 
+        getBackToScrollPosition() {
+            $(displayMode.window).scrollTop(displayMode.scrollPosition);
+        },
+
         initModal(modelNumber) {
             /* create containers */
             const modalContainerOuter = document.createElement(`div`);
@@ -238,6 +252,11 @@
             const modalImage = document.createElement(`img`);
             const modalFeatures = document.createElement(`div`);
             const modalUniversalFeatures = document.createElement(`div`);
+            const callToAction = document.createElement(`button`);
+
+            /* make elements available in the module */
+            this.modalImage = modalImage;
+            this.modalContainerOuter = modalContainerOuter;
 
             /* assign classes */
             modalContainerOuter.classList.add(`modal-container-outer`);
@@ -245,19 +264,32 @@
             modalDismiss.classList.add(`modal-dismiss`);
             modalFeatures.classList.add(`modal-features`);
             modalUniversalFeatures.classList.add(`modal-universal-features`);
+            callToAction.classList.add(`btn`, `btn--view-more`, `modal-container-call-to-action`);
 
             /* fill containers with content */
-            modalDismiss.innerHTML = `&times;`;
             modalTitle.innerHTML = this.models[modelNumber].title;
             modalImage.src = this.models[modelNumber].imageSrc;
             modalFeatures.innerHTML = this.models[modelNumber].technicalFeatures;
             modalUniversalFeatures.innerHTML = this.models[modelNumber].universalFeatures;
+            callToAction.innerHTML = `<span><i class="fa fa-envelope-o"></i> Contact us for more information</span>`;
 
             /* append elements to DOM */
-            this.appendNodes(modalContainerInner, [modalTitle, modalDismiss, modalImage, modalFeatures, modalUniversalFeatures]);
-            this.appendNodes(modalContainerOuter, modalContainerInner);
+            this.appendNodes(modalContainerInner, [modalTitle, modalImage, callToAction, modalFeatures, modalUniversalFeatures]);
+            this.appendNodes(modalContainerOuter, [modalContainerInner, modalDismiss]);
             this.appendNodes(document.body, modalContainerOuter);
 
+            /* positioning modalDismiss correctly */
+            modalDismiss.style.top = `${modalContainerInner.offsetTop}px`;
+            modalDismiss.style.left = `${modalContainerInner.offsetLeft}px`;
+            $(window).on('resize orientationchange', () => {
+                if (modalDismiss && modalContainerInner) {
+                    modalDismiss.style.top = `${modalContainerInner.offsetTop}px`;
+                    modalDismiss.style.left = `${modalContainerInner.offsetLeft}px`;
+                }
+            });
+
+            /* trigger contact us modal on call to action click */
+            $(callToAction).on('click', displayMode.openForm);
 
             /* add animations */
             this.body.classList.add(`no-scroll`);
@@ -269,23 +301,49 @@
             }, 2000);
 
             /* dismiss modal */
-            modalDismiss.addEventListener(`click`, function () {
-                modalContainerOuter.parentNode.removeChild(modalContainerOuter);
-                document.removeEventListener(`keydown`, addListener);
-                displayMode.body.classList.remove(`no-scroll`);
-                modalContainerOuter.classList.remove(`is-visible`);
-            });
+            modalDismiss.addEventListener(`click`, displayMode.dismissModal);
 
-            document.addEventListener(`keydown`, addListener);
+            document.addEventListener(`keydown`, displayMode.addListener);
 
-            function addListener(event) {
-                if (event.keyCode == 27 && modalContainerOuter) {
-                    modalContainerOuter.parentNode.removeChild(modalContainerOuter);
-                    document.removeEventListener(`keydown`, addListener);
-                    modalContainerOuter.classList.remove(`is-visible`);
-                    displayMode.body.classList.remove(`no-scroll`);
-                }
+            /* toggle class zoomed on image click */
+
+            modalImage.addEventListener(`click`, displayMode.zoomed);
+        },
+
+        dismissModal() {
+            displayMode.modalImage.removeEventListener(`click`, displayMode.zoomed);
+            displayMode.modalContainerOuter.parentNode.removeChild(displayMode.modalContainerOuter);
+            document.removeEventListener(`keydown`, displayMode.addListener);
+            displayMode.body.classList.remove(`no-scroll`);
+            displayMode.modalContainerOuter.classList.remove(`is-visible`);
+            displayMode.getBackToScrollPosition();
+        },
+
+        zoomed() {
+            displayMode.modalImage.classList.toggle(`zoomed`);
+        },
+
+        addListener(event) {
+            if (event.keyCode == 27 && displayMode.modalContainerOuter) {
+                displayMode.dismissModal();
             }
+        },
+
+        openForm() {
+            displayMode.dismissModal();
+            displayMode.contactForm.addClass('is-visible');
+            $(displayMode.body).addClass('no-scroll');
+            displayMode.form.removeClass('opacity');
+            displayMode.form.addClass('bounceInLeft');
+            setTimeout(() => {
+                displayMode.form.removeClass('bounceInLeft');
+            }, 2000);
+        },
+
+        closeContactForm() {
+            displayMode.contactForm.removeClass('is-visible');
+            $(displayMode.body).removeClass('no-scroll');
+            displayMode.getBackToScrollPosition();
         },
 
         appendNodes(container, listOfNodes) {
@@ -316,11 +374,15 @@
             displayMode.setDisplayModeToLocalStorage(currentDataDisplay);
             return displayMode.chooseDisplayMode(currentDataDisplay);
         },
-        
+
         cacheDOM() {
             this.exploreModelsContainer = document.querySelector(`.tab__content--explore-all-models`);
             this.displayModeButtons = document.querySelectorAll(`.display-mode .btn--display`);
             this.body = document.body || window.document.body;
+            this.window = window;
+            this.contactForm = $(this.body).find('.footer__top-contact-us');
+            this.closeForm = this.contactForm.find('.contact-us__close');
+            this.form = this.contactForm.find('form');
         },
 
         bindEvents() {
@@ -333,7 +395,7 @@
         addClassSelectedToDefaultDisplayModeButton() {
             [].forEach.call(this.displayModeButtons, (button) => {
                 button.classList.remove(`selected`);
-                if(button.getAttribute(`data-display`) === localStorage.displayMode) {
+                if (button.getAttribute(`data-display`) === localStorage.displayMode) {
                     button.classList.add(`selected`);
                     return;
                 }

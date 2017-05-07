@@ -7,9 +7,16 @@
 
     activeTab: null,
 
+    scrollPosition: 0,
+
     cacheDom: function cacheDom() {
+      this.body = $(document.body);
       this.tabs = $('.tabs .tab');
       this.tabsTitle = $('.tabs .tab__title');
+      this.contactForm = this.body.find('.footer__top-contact-us');
+      this.closeForm = this.contactForm.find('.contact-us__close');
+      this.form = this.contactForm.find('form');
+      this.findOutMoreBtn = $('.find-out-more');
     },
     getActiveTab: function getActiveTab() {
       return this.activeTab;
@@ -39,6 +46,31 @@
         $(event.target).closest('.tab__title').addClass('is-active');
         _this2.toggleActiveClass();
       });
+      this.findOutMoreBtn.on('click', this.openForm.bind(this));
+      this.closeForm.on('click', this.closeContactForm.bind(this));
+    },
+    openForm: function openForm() {
+      var _this3 = this;
+
+      this.setScrollPosition();
+      this.contactForm.addClass('is-visible');
+      this.body.addClass('no-scroll');
+      this.form.removeClass('opacity');
+      this.form.addClass('bounceInLeft');
+      setTimeout(function () {
+        _this3.form.removeClass('bounceInLeft');
+      }, 2000);
+    },
+    closeContactForm: function closeContactForm() {
+      this.contactForm.removeClass('is-visible');
+      this.body.removeClass('no-scroll');
+      this.getBackToScrollPosition();
+    },
+    getBackToScrollPosition: function getBackToScrollPosition() {
+      $(window).scrollTop(this.scrollPosition);
+    },
+    setScrollPosition: function setScrollPosition() {
+      this.scrollPosition = $(window).scrollTop();
     },
     init: function init() {
       this.cacheDom();

@@ -5,9 +5,16 @@
 
     activeTab: null,
 
+    scrollPosition: 0,
+
     cacheDom() {
+      this.body = $(document.body);
       this.tabs = $('.tabs .tab');
       this.tabsTitle = $('.tabs .tab__title');
+      this.contactForm = this.body.find('.footer__top-contact-us');
+      this.closeForm = this.contactForm.find('.contact-us__close');
+      this.form = this.contactForm.find('form');
+      this.findOutMoreBtn = $('.find-out-more');
     },
 
     getActiveTab() {
@@ -32,12 +39,39 @@
     },
 
     bindEvents() {
-      this.tabsTitle.on('click', (event) =>  {
-        this.setActiveTab($('.tab[data-tab="'+ $(event.target).closest('.tab__title').attr('data-tab') +'"]'));
+      this.tabsTitle.on('click', (event) => {
+        this.setActiveTab($('.tab[data-tab="' + $(event.target).closest('.tab__title').attr('data-tab') + '"]'));
         this.tabsTitle.removeClass('is-active');
         $(event.target).closest('.tab__title').addClass('is-active');
         this.toggleActiveClass();
       });
+      this.findOutMoreBtn.on('click', this.openForm.bind(this));
+      this.closeForm.on('click', this.closeContactForm.bind(this));
+    },
+
+    openForm() {
+      this.setScrollPosition();
+      this.contactForm.addClass('is-visible');
+      this.body.addClass('no-scroll');
+      this.form.removeClass('opacity');
+      this.form.addClass('bounceInLeft');
+      setTimeout(() => {
+        this.form.removeClass('bounceInLeft');
+      }, 2000);
+    },
+
+    closeContactForm() {
+      this.contactForm.removeClass('is-visible');
+      this.body.removeClass('no-scroll');
+      this.getBackToScrollPosition();
+    },
+
+    getBackToScrollPosition() {
+      $(window).scrollTop(this.scrollPosition);
+    },
+
+    setScrollPosition() {
+      this.scrollPosition = $(window).scrollTop();
     },
 
     init() {

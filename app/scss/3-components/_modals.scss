@@ -1,4 +1,20 @@
 .modal-container-outer {
+    .modal-dismiss {
+        @extend .contact-us__close;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        background-color: rgba(0, 0, 0, .7);
+        border-radius: 50%;
+        border: 2px solid #fff;
+        font-size: 1.15em;
+        text-align: center;
+        padding-left: 2px;
+        &:after {
+            content: 'x';
+            font-size: 1em;
+        }
+    }
     @extend .footer__top-contact-us;
     .modal-container-inner {
         position: relative;
@@ -6,31 +22,35 @@
         flex-direction: column;
         max-height: 100%;
         overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
         color: $silver;
         background-color: $testimonials-bg;
         padding: $spacing-medium;
-        .modal-dismiss {
-            @extend .contact-us__close;
-            position: absolute;
-            top: -5px;
-            left: 5px;
-            @media screen and (max-width: 375px) {
-                font-size: 2em;
-            }
-        }
+        border-top-left-radius: 12px;
         h3 {
             text-align: center;
         }
         img {
-            max-width: 200px;
+            max-width: 100%;
             height: 200px;
             margin: $spacing-base auto;
+            cursor: -webkit-zoom-in;
+            &.zoomed {
+                max-width: 100%;
+                height: auto;
+                cursor: -webkit-zoom-out;
+            }
+        }
+        .modal-container-call-to-action {
+            padding-bottom: $spacing-large;
+            @media screen and (max-width: 499px) {
+                font-size: .65em;
+            }
         }
         .modal-universal-features,
         p {
             margin: $spacing-medium 0;
         }
-
         li {
             list-style-type: lower-latin;
             list-style-position: inside;

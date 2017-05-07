@@ -584,10 +584,12 @@ body {
                 flex: 1 1 100%; } }
     .grid article .article__image {
       position: relative;
-      overflow: hidden; }
+      overflow: hidden;
+      max-width: 300px;
+      margin: 0 auto; }
       .grid article .article__image img {
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
         box-shadow: 0px 0px 10px 0px rgba(17, 17, 17, 0.7);
         transition: all .25s ease-in-out;
         margin: 0 auto;
@@ -1129,7 +1131,7 @@ p {
         -ms-flex-align: center;
             align-items: center;
     transition: all .3s ease-in-out; }
-    .footer__top-contact-us .contact-us__close, .modal-container-outer .contact-us__close, .modal-container-outer .modal-container-inner .modal-dismiss {
+    .footer__top-contact-us .contact-us__close, .modal-container-outer .contact-us__close, .modal-container-outer .modal-dismiss {
       color: #ddd;
       position: fixed;
       top: 15px;
@@ -1602,6 +1604,9 @@ form {
                 animation-timing-function: ease-in-out;
         -webkit-animation-iteration-count: 1;
                 animation-iteration-count: 1; }
+        .tabs .tab.is-visible .tab__content .find-out-more {
+          margin-top: 30px;
+          margin-bottom: 30px; }
         .tabs .tab.is-visible .tab__content .content__image {
           display: -webkit-flex;
           display: -ms-flexbox;
@@ -1837,6 +1842,20 @@ form {
               background: #fff;
               color: #607D8B; }
 
+.modal-container-outer .modal-dismiss {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  border: 2px solid #fff;
+  font-size: 1.15em;
+  text-align: center;
+  padding-left: 2px; }
+  .modal-container-outer .modal-dismiss:after {
+    content: 'x';
+    font-size: 1em; }
+
 .modal-container-outer .modal-container-inner {
   position: relative;
   display: -webkit-flex;
@@ -1847,22 +1866,27 @@ form {
           flex-direction: column;
   max-height: 100%;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   color: #ddd;
   background-color: #3F0D4D;
-  padding: 20px; }
-  .modal-container-outer .modal-container-inner .modal-dismiss {
-    position: absolute;
-    top: -5px;
-    left: 5px; }
-    @media screen and (max-width: 375px) {
-      .modal-container-outer .modal-container-inner .modal-dismiss {
-        font-size: 2em; } }
+  padding: 20px;
+  border-top-left-radius: 12px; }
   .modal-container-outer .modal-container-inner h3 {
     text-align: center; }
   .modal-container-outer .modal-container-inner img {
-    max-width: 200px;
+    max-width: 100%;
     height: 200px;
-    margin: 15px auto; }
+    margin: 15px auto;
+    cursor: -webkit-zoom-in; }
+    .modal-container-outer .modal-container-inner img.zoomed {
+      max-width: 100%;
+      height: auto;
+      cursor: -webkit-zoom-out; }
+  .modal-container-outer .modal-container-inner .modal-container-call-to-action {
+    padding-bottom: 30px; }
+    @media screen and (max-width: 499px) {
+      .modal-container-outer .modal-container-inner .modal-container-call-to-action {
+        font-size: .65em; } }
   .modal-container-outer .modal-container-inner .modal-universal-features,
   .modal-container-outer .modal-container-inner p {
     margin: 20px 0; }
@@ -1871,11 +1895,21 @@ form {
     list-style-position: inside; }
 
 .home-section {
-  background: url(../images/geometric1.jpg) no-repeat top center fixed;
-  background-size: cover;
   position: relative;
   height: 100vh;
   min-height: 46.875em; }
+  .home-section:before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    background: url(../images/geometric1.jpg) no-repeat top center;
+    background-size: cover;
+    will-change: transform;
+    z-index: -1; }
   @media screen and (max-width: 48em) and (orientation: portrait) {
     .home-section {
       height: 100vh; } }
@@ -1904,7 +1938,8 @@ form {
     font-family: 'Lato';
     color: #88166f;
     text-align: center;
-    position: relative; }
+    position: relative;
+    font-weight: 600; }
   .home-section .fa-angle-down {
     display: block;
     text-align: center;
