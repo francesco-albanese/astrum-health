@@ -1673,7 +1673,8 @@ form {
                 width: 200px;
                 height: 200px;
                 margin: auto;
-                margin-right: 20px; }
+                margin-right: 20px;
+                margin-left: 0; }
                 @media screen and (max-width: 30em) {
                   .tabs .tab.is-visible .tab__content--explore-all-models.display-list .model-content .model-content-container img {
                     margin-right: auto;

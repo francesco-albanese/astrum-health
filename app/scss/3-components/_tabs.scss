@@ -84,6 +84,7 @@
                   height: 200px;
                   margin: auto;
                   margin-right: $spacing-medium;
+                  margin-left: 0;
                   @media screen and (max-width: $container-small) {
                     margin-right: auto;
                     margin-bottom: $spacing-medium;
