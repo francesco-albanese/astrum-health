@@ -18,6 +18,10 @@ module.exports = {
     images: {
         files: ['./app/images/**/*.{png,jpg,gif,svg}'],
         tasks: ['imagemin:build']
+    },
+    typescript: {
+        files: ['./app/typescript/**/*.ts'],
+        tasks: ['typescript']
     }
 
 }

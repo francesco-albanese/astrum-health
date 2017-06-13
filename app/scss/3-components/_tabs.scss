@@ -36,6 +36,10 @@
         animation-duration: .25s;
         animation-timing-function: ease-in-out;
         animation-iteration-count: 1;
+        flex: 1;
+        &.overflow-auto {
+          overflow: auto;
+        }
         .find-out-more {
           margin-top: $spacing-large;
           margin-bottom: $spacing-large;
