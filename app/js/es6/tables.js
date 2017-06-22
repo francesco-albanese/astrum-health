@@ -162,7 +162,10 @@
         return response.json();
     }
 
-    fetch('/js/es6/table-data.json').then(checkStatus).then(parseJSON).then(function (data) {
+    var production = true;
+    var jsonPath = production ? "/js/table-data.json" : "/js/es6/table-data.json";
+
+    fetch(jsonPath).then(checkStatus).then(parseJSON).then(function (data) {
         return dynamicTable.init(data);
     }).catch(function (error) {
         console.log('request failed', error);
