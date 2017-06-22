@@ -15,7 +15,10 @@
         return response.json()
     }
 
-    fetch('/js/es6/table-data.json')
+    let production = true;
+    let jsonPath = production ? "/js/table-data.json" : "/js/es6/table-data.json";
+
+    fetch(jsonPath)
         .then(checkStatus)
         .then(parseJSON)
         .then((data) => dynamicTable.init(data))
