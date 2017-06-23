@@ -7,6 +7,7 @@
     "global": "^4.3.2",
     "grunt-cli": "^1.2.0",
     "load-grunt-config": "^0.19.2",
+    "node-sass": "^4.5.3",
     "time-grunt": "^1.4.0",
     "whatwg-fetch": "^2.0.3"
   },

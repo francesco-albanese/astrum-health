@@ -188,6 +188,9 @@
             p {
               flex: 1;
               text-align: justify;
+              body.sealers & {
+                max-height: 80px;
+              }
             }
             &--universal-features {
               display: flex;
