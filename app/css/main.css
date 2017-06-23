@@ -1778,6 +1778,8 @@ form {
                   -ms-flex: 1;
                       flex: 1;
               text-align: justify; }
+              body.sealers .tabs .tab.is-visible .tab__content--explore-all-models .model-content p {
+                max-height: 80px; }
             .tabs .tab.is-visible .tab__content--explore-all-models .model-content--universal-features {
               display: -webkit-flex;
               display: -ms-flexbox;
@@ -1907,14 +1909,15 @@ form {
   width: 1119px;
   overflow: hidden; }
   .table-container .highlight {
-    background-color: #ffa; }
+    background-color: #b8b8b8;
+    color: #fff; }
   .table-container .table-row {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     width: 1117px; }
     .table-container .table-row.highlight .table-cell.table-cell-not-applicable {
-      background-color: #ffa; }
+      background-color: #b8b8b8; }
     .table-container .table-row .table-header {
       -webkit-flex: 1;
           -ms-flex: 1;
@@ -1951,13 +1954,16 @@ form {
       padding: 5px; }
       .table-container .table-row .table-cell.table-cell-title {
         color: #A51C87;
-        font-weight: 600; }
+        font-weight: 600;
+        -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+                justify-content: flex-start; }
       .table-container .table-row .table-cell.table-cell-not-applicable {
         background-color: #d123ab; }
       .table-container .table-row .table-cell:last-child {
         border-right: 0; }
       .table-container .table-row .table-cell.highlight.table-cell-not-applicable {
-        background-color: #ffa; }
+        background-color: #b8b8b8; }
     .table-container .table-row:last-child .table-cell {
       border-bottom: 0; }
     .table-container .table-row-cloned {

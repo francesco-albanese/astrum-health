@@ -2,17 +2,16 @@
     border: 1px solid #4d4d4d;
     width: 1119px;
     overflow: hidden;
-
     .highlight {
-        background-color: #ffa;
+        background-color: darken(#c5c5c5, 5%);
+        color: $white;
     }
-
     .table-row {
         display: flex;
         width: 1117px;
         &.highlight {
             .table-cell.table-cell-not-applicable {
-                background-color: #ffa;
+                background-color: darken(#c5c5c5, 5%);
             }
         }
         .table-header {
@@ -38,6 +37,7 @@
             &.table-cell-title {
                 color: #A51C87;
                 font-weight: 600;
+                justify-content: flex-start;
             }
             &.table-cell-not-applicable {
                 background-color: lighten(#A51C87, 10%);
@@ -45,9 +45,8 @@
             &:last-child {
                 border-right: 0;
             }
-
             &.highlight.table-cell-not-applicable {
-                background-color: #ffa;
+                background-color: darken(#c5c5c5, 5%);
             }
         }
         &:last-child {

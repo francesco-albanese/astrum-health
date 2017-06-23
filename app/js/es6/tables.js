@@ -162,7 +162,7 @@
         return response.json();
     }
 
-    var production = true;
+    var production = false;
     var jsonPath = production ? "/js/table-data.json" : "/js/es6/table-data.json";
 
     fetch(jsonPath).then(checkStatus).then(parseJSON).then(function (data) {
