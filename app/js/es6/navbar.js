@@ -158,6 +158,7 @@
       this.cacheDom();
       this.backToTop.addClass('opacity');
       this.bindEvents();
+      window.isElementVisible = navbar.isElementVisible;
     }
   };
 

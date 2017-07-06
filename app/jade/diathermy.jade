@@ -8,7 +8,7 @@ html(lang="en-GB")
       meta(name='keywords', content='keywords')
       meta(name="robots", content="noindex, nofollow")
       meta(name='author', content='Francesco Albanese')
-      link(rel='canonical', href='company.html')
+      link(rel='canonical', href='sealers.html')
       meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
       title Astrum Health
       link(rel='icon', href='', type='image/x-icon', sizes='16x16')
@@ -22,7 +22,7 @@ html(lang="en-GB")
       <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
     
-  body(id="top", class="partners")
+  body(id="top", class="diathermy")
     section.header--not-home
       .container 
           include partials/page-components/header-not-home.jade
@@ -30,13 +30,23 @@ html(lang="en-GB")
     section.content.fadeIn
       .container
         article.content__container
-          section.content__logos
-            img(src="images/AquaPhase-Logo.jpg") 
-            img(src="images/Entrhal-Medical-Logo.jpg") 
-          h1 Partners
-          p.split-columns At Astrum Health, high superior infection control standards are our chief priority, which our partners fully understand and support. Astrum’s partners are manufacturers of high quality medical devices that meet international quality standards. Together, our aim is to support healthier lives, increasing efficiency whilst decreasing cost - both direct and indirect. This is attained though building value from educating, superb class service and bespoke customer relationship. 
+          h1 Diateg Insulation Tester
+          img.content__image(src="images/diathermy.jpg")
+          h2 The Status Quo
+          p.split-columns All over the world, faulty insulation on diathermy instruments regularly causes accidents which can lead to tissue damage and which can cause temporary or permanent injury to the patient. The majority of these injuries, which include burns and theatre fires and go, unreported. In the worst-case scenario, fatalities may occur. Studies1,2 in hospitals have shown that 18% of the endoscopic instruments used in the hospitals which participated in the trial had damaged insulation.
+
+          h2 Change in Practice – Safety First!
+          p.split-columns In addition to standard safety procedures, a diathermy tester can eliminate any possible doubt regarding the integrity of the insulation layer on electrosurgical instruments. This device detects damage, porosity, hairline cracks, pinholes and gas pockets, which all affect the efficacy of the insulation and can, lead to internal burns. 
           
-          p We maintain a close working relationship with our partners which sees customer needs and feedback appropriately fed up the supply chain. This is used to influence our continuing product development and solution provision.
+        
+        .tabs
+          .tabs-title-container.flex
+            .tab__title.is-active 
+              span Features & Benefits
+          .tab
+            .tab__content
+              .sealers
+                h3 Sealer Technical Specification            
   
     footer.footer
       section
@@ -84,7 +94,7 @@ html(lang="en-GB")
                 a(href="http://www.linkedin.com/company/10386914?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10386914%2Cidx%3A2-1-2%2CtarId%3A1486756326929%2Ctas%3Aastrum%20health" target="_blank")
                   include partials/page-components/linkedin-svg.jade
                 a(href="https://twitter.com/Astrum_Health" target="_blank") 
-                  include partials/page-components/twitter-svg.jade
+                  include partials/page-components/twitter-svg.jade      
       section.footer__bottom
         .footer__bottom-copyright.flex.flex--center
           p Copyright 2016 - Designed by #[a(href="#") francesco albanese]
@@ -114,7 +124,7 @@ html(lang="en-GB")
             a(href="#contact-us") contact us
     
     - if (production === false)          
-      script(src="js/es6/navbar.js", charset="utf-8")            
-      script(src="js/es6/svg-animation.js", charset="utf-8")
+      script(src="js/es6/navbar.js")            
+      script(src="js/es6/svg-animation.js")
     -  else 
       script(src="js/bundle.js")
