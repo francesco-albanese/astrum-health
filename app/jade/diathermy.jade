@@ -31,7 +31,10 @@ html(lang="en-GB")
       .container
         article.content__container
           h1 Diateg Insulation Tester
-          img.content__image(src="images/diathermy.jpg")
+          .video-outer-container 
+            .video-inner-container
+              video(src="videos/diateg-professional-isolations.mp4")
+
           h2 The Status Quo
           p.split-columns All over the world, faulty insulation on diathermy instruments regularly causes accidents which can lead to tissue damage and which can cause temporary or permanent injury to the patient. The majority of these injuries, which include burns and theatre fires and go, unreported. In the worst-case scenario, fatalities may occur. Studies1,2 in hospitals have shown that 18% of the endoscopic instruments used in the hospitals which participated in the trial had damaged insulation.
 
@@ -43,10 +46,9 @@ html(lang="en-GB")
           .tabs-title-container.flex
             .tab__title.is-active 
               span Features & Benefits
-          .tab
+          .tab.is-visible
             .tab__content
-              .sealers
-                h3 Sealer Technical Specification            
+              img.content__image(src="images/diathermy.jpg")          
   
     footer.footer
       section
@@ -124,7 +126,9 @@ html(lang="en-GB")
             a(href="#contact-us") contact us
     
     - if (production === false)          
-      script(src="js/es6/navbar.js")            
+      script(src="js/es6/navbar.js")        
       script(src="js/es6/svg-animation.js")
+      script(src="js/es6/loadvideo.js")
     -  else 
       script(src="js/bundle.js")
+      script(src="js/loadvideo.min.js")

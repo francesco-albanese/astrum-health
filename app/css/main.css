@@ -1975,6 +1975,25 @@ form {
       .table-container .table-row-cloned.visible {
         visibility: visible; }
 
+body.diathermy .video-outer-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px auto; }
+  body.diathermy .video-outer-container .video-inner-container {
+    max-width: 500px; }
+    body.diathermy .video-outer-container .video-inner-container video {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      max-width: 100%; }
+
 .home-section {
   position: relative;
   height: 100vh;

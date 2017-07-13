@@ -1,0 +1,15 @@
+body.diathermy {
+    .video-outer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .video-inner-container {
+            max-width: 500px;
+            video {
+                display: flex;
+                max-width: 100%;
+            }
+        }
+        margin: $spacing-large auto;
+    }
+}
