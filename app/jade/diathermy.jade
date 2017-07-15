@@ -33,7 +33,7 @@ html(lang="en-GB")
           h1 Diateg Insulation Tester
           .video-outer-container 
             .video-inner-container
-              video(src="videos/diateg-professional-isolations.mp4")
+              video(src="videos/diateg-professional-isolations.mp4" poster="images/diathermy.jpg")
 
           h2 The Status Quo
           p.split-columns All over the world, faulty insulation on diathermy instruments regularly causes accidents which can lead to tissue damage and which can cause temporary or permanent injury to the patient. The majority of these injuries, which include burns and theatre fires and go, unreported. In the worst-case scenario, fatalities may occur. Studies1,2 in hospitals have shown that 18% of the endoscopic instruments used in the hospitals which participated in the trial had damaged insulation.
@@ -47,9 +47,38 @@ html(lang="en-GB")
             .tab__title.is-active 
               span Features & Benefits
           .tab.is-visible
-            .tab__content
-              img.content__image(src="images/diathermy.jpg")          
-  
+            .tab__content   
+              .features-benefits-container.flex
+                .features-benefits-inner-container
+                  .features-container
+                    h3 Technical Features <i class="fa fa-briefcase"></i>
+                    ul 
+                      li.feature <i class="fa fa-plus"></i> <span>The device is compact, portable and easy to operate</span>
+                      li.feature <i class="fa fa-plus"></i> <span>Detects the smallest defects in the instrument insulation</span>
+                      li.feature <i class="fa fa-plus"></i> <span>Simple and safe to operate touchscreen</span>
+                      li.feature <i class="fa fa-plus"></i> <span>Fault display via audiovisual signals </span>
+                      li.feature <i class="fa fa-plus"></i> <span>Testing of mono- and bipolar instruments</span>
+                      li.feature <i class="fa fa-plus"></i> <span>CE tested</span>
+                      li.feature <i class="fa fa-plus"></i> <span>Compact, light-weight and portable</span>
+                      li.feature <i class="fa fa-plus"></i> <span>Microprocessor-controlled</span>
+                      li.feature <i class="fa fa-plus"></i> <span>Touchscreen operation and membrane switch </span>
+                      li.feature <i class="fa fa-plus"></i> <span>Secure battery operation</span>
+                      li.feature <i class="fa fa-plus"></i> <span>Easy to clean housing</span>
+                      li.feature <i class="fa fa-plus"></i> <span>4 available test programs</span>
+                  .benefits-container
+                    h3 Benefits <i class="fa fa-money"></i>
+                    ul 
+                      li.benefit <i class="fa fa-plus"></i> <span>An accurate, fast and non-destructive testing method for the detection of damage</span>
+                      li.benefit <i class="fa fa-plus"></i> <span>The device facilitates testing of diathermy testers with different diameters</span>
+                      li.benefit <i class="fa fa-plus"></i> <span>Enhanced safety during surgery (patients and staff)</span>
+                  .references-container
+                    h3 References <i class="fa fa-sticky-note-o"></i>
+                    ul 
+                      li <strong>1</strong> <span>Casseress YA, Albayrak A, Kijkopraties beeld. Tussenrapportage. (Endoscopic Surgery in Focus. Interim Report.) 5th March 2003 NVEC and TU Delft.</span>
+                      li <strong>2</strong> <span>Prof. Dr. G. van der Wal, Risico’s minimal invasieve chirurgie onderschat. (Risks of Minimally Invasive Surgery Underestimated.) November 2007.</span>    
+                .image-container.flex 
+                  img.content__image(src="images/diathermy.jpg") 
+                    
     footer.footer
       section
         .container
