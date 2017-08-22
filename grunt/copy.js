@@ -11,5 +11,12 @@ module.exports = {
         cwd: './app/js/es6',
         src: 'table-data.json',
         dest: 'dist/js',
+    },
+
+    videos: {
+        expand: true,
+        cwd: './app/videos/',
+        src: 'diateg-professional-isolations.mp4',
+        dest: 'dist/videos',
     }
 }
