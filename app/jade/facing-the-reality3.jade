@@ -11,7 +11,7 @@ html(lang="en-GB")
       link(rel='canonical', href='company.html')
       meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
       title Astrum Health
-      link(rel='icon', href='', type='image/x-icon', sizes='16x16')
+      include partials/page-components/favicons.jade
       link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1", crossorigin="anonymous")
       - if (!production)
         link(rel='stylesheet', href='css/main.css')
@@ -34,6 +34,7 @@ html(lang="en-GB")
           h2 Decontamination of equipment
           img.content__image(src="images/cross-contamination.jpg")
           p.split-columns Numerous studies have shown that frequently used medical equipment become contaminated by a variety of pathogenic and nonpathogenic organisms. Common human pathogens can survive on surfaces for prolonged periods ranging from 1.5 hours to 7 months (Arias, 2010). 
+          img.content__image(src="images/AQ3000-Wheelchair.jpg")
           p Url: #[a.url(href="#" target="_blank") Read More]
   
     footer.footer

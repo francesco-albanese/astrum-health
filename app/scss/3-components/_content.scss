@@ -74,4 +74,18 @@
     }
   }
 
+  .we-can-help & {
+    ul {
+      list-style-type: disc;
+      list-style-position: inside;
+      padding-left: $spacing-medium;
+    }
+    .italic {
+      font-style: italic;
+      a {
+        border-bottom: 1px dotted $black;
+      }
+    }
+  }
+
 }
