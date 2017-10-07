@@ -13,6 +13,13 @@ module.exports = {
         dest: 'dist/js',
     },
 
+    php: {
+        expand: true,
+        cwd: './app/mail/',
+        src: '*.php',
+        dest: 'dist/mail',
+    },
+
     videos: {
         expand: true,
         cwd: './app/videos/',

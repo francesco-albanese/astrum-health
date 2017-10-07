@@ -900,6 +900,7 @@ p {
         -ms-flex-align: center;
             align-items: center;
     margin: 30px auto;
+    max-width: 80%;
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
   .content .url {
     padding: 10px 20px;
@@ -1366,6 +1367,9 @@ form {
       padding: 10px;
       resize: none;
       font-family: Lato, sans-serif; }
+      form .label__wrapper input.form-error,
+      form .label__wrapper textarea.form-error {
+        border-bottom: 2px solid lightcoral; }
       form .label__wrapper input ~ .label--floating,
       form .label__wrapper textarea ~ .label--floating {
         transition: all .3s ease-in-out;
@@ -1425,6 +1429,14 @@ form {
         left: 50%; }
       form .label__wrapper .bar:after {
         right: 50%; }
+  form .email-outcome {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700; }
+    form .email-outcome.email-success {
+      color: lightseagreen; }
+    form .email-outcome.email-error {
+      color: lightcoral; }
 
 .navbar {
   display: -webkit-flex;
