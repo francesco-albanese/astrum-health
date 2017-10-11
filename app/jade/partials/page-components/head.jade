@@ -13,8 +13,10 @@ head
     link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1", crossorigin="anonymous")
     - if (!production)
       link(rel='stylesheet', href='css/main.css')
+      script(src="js/es6/fetch.js")   
     - else  
       link(rel='stylesheet', href='css/main.min.css')
+      script(src="js/es6/fetch.min.js")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js", charset="utf-8")
     
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->

@@ -10,7 +10,8 @@
     "minimatch": "^3.0.4",
     "node-sass": "^4.5.3",
     "time-grunt": "^1.4.0",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "yargs": "^9.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
@@ -39,7 +40,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "production": "grunt production"
+    "production": "node server/server.js --production=true && grunt production"
   },
   "repository": {
     "type": "git",
