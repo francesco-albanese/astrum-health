@@ -1,0 +1,138 @@
+- var production = true;
+doctype html
+html(lang="en-GB")
+  head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content ='IE=edge')
+      meta(name='description', content='Astrum Health is a leader in providing education and solutions that improve infection control within medical environments.')
+      meta(name='keywords', content='keywords')
+      meta(name="robots", content="index, follow")
+      meta(name='author', content='Francesco Albanese')
+      link(rel='canonical', href='we-can-help.html')
+      meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+      title Astrum Health
+      include partials/page-components/favicons.jade
+      link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1", crossorigin="anonymous")
+      - if (!production)
+        link(rel='stylesheet', href='css/main.css')
+      - else  
+        link(rel='stylesheet', href='css/main.min.css')
+      script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js", charset="utf-8")
+      
+      <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+    
+  body(id="top", class="we-can-help")
+    section.header--not-home
+      .container 
+          include partials/page-components/header-not-home.jade
+        
+    section.content.fadeIn
+      .container
+        article.content__container
+          h1 Support and Service
+          img.content__image(src="images/we-can-help.jpg")
+          p.split-columns At Astrum we understand that when you purchase your new equipment, you are in effect acquiring a solution. Our drive comes from supporting the customer from purchase decision through to lifetime support. Thus in understanding your need for expert customer service support, we provide superb support and service options geared for your solution and needs. 
+          p.split-columns Our customer support and service aims to:
+          ul
+            li Provide you with limited equipment downtime
+            li Provide you with quick turnaround solutions
+            li Expert advice in identifying your needs
+            li Providing you with on the go human contact as required
+          p.split-columns Astrum will also deliver training and assistance for improving decontamination processes, and for the use of our equipment. We will also ensure that we work with you and your facility to help you save costs on resources, processes, and equipment in the short and long term.
+
+          h2 Parts and Phone Support
+          p.split-columns We stock only manufacturer recommended parts. This is to guarantee superb machine performance and durability of both machine and parts. Commonly used parts will be readily available, but some parts may need to be ordered in from the manufacturer dependant of machine configuration. 
+          p Be rest assured of readily available telephone support from our well trained support staff. Our telephone support does not only answer calls, but ensure you are offered prompt solutions to your queries. 
+          p #[i.italic Not happy with any element of our service, or want to appraise our service? #[a(href="#contact-us") Click here]]
+          h2 Installation, Service and Maintenance
+          p.split-columns Enjoy longevity and durability or your equipment by ensuring routine service and maintenance. We provide a team of factory-trained engineers for all your maintenance needs in keeping your equipment at capacity. They will support you with installation, service and maintenance of your equipment. We offer options for maintenance including microbiological testing to suit infection control protocols. Whilst we offer guaranteed limited downtime* of our equipment, we accept some technical challenges may pop up. We offer a rapid response to any callouts with swift case by case resolution.
+          p #[strong *Based on normal equipment usage of equipment under regular service and daily site maintenance. Does not take into consideration user error and or lack of routine maintenance.]
+          p #[i.italic To speak to someone and discuss your maintenance requirements #[a(href="#contact-us") Contact Us]].
+
+          h2 Design
+          p We will support you with the design of your decontamination workflow engineering at no cost.
+          
+    footer.footer
+      section
+        .container
+          .footer__top-contact-us#contact-us
+            i.contact-us__close &times;
+            form.opacity
+              h2 contact us
+              .label__wrapper
+                input(type="text", name="name", id="name" required)
+                span(class="highlight")
+                span(class="bar")
+                label(for="name", class="label--floating") name
+              .label__wrapper
+                input(type="text", name="surname", id="surname" required)
+                span(class="highlight")
+                span(class="bar")
+                label(for="surname", class="label--floating") surname
+              .label__wrapper
+                input(type="email", name="email", id="email" required)
+                span(class="highlight")
+                span(class="bar")
+                label(for="email", class="label--floating") email
+              .label__wrapper
+                textarea(name="message", id="message" required rows="3")
+                span(class="highlight")
+                span(class="bar")
+                label(for="message", class="label--floating") message
+              button(class="btn btn--submit" type="button") submit
+      section.footer__centre
+        .container
+          section.flex
+            .footer__centre-logo.flex.flex--center
+              include partials/page-components/logo-svg.jade        
+            .footer__centre-navigation.flex.flex--center
+              nav
+                ul.flex
+                  li: a(href="company.html") company
+                  li: a(href="facing-the-reality.html") facing the reality
+                  li: a(href="partners.html") partners
+                  li: a(href="#follow-us") follow us
+            .footer__centre-follow-us
+              i.follow-us__close &times;
+              .follow-us-container.opacity
+                a(href="http://www.linkedin.com/company/10386914?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A10386914%2Cidx%3A2-1-2%2CtarId%3A1486756326929%2Ctas%3Aastrum%20health" target="_blank")
+                  include partials/page-components/linkedin-svg.jade
+                a(href="https://twitter.com/Astrum_Health" target="_blank") 
+                  include partials/page-components/twitter-svg.jade      
+      section.footer__bottom
+        .footer__bottom-copyright.flex.flex--center
+          p Copyright 2016 - Designed by #[a(href="#") francesco albanese]
+    
+    a(href="#top" title="Back to top").back-to-top #[i.fa.fa-angle-up.fa-3x(aria-hidden='true')]
+    section.offscreen-menu.flex.flex--center
+      i.offscreen-menu__close &times;
+      nav
+        ul.flex.flex--center
+          li
+            a(href="index.html") home
+          li
+            a(href="company.html") company
+          li
+            a(href="partners.html") partners
+          li
+            a(href="facing-the-reality.html") facing the reality
+          li
+            a.follow-us(href="#") follow us
+          li 
+            a(href="solutions.html") solutions
+          li 
+            a(href="facing-the-reality.html") resources
+          li 
+            a(href="testimonials.html") testimonials
+          li 
+            a(href="#contact-us") contact us
+    
+    - if (production === false)          
+      script(src="js/es6/navbar.js")        
+      script(src="js/es6/svg-animation.js")
+      script(src="js/es6/loadvideo.js")
+      script(src="js/es6/sendmail.js", charset="utf-8")
+    -  else 
+      script(src="js/bundle.js")
+      script(src="js/loadvideo.min.js")

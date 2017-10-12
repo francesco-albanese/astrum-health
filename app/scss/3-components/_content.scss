@@ -20,6 +20,7 @@
     justify-content: center;
     align-items: center;
     margin: $spacing-large auto;
+    max-width: 80%;
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   }
 
@@ -70,6 +71,20 @@
           column-count: 1;
           font-size: 1em;
         }
+      }
+    }
+  }
+
+  .we-can-help & {
+    ul {
+      list-style-type: disc;
+      list-style-position: inside;
+      padding-left: $spacing-medium;
+    }
+    .italic {
+      font-style: italic;
+      a {
+        border-bottom: 1px dotted $black;
       }
     }
   }

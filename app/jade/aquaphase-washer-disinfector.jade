@@ -6,12 +6,12 @@ html(lang="en-GB")
       meta(http-equiv='X-UA-Compatible', content ='IE=edge')
       meta(name='description', content='Astrum Health is a leader in providing education and solutions that improve infection control within medical environments.')
       meta(name='keywords', content='keywords')
-      meta(name="robots", content="noindex, nofollow")
+      meta(name="robots", content="index, follow")
       meta(name='author', content='Francesco Albanese')
       link(rel='canonical', href='aquaphase-washer-disinfector.html')
       meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
       title Astrum Health
-      link(rel='icon', href='', type='image/x-icon', sizes='16x16')
+      include partials/page-components/favicons.jade
       link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1", crossorigin="anonymous")
       - if (!production)
         link(rel='stylesheet', href='css/main.css')
@@ -281,7 +281,7 @@ html(lang="en-GB")
                 span(class="highlight")
                 span(class="bar")
                 label(for="message", class="label--floating") message
-              button(class="btn btn--submit" type="submit") submit
+              button(class="btn btn--submit" type="button") submit
       section.footer__centre
         .container
           section.flex
@@ -334,6 +334,7 @@ html(lang="en-GB")
       script(src="js/es6/svg-animation.js")
       script(src="js/es6/tabs.js")
       script(src="js/es6/displaymode.js")
+      script(src="js/es6/sendmail.js", charset="utf-8")
     -  else 
       script(src="js/bundle.js")
       script(src="js/displaymode.min.js")

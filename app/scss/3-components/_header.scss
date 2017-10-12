@@ -1,6 +1,11 @@
 
 .header {
 
+    svg {
+        width: 7em;
+        margin: auto;
+    }
+
   &--not-home {
     background-color: $white;
   }

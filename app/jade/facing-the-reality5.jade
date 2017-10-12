@@ -6,12 +6,12 @@ html(lang="en-GB")
       meta(http-equiv='X-UA-Compatible', content ='IE=edge')
       meta(name='description', content='Astrum Health is a leader in providing education and solutions that improve infection control within medical environments.')
       meta(name='keywords', content='keywords')
-      meta(name="robots", content="noindex, nofollow")
+      meta(name="robots", content="index, follow")
       meta(name='author', content='Francesco Albanese')
       link(rel='canonical', href='company.html')
       meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
       title Astrum Health
-      link(rel='icon', href='', type='image/x-icon', sizes='16x16')
+      include partials/page-components/favicons.jade
       link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1", crossorigin="anonymous")
       - if (!production)
         link(rel='stylesheet', href='css/main.css')
@@ -30,10 +30,11 @@ html(lang="en-GB")
     section.content.fadeIn
       .container
         article.content__container
-          h1 The Role of hospital surfaces in transmission of pathogens
+          h1 The role of hospital surfaces in transmission of pathogens
           h2 The inability to validate manually cleaned surfaces and equipment
           img.content__image(src="images/hospital-surfaces.jpg")
           p.split-columns Multiple studies strongly suggest that environmental contamination plays an important role in the transmission of methicillin-resistant Staphylococcus aureus, vancomycin-resistant Enterococcus app,  norovirus and Clostridium difficile. Importantly, norovirus and C difficile are relatively resistant to the most common surface disinfectants and waterless alcohol-based antiseptics. Evidence from studies strongly suggests that contaminated surfaces are important in the spread of the emerging healthcare-associated pathogens norovirus, C difficile, and MDR-Acinetobacter. It has also been demonstrated that many room surfaces are not adequately cleaned.
+          img(style="max-width:30%", src="images/role-of-hospital.jpg").content__image
           p Url: #[a.url(href="Role-of-hospital-surfaces-in-the-transmission-of-pathogens.pdf" target="_blank") Role of hospital surfaces in the transmission of pathogens]
   
     footer.footer
@@ -63,7 +64,7 @@ html(lang="en-GB")
                 span(class="highlight")
                 span(class="bar")
                 label(for="message", class="label--floating") message
-              button(class="btn btn--submit" type="submit") submit
+              button(class="btn btn--submit" type="button") submit
       section.footer__centre
         .container
           section.flex
@@ -114,5 +115,6 @@ html(lang="en-GB")
     - if (production === false)          
       script(src="js/es6/navbar.js", charset="utf-8")            
       script(src="js/es6/svg-animation.js", charset="utf-8")
+      script(src="js/es6/sendmail.js", charset="utf-8")
     -  else 
       script(src="js/bundle.js")

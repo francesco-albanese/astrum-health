@@ -6,12 +6,12 @@ html(lang="en-GB")
       meta(http-equiv='X-UA-Compatible', content ='IE=edge')
       meta(name='description', content='Astrum Health is a leader in providing education and solutions that improve infection control within medical environments.')
       meta(name='keywords', content='keywords')
-      meta(name="robots", content="noindex, nofollow")
+      meta(name="robots", content="index, follow")
       meta(name='author', content='Francesco Albanese')
       link(rel='canonical', href='company.html')
       meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
       title Astrum Health
-      link(rel='icon', href='', type='image/x-icon', sizes='16x16')
+      include partials/page-components/favicons.jade
       link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css", rel="stylesheet", integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1", crossorigin="anonymous")
       - if (!production)
         link(rel='stylesheet', href='css/main.css')
@@ -32,7 +32,7 @@ html(lang="en-GB")
         article.content__container
           h1 Surgical Diathermy Burns
           h2 Lack of Electrode Testing
-          img.content__image(src="images/surgical-diathermy.jpg")
+          img.content__image(src="images/surgical-fire.jpg")
           p.split-columns "Electrical burns to patients have been reported to result from insulation failure active diathermy electrodes. Not only are patients at risk, but this also poses risk to operating staff presenting as both open fires and surged related tissue burns. These burns are usually predictable and easily preventable by checking the insulation should be checked daily. " Demircin et al 2013 Patient and staff safety is of paramount importance and can save healthcare organisations a lot of money from lawsuits, extended patient hospital stay and staff sickness absence. 
           p Url: #[a.url(href="http://www.rjlm.ro/system/revista/27/173-176.pdf" target="_blank") Medicolegal aspects of surgical diathermy burns]
   
@@ -63,7 +63,7 @@ html(lang="en-GB")
                 span(class="highlight")
                 span(class="bar")
                 label(for="message", class="label--floating") message
-              button(class="btn btn--submit" type="submit") submit
+              button(class="btn btn--submit" type="button") submit
       section.footer__centre
         .container
           section.flex
@@ -114,5 +114,6 @@ html(lang="en-GB")
     - if (production === false)          
       script(src="js/es6/navbar.js", charset="utf-8")            
       script(src="js/es6/svg-animation.js", charset="utf-8")
+      script(src="js/es6/sendmail.js", charset="utf-8")
     -  else 
       script(src="js/bundle.js")

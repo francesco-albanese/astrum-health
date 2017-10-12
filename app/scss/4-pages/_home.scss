@@ -2,18 +2,22 @@
     position: relative;
     height: 100vh;
     min-height: 46.875em;
-    &:before {
-        content: '';
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-color: #fff;
-        background: url(../images/geometric1.jpg) no-repeat top center;
-        background-size: cover;
-        will-change: transform;
-        z-index: -1;
+    background: url(../images/geometric1.jpg) no-repeat fixed top center /cover;
+    @media screen and (max-width: $container-medium) {
+        background: none;
+        &:before {
+            content: '';
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            background: url(../images/geometric1.jpg) no-repeat top center;
+            background-size: cover;
+            will-change: transform;
+            z-index: -1;
+        }
     }
     @media screen and (max-width: $container-medium) and (orientation: portrait) {
         height: 100vh;

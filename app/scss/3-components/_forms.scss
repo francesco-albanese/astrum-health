@@ -31,6 +31,11 @@ form {
       padding: $spacing-small;
       resize: none;
       font-family: Lato, sans-serif;
+
+      &.form-error {
+        border-bottom: 2px solid lightcoral;
+      }
+
       ~ .label--floating {
         transition: all .3s ease-in-out;
         position:absolute;
@@ -87,6 +92,20 @@ form {
       &:after {
         right: 50%;
       }
+    }
+  }
+
+  .email-outcome {
+    margin-top: $spacing-medium;
+    font-size: 20px;
+    font-weight: 700;
+
+    &.email-success {
+      color: lightseagreen;
+    }
+
+    &.email-error {
+      color: lightcoral;
     }
   }
 }
