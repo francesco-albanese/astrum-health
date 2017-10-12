@@ -171,35 +171,35 @@ $container-small: 30.000em; //480px
 
     &:first-child {
       .facing-the-reality__grid-image {
-        background: url(../images/landscape.jpeg) no-repeat center;
+        background: url(../images/insulation-failure.jpg) no-repeat center;
         background-size: cover;
       }
     }
 
     &:nth-child(2) {
       .facing-the-reality__grid-image {
-        background: url(../images/medical.jpeg) no-repeat center;
+        background: url(../images/electrosurgery.jpeg) no-repeat center;
         background-size: cover;
       }
     }
 
     &:nth-child(3) {
       .facing-the-reality__grid-image {
-        background: url(../images/medical1.jpeg) no-repeat center;
+        background: url(../images/cross-contamination.jpg) no-repeat center;
         background-size: cover;
       }
     }
 
     &:nth-child(4) {
       .facing-the-reality__grid-image {
-        background: url(../images/sea.jpeg) no-repeat center;
+        background: url(../images/hospital-furniture.jpg) no-repeat center;
         background-size: cover;
       }
     }
 
     &:last-child {
       .facing-the-reality__grid-image {
-        background: url(../images/sea1.jpeg) no-repeat center;
+        background: url(../images/hospital-surfaces.jpg) no-repeat center;
         background-size: cover;
       }
     }
