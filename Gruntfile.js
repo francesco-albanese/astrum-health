@@ -11,6 +11,6 @@ module.exports = function (grunt) {
     // register tasks
     grunt.registerTask('default', ['browserSync', 'watch']);
     grunt.registerTask('development', ['clean:cleanDist', 'jade', 'sass', 'babel', 'postcss:build']);
-    grunt.registerTask('production', ['clean:cleanDist', 'jade', 'copy', 'sass', 'postcss:build', 'postcss:minify', 'uglify', 'concat', 'imagemin:build', 'clean:cleanJS']);
+    grunt.registerTask('production', ['clean:cleanDist', 'jade', 'copy', 'babel', 'sass', 'postcss:build', 'postcss:minify', 'uglify', 'concat', 'imagemin:build', 'clean:cleanJS']);
 
 };
