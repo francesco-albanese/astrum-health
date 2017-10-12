@@ -64,11 +64,11 @@
       this.followUsOffScreen.on('click', this.openFollowUsOffScreen.bind(this));
     },
     backgroundImageScroll: function backgroundImageScroll() {
-      if (this.window.width() < 769) {
+      if (this.window.width() < 800) {
         return;
       }
       var $scrollTop = this.window.scrollTop();
-      this.$homeSection.css('background-position', 'center ' + parseInt(-$scrollTop / 10) + 'px');
+      this.$homeSection.css('background-position', 'center ' + parseInt(-($scrollTop - -(window.pageYOffset / 2))) + 'px');
     },
     openForm: function openForm() {
       this.contactForm.addClass('is-visible');

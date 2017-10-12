@@ -64,11 +64,11 @@
     },
 
     backgroundImageScroll() {
-      if (this.window.width() < 769) {
+      if (this.window.width() < 800) {
         return;
       }
       let $scrollTop = this.window.scrollTop();
-      this.$homeSection.css('background-position', 'center ' + parseInt(-($scrollTop) / 10) + 'px');
+      this.$homeSection.css('background-position', 'center ' + parseInt(-($scrollTop - (-(window.pageYOffset / 2))) ) + 'px');
     },
 
     openForm() {
