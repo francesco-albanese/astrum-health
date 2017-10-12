@@ -40,6 +40,7 @@
       this.followUsContainer = this.body.find('.follow-us-container');
       this.followUsInNavbar = this.body.find('a[href="#follow-us"]');
       this.closeFollowUs = this.body.find('.follow-us__close');
+      this.date = this.body.find('.footer__bottom-copyright .date');
     },
     bindEvents: function bindEvents() {
       var _this = this;
@@ -64,11 +65,11 @@
       this.followUsOffScreen.on('click', this.openFollowUsOffScreen.bind(this));
     },
     backgroundImageScroll: function backgroundImageScroll() {
-      if (this.window.width() < 769) {
+      if (this.window.width() < 800) {
         return;
       }
       var $scrollTop = this.window.scrollTop();
-      this.$homeSection.css('background-position', 'center ' + parseInt(-$scrollTop / 10) + 'px');
+      this.$homeSection.css('background-position', 'center ' + parseInt(-($scrollTop - -(window.pageYOffset / 2))) + 'px');
     },
     openForm: function openForm() {
       this.contactForm.addClass('is-visible');
@@ -192,6 +193,7 @@
       this.cacheDom();
       this.backToTop.addClass('opacity');
       this.bindEvents();
+      this.date.text(new Date().getFullYear());
       window.isElementVisible = navbar.isElementVisible;
     }
   };

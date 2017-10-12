@@ -40,7 +40,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "production": "node server/server.js --production=true && grunt production"
+    "production": "node server/server.js --production=true && grunt production",
+    "development": "node server/server.js --production=false && grunt development && grunt"
   },
   "repository": {
     "type": "git",
