@@ -384,7 +384,8 @@ table {
           animation-iteration-count: 1; }
 
 .astrumLogo path {
-  transition: stroke-dashoffset .6s linear, fill .3s ease .5s; }
+  transition: stroke-dashoffset .6s linear, fill .3s ease .5s;
+  fill: #88166f; }
 
 .astrumLogo .svg1 {
   fill: transparent;
@@ -459,7 +460,7 @@ table {
   .follow-us-svg path {
     transition: stroke-dashoffset .45s linear, fill .25s ease-in-out .25s; }
     .follow-us-svg path.linkedin-path {
-      fill: #007AAA;
+      fill: #048fd8;
       stroke: #fff;
       stroke-width: 7px;
       stroke-dasharray: 3085.959716796875px;
@@ -675,19 +676,19 @@ body {
       .facing-the-reality__grid .facing-the-reality__grid-article {
         width: auto; } }
   .facing-the-reality__grid .facing-the-reality__grid-article-wrapper:first-child .facing-the-reality__grid-image {
-    background: url(../images/landscape.jpeg) no-repeat center;
+    background: url(../images/insulation-failure.jpg) no-repeat center;
     background-size: cover; }
   .facing-the-reality__grid .facing-the-reality__grid-article-wrapper:nth-child(2) .facing-the-reality__grid-image {
-    background: url(../images/medical.jpeg) no-repeat center;
+    background: url(../images/electrosurgery.jpeg) no-repeat center;
     background-size: cover; }
   .facing-the-reality__grid .facing-the-reality__grid-article-wrapper:nth-child(3) .facing-the-reality__grid-image {
-    background: url(../images/medical1.jpeg) no-repeat center;
+    background: url(../images/cross-contamination.jpg) no-repeat center;
     background-size: cover; }
   .facing-the-reality__grid .facing-the-reality__grid-article-wrapper:nth-child(4) .facing-the-reality__grid-image {
-    background: url(../images/sea.jpeg) no-repeat center;
+    background: url(../images/hospital-furniture.jpg) no-repeat center;
     background-size: cover; }
   .facing-the-reality__grid .facing-the-reality__grid-article-wrapper:last-child .facing-the-reality__grid-image {
-    background: url(../images/sea1.jpeg) no-repeat center;
+    background: url(../images/hospital-surfaces.jpg) no-repeat center;
     background-size: cover; }
   .facing-the-reality__grid .facing-the-reality__grid-article-wrapper--even {
     -webkit-flex-direction: row-reverse;
@@ -2207,6 +2208,10 @@ body.diathermy .video-outer-container {
   padding: 30px;
   text-align: center; }
 
-.company .content {
-  height: calc(100vh + 56px); }
+.company .astrum-logo svg {
+  max-width: 30%;
+  margin: 25px auto -34px;
+  display: block; }
+  .company .astrum-logo svg path[fill="url(#SVGID_7_)"] {
+    display: none; }
 /*# sourceMappingURL=main.css.map */

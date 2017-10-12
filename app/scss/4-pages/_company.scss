@@ -1,5 +1,12 @@
 .company {
-  .content {
-    height: calc(100vh + 56px);
+  .astrum-logo {
+    svg {
+      max-width: 30%;
+      margin: 25px auto -34px;
+      display: block;
+      path[fill="url(#SVGID_7_)"] {
+        display: none;
+      }
+    }
   }
 }
