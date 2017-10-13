@@ -14,7 +14,7 @@
         return response.json()
     }
 
-    let production = false;
+    let production = true;
     let jsonPath = production ? "/js/table-data.json" : "/js/es6/table-data.json";
 
     fetch(jsonPath)
