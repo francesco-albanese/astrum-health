@@ -2,10 +2,11 @@
 
 (function () {
     function checkStatus(response) {
+        var error = null;
         if (response.status >= 200 && response.status < 300) {
             return response;
         } else {
-            var error = new Error(response.statusText);
+            error = new Error(response.statusText);
             error.response = response;
             throw error;
         }
@@ -15,13 +16,13 @@
         return response.json();
     }
 
-    var production = true;
+    var production = false;
     var jsonPath = production ? "/js/table-data.json" : "/js/es6/table-data.json";
 
     fetch(jsonPath).then(checkStatus).then(parseJSON).then(function (data) {
         return dynamicTable.init(data);
     }).catch(function (error) {
-        console.log('request failed', error);
+        throw 'request failed', error;
     });
 
     var dynamicTable = {
@@ -134,7 +135,6 @@
             this.generateRowTitles(data.rowTitles);
             this.generateRowData(data.rowData);
             this.bindEvents();
-            // console.info(data);
         }
     };
 })();
